@@ -13,13 +13,14 @@ trap cleanup SIGINT SIGTERM
 
 # Start background processes
 ./server &
-./drone &
+./dynamic &
 ./obsticalegenerator &
 ./targetgenerator &
 
 # Start Konsole processes
-konsole --qwindowgeometry 922x965 -e ./keyboard &
+konsole --qwindowgeometry 922x700 -e ./keyboard &
 konsole --qwindowgeometry 1000x1000 -e ./vis &
+konsole --qwindowgeometry 900x300 -e ./watchdog &
 
 # Wait for all background processes to complete
 wait

@@ -12,8 +12,7 @@
 #include <sys/file.h>
 #include <string.h>
 #include <time.h>
-#define TIMEOUT 3 // Timeout in seconds
-
+#define TIMEOUT 4 // Timeout in seconds
 
 #define LOG_FILE "watchdog_log.txt"
 void update_watchdog_file();
@@ -85,11 +84,6 @@ int main(void)
 
     while (1)
     {
-        obsticale_generator();
-
-        write(fd_request_obsticale, generated_obsticales, sizeof(generated_obsticales));
-        // wait 6 seconds before generate new obsticales
-        sleep_wrapper(6);
         time_t current_time = time(NULL);
 
         if (current_time - last_logged_time >= TIMEOUT)
@@ -97,6 +91,11 @@ int main(void)
             update_watchdog_file();
             last_logged_time = current_time;
         }
+        obsticale_generator();
+
+        write(fd_request_obsticale, generated_obsticales, sizeof(generated_obsticales));
+        // wait 6 seconds before generate new obsticales
+        sleep_wrapper(6);
     }
 }
 

@@ -9,7 +9,7 @@
 #include <string.h>
 #include <time.h>
 
-#define TIMEOUT 4 // Timeout in seconds
+#define TIMEOUT 3 // Timeout in seconds
 #define LOG_FILE "watchdog_log.txt"
 
 void update_watchdog_file();
@@ -187,58 +187,66 @@ int main()
 
     wrefresh(win2);
     refresh();
-    time_t last_logged_time = 0;
+    //time_t last_logged_time = 0;
 
     int ch;
+    timeout(100); // Set getch() to non-blocking with a 100 ms timeout
+
+    time_t last_logged_time = time(NULL);
     while ((ch = getch()) != 'q')
     {
-        if (ch == '8')
-        {
-            write(fd_request_keyboard, "up", 3);
-        }
-        else if (ch == '2')
-        {
-            write(fd_request_keyboard, "down", 5);
-        }
-        else if (ch == '4')
-        {
-            write(fd_request_keyboard, "left", 5);
-        }
-        else if (ch == '6')
-        {
-            write(fd_request_keyboard, "right", 6);
-        }
-        else if (ch == '5')
-        {
-            write(fd_request_keyboard, "stop", 5);
-        }
-        else if (ch == '7')
-        {
-            write(fd_request_keyboard, "up-left", 8);
-        }
-        else if (ch == '9')
-        {
-            write(fd_request_keyboard, "up-right", 9);
-        }
-        else if (ch == '1')
-        {
-            write(fd_request_keyboard, "down-left", 10);
-        }
-        else if (ch == '3')
-        {
-            write(fd_request_keyboard, "down-right", 11);
-        }
-        else if (ch == 't')
-        {
-            write(fd_request_keyboard, "target", 7);
-        }
-        else if (ch == 'o')
-        {
-            write(fd_request_keyboard, "obsticale", 10);
-        }
         time_t current_time = time(NULL);
+
+        if (ch != ERR)
+        { // If a key was pressed
+            if (ch == '8')
+            {
+                write(fd_request_keyboard, "up", 3);
+            }
+            else if (ch == '2')
+            {
+                write(fd_request_keyboard, "down", 5);
+            }
+            else if (ch == '4')
+            {
+                write(fd_request_keyboard, "left", 5);
+            }
+            else if (ch == '6')
+            {
+                write(fd_request_keyboard, "right", 6);
+            }
+            else if (ch == '5')
+            {
+                write(fd_request_keyboard, "stop", 5);
+            }
+            else if (ch == '7')
+            {
+                write(fd_request_keyboard, "up-left", 8);
+            }
+            else if (ch == '9')
+            {
+                write(fd_request_keyboard, "up-right", 9);
+            }
+            else if (ch == '1')
+            {
+                write(fd_request_keyboard, "down-left", 10);
+            }
+            else if (ch == '3')
+            {
+                write(fd_request_keyboard, "down-right", 11);
+            }
+            else if (ch == 't')
+            {
+                write(fd_request_keyboard, "target", 7);
+            }
+            else if (ch == 'o')
+            {
+                write(fd_request_keyboard, "obsticale", 10);
+            }
+        }
+
         if (current_time - last_logged_time >= TIMEOUT)
-        { // Check if 3 seconds have passed
+        {
             update_watchdog_file();
             last_logged_time = current_time;
         }

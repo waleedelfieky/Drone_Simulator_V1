@@ -7,7 +7,7 @@
 #include <sys/file.h>
 #include <string.h>
 #include <time.h>
-#define TIMEOUT 3 // Timeout in seconds
+#define TIMEOUT 8 // Timeout in seconds
 
 
 #define LOG_FILE "watchdog_log.txt"

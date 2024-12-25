@@ -11,7 +11,7 @@
 #define LOG_FILE "watchdog_log.txt"
 #define TEMP_FILE "temp_log.txt" // Ensure TEMP_FILE is properly defined
 
-#define TIMEOUT 4 // Timeout in seconds
+#define TIMEOUT 10 // Timeout in seconds
 
 void clear_log_file();
 void get_process_name(pid_t pid, char *process_name, size_t size);
@@ -19,7 +19,7 @@ void check_processes();
 void terminate_all_processes();
 
 
-const char *process_names[] = {"vis", "keyboard", "obsticalegenerator", "server", "targetgenerator", "drone"};
+const char *process_names[] = {"vis", "keyboard", "obsticalegenerator", "server", "targetgenerator", "dynamic"};
 const int process_count = sizeof(process_names) / sizeof(process_names[0]);
 
 
@@ -85,7 +85,7 @@ void check_processes() {
     time_t current_time = time(NULL);
 
     //printf("Current time: %ld\n", current_time); // Print the current time in seconds
-
+    printf("=======================================================\n");
     while (fgets(line, sizeof(line), file)) {
         pid_t pid;
         time_t last_execution;
@@ -120,6 +120,7 @@ void check_processes() {
             fputs(line, temp_file);
         }
     }
+    printf("=======================================================\n");
 
     // Unlock the file and close it
     flock(fd, LOCK_UN);

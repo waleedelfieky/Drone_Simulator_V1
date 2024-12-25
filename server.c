@@ -28,7 +28,7 @@ void update_watchdog_file();
 
 #define MAX_TARGETS 10
 #define MAX_OBSTACLES 20
-#define TIMEOUT 3 // Timeout in seconds
+#define TIMEOUT 8 // Timeout in seconds
 
 
 typedef struct

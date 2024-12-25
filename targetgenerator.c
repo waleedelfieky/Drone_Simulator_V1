@@ -11,7 +11,7 @@
 #include <signal.h>
 #include <sys/file.h>
 #include <time.h>
-#define TIMEOUT 3 // Timeout in seconds
+#define TIMEOUT 4 // Timeout in seconds
 
 
 
