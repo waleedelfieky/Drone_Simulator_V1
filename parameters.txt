@@ -1,0 +1,11 @@
+M 1.0          # Mass of the drone (kg)
+K 0.5        # Viscous coefficient (N·s/m)
+T 0.1          # Time step (s)
+F_max 3.0     # Maximum force (N)
+X_max 100.0    # Geofence X boundary (m)
+Y_max 50.0    # Geofence Y boundary (m)
+rho 3        # Obstacle perception radius (m)
+eta 40        # Obstacle repulsion strength coefficient
+zeta 0.5       # Target attraction strength coefficient
+d_goal 10.0    # Distance threshold for full attraction (m)
+
