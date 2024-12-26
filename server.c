@@ -32,7 +32,6 @@ void update_watchdog_file();
 #define MAX_OBSTACLES 20
 #define TIMEOUT 8 // Timeout in seconds
 
-
 typedef struct
 {
     float x, y;   // Position
@@ -72,6 +71,8 @@ Target target_generator_reader[MAX_TARGETS];
 Obstacle obsticale_generator_reader[MAX_OBSTACLES];
 
 const int NUMBER_OF_PIPES = NUMBER_OF_CLIENTS * 2;
+
+int closed_pipe_flags[NUMBER_OF_CLIENTS] = {0};
 
 struct PIPES_T
 {
@@ -123,10 +124,10 @@ void send_target_signal();
 /*======================================================*/
 void send_obsticale_signal();
 /*======================================================*/
-//API to clear content of log file
+// API to clear content of log file
 void clear_log_file(const char *filename);
 /*======================================================*/
-//API to appened content in log file
+// API to appened content in log file
 void append_to_log_file(const char *filename, const char *format, ...);
 /*======================================================*/
 int main()
@@ -177,19 +178,23 @@ void init(void)
     //  we will read the pid of the processes so open fifos as read mood
     fd_target_generator = open(target_pipe_generator, O_RDONLY);
     printf("open for target sucess success\n");
+    append_to_log_file(LOG_FILE_NAME, "open for first target generaotor pipe successfully done\n");
     // read the pid and save it into our global varibale
     read(fd_target_generator, &pid_targt_generator, sizeof(pid_t));
     printf("read for target success sucess success\n");
     // print pid to make sure
     printf("the pid of target generation is: %d\n", pid_targt_generator);
+    append_to_log_file(LOG_FILE_NAME, "read of tareget PID done succesffuly and pid is %d\n", pid_targt_generator);
     // close(fd_target_generator);
     // printf("close for target sucess success\n");
 
     fd_obsticale_generator = open(obsticale_pipe_generator, O_RDONLY);
     printf("open for obsticale sucess success\n");
+    append_to_log_file(LOG_FILE_NAME, "successfuly open pipe of obsicale for first time generation\n");
     read(fd_obsticale_generator, &pid_obsticale_generator, sizeof(pid_t));
     printf("read for obsticale sucess success\n");
     printf("the pid of obsticale generation is: %d\n", pid_obsticale_generator);
+    append_to_log_file(LOG_FILE_NAME, "read of obsricales PID is done succesffuly and pid is %d\n", pid_obsticale_generator);
     send_target_signal();
     send_obsticale_signal();
 }
@@ -206,6 +211,7 @@ void create_fifos(struct PIPES_T **pipes_paths, int number_of_clients, int permi
             if (mkfifo(pipes_paths[i]->request_path, permission) == -1)
             {
                 perror("Error creating request FIFO");
+                append_to_log_file(LOG_FILE_NAME, "Error creating request FIFO for %s\n", pipes_paths[i]->request_path);
                 exit(EXIT_FAILURE);
             }
         }
@@ -216,6 +222,7 @@ void create_fifos(struct PIPES_T **pipes_paths, int number_of_clients, int permi
             if (mkfifo(pipes_paths[i]->response_path, permission) == -1)
             {
                 perror("Error creating response FIFO");
+                append_to_log_file(LOG_FILE_NAME, "Error creating request FIFO for %s\n", pipes_paths[i]->request_path);
                 exit(EXIT_FAILURE);
             }
         }
@@ -234,8 +241,11 @@ void open_fifos(struct PIPES_T **pipes_paths, int number_of_clients)
     {
         pipes_paths[i]->fd_request = open(pipes_paths[i]->request_path, O_RDONLY);
         printf("Opened request FIFO for reading: %s\n", pipes_paths[i]->request_path);
+        append_to_log_file(LOG_FILE_NAME, "Opened request FIFO for reading %s\n", pipes_paths[i]->request_path);
+
         pipes_paths[i]->fd_response = open(pipes_paths[i]->response_path, O_WRONLY);
         printf("Opened request FIFO for reading: %s\n", pipes_paths[i]->response_path);
+        append_to_log_file(LOG_FILE_NAME, "Opened request FIFO for reading %s\n", pipes_paths[i]->response_path);
     }
 }
 
@@ -317,8 +327,18 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                     int bytes_read = read(pipes_paths[i]->fd_request, buffer, sizeof(buffer));
                     if (bytes_read == 0)
                     {
-                        printf("Writer closed the pipe for: %s\n", pipes_paths[i]->request_path);
-                        continue; // Skip further processing for this iteration
+                        if (closed_pipe_flags[i] == 0)
+                        {
+
+                            printf("Writer closed the pipe for: %s\n", pipes_paths[i]->request_path);
+                            append_to_log_file(LOG_FILE_NAME, "Writer closed the pipe for: %s\n", pipes_paths[i]->request_path);
+                            closed_pipe_flags[i] = 1;
+                            continue; // Skip further processing for this iteration
+                        }
+                        else
+                        {
+                            continue;
+                        }
                     }
                     keyboard_pipe_Work(buffer);
                     // fflush(stdout);
@@ -334,13 +354,23 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                     int bytes_read = read(pipes_paths[i]->fd_request, buffer, sizeof(buffer));
                     if (bytes_read == 0)
                     {
-                        printf("Writer closed the pipe for: %s\n", pipes_paths[i]->request_path);
-                        continue; // Skip further processing for this iteration
+                        if (closed_pipe_flags[i] == 0)
+                        {
+                            printf("Writer closed the pipe for: %s\n", pipes_paths[i]->request_path);
+                            append_to_log_file(LOG_FILE_NAME, "Writer closed the pipe for: %s\n", pipes_paths[i]->request_path);
+                            closed_pipe_flags[i] = 1;
+                            continue; // Skip further processing for this iteration
+                        }
+                        else
+                        {
+                            continue;
+                        }
                     }
                     // the work to be done
                     // printf("============================================================\n");
                     // printf("the x and y update is x: (%f) y: (%f)\n", state.drone.x, state.drone.y);
                     // printf("============================================================\n");
+                    //append_to_log_file(LOG_FILE_NAME, "the x and y position update in server is x: (%f) y: (%f)\n", state.drone.x, state.drone.y);
 
                     write(pipes_paths[i]->fd_response, &state, sizeof(state));
                     // fflush(stdout);
@@ -381,10 +411,10 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                             { // 1m proximity
                                 state.targets[i].active = 0;
                                 state.score += state.targets[i].value;
-                                printf("=======================================================\n");
-                                printf("target collected\n");
-                                printf("target number (%d): status is (%d) now", i, state.targets[i].active);
-                                printf("=======================================================\n");
+                                // printf("=======================================================\n");
+                                // printf("target collected\n");
+                                // printf("target number (%d): status is (%d) now", i, state.targets[i].active);
+                                // printf("=======================================================\n");
                             }
                         }
                     }
@@ -392,8 +422,17 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                     // print closed in case of pipe closing
                     if (bytes_read == 0)
                     {
-                        printf("Writer closed the pipe for: %s\n", pipes_paths[i]->request_path);
-                        continue; // Skip further processing for this iteration
+                        if (closed_pipe_flags[i] == 0)
+                        {
+                            printf("Writer closed the pipe for: %s\n", pipes_paths[i]->request_path);
+                            append_to_log_file(LOG_FILE_NAME, "Writer closed the pipe for: %s\n", pipes_paths[i]->request_path);
+                            closed_pipe_flags[i] = 1;
+                            continue; // Skip further processing for this iteration
+                        }
+                        else
+                        {
+                            continue;
+                        }
                     }
                     // respond to the drone with the new struct
                     write(pipes_paths[i]->fd_response, &state, sizeof(state));
@@ -424,36 +463,42 @@ void keyboard_pipe_Work(char *keyboard_input)
     if (strcmp(keyboard_input, "up") == 0)
     {
         printf("Move up\n");
+        append_to_log_file(LOG_FILE_NAME, "key command on server is move up\n");
         // Add your action for "up"
         strcpy(state.key_pressed, "up");
     }
     else if (strcmp(keyboard_input, "down") == 0)
     {
         printf("Move down\n");
+        append_to_log_file(LOG_FILE_NAME, "key command on server is move down\n");
         // Add your action for "down"
         strcpy(state.key_pressed, "down");
     }
     else if (strcmp(keyboard_input, "left") == 0)
     {
         printf("Move left\n");
+        append_to_log_file(LOG_FILE_NAME, "key command on server is move left\n");
         // Add your action for "left"
         strcpy(state.key_pressed, "left");
     }
     else if (strcmp(keyboard_input, "right") == 0)
     {
         printf("Move right\n");
+        append_to_log_file(LOG_FILE_NAME, "key command on server is move right\n");
         strcpy(state.key_pressed, "right");
         // Add your action for "right"
     }
     else if (strcmp(keyboard_input, "stop") == 0)
     {
         printf("Stop movement\n");
+        append_to_log_file(LOG_FILE_NAME, "key command on server is stopt\n");
         // Add your action for "stop"
         strcpy(state.key_pressed, "stop");
     }
     else if (strcmp(keyboard_input, "up-left") == 0)
     {
         printf("Move up-left\n");
+        append_to_log_file(LOG_FILE_NAME, "key command on server move up left\n");
         // Add your action for "up-left"
         strcpy(state.key_pressed, "up-left");
     }
@@ -462,16 +507,19 @@ void keyboard_pipe_Work(char *keyboard_input)
         printf("Move up-right\n");
         // Add your action for "up-right"
         strcpy(state.key_pressed, "up-right");
+        append_to_log_file(LOG_FILE_NAME, "key command on server move up right\n");
     }
     else if (strcmp(keyboard_input, "down-left") == 0)
     {
         printf("Move down-left\n");
+        append_to_log_file(LOG_FILE_NAME, "key command on server down left\n");
         // Add your action for "down-left"
         strcpy(state.key_pressed, "down-left");
     }
     else if (strcmp(keyboard_input, "down-right") == 0)
     {
         printf("Move down-right\n");
+        append_to_log_file(LOG_FILE_NAME, "key command on server down right\n");
         // Add your action for "down-right"
         strcpy(state.key_pressed, "down-right");
     }
@@ -480,15 +528,18 @@ void keyboard_pipe_Work(char *keyboard_input)
         send_target_signal();
         printf("===============================\n");
         printf("send target singal sent successfully\n");
+        append_to_log_file(LOG_FILE_NAME, "send target singal sent successfully and waiting generation\n");
         printf("===============================\n");
     }
     else if (strcmp(keyboard_input, "obsticale") == 0)
     {
         send_obsticale_signal();
+        append_to_log_file(LOG_FILE_NAME, "send obsticale singal sent successfully and waiting generation\n");
     }
     else
     {
         printf("Unknown input: %s\n", keyboard_input);
+        append_to_log_file(LOG_FILE_NAME, "server recieved unkonwn input from keyboard: %s\n", keyboard_input);
         // Handle unknown input
     }
 }
@@ -499,15 +550,18 @@ void send_target_signal()
     if (kill(pid_targt_generator, SIGUSR1) == -1)
     {
         perror("Failed to send SIGUSR1");
+        append_to_log_file(LOG_FILE_NAME, "Failed to send SIGUSR1\n");
         exit(EXIT_FAILURE);
     }
     printf("SIGUSR1 sent to process %d.\n", pid_targt_generator);
+    append_to_log_file(LOG_FILE_NAME, "SIGUSR1 sent to process %d.\n", pid_targt_generator);
     // sleep(3);
     read(fd_target_generator, target_generator_reader, sizeof(target_generator_reader));
     // output to test
     for (int i = 1; i < MAX_TARGETS; i++)
     {
         printf("x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", target_generator_reader[i].x, target_generator_reader[i].y, target_generator_reader[i].value, target_generator_reader[i].active, target_generator_reader[i].action);
+        append_to_log_file(LOG_FILE_NAME, "server received targets for first time is obsticale number [%d] x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", i, target_generator_reader[i].x, target_generator_reader[i].y, target_generator_reader[i].value, target_generator_reader[i].active, target_generator_reader[i].action);
     }
     // upadte in global varibale
     memcpy(state.targets, target_generator_reader, sizeof(target_generator_reader));
@@ -519,15 +573,18 @@ void send_obsticale_signal()
     if (kill(pid_obsticale_generator, SIGUSR1) == -1)
     {
         perror("Failed to send SIGUSR1");
+        append_to_log_file(LOG_FILE_NAME, "Failed to send SIGUSR1\n");
         exit(EXIT_FAILURE);
     }
     printf("SIGUSR1 sent to process %d.\n", pid_obsticale_generator);
+    append_to_log_file(LOG_FILE_NAME, "SIGUSR1 sent to process %d.\n", pid_obsticale_generator);
     // sleep(3);
     read(fd_obsticale_generator, obsticale_generator_reader, sizeof(obsticale_generator_reader));
     // output to test
     for (int i = 1; i < MAX_TARGETS; i++)
     {
         printf("x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", obsticale_generator_reader[i].x, obsticale_generator_reader[i].y, obsticale_generator_reader[i].size, obsticale_generator_reader[i].active, obsticale_generator_reader[i].action);
+        append_to_log_file(LOG_FILE_NAME, "obsticle received for first time is number [ %d] x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", i, obsticale_generator_reader[i].x, obsticale_generator_reader[i].y, obsticale_generator_reader[i].size, obsticale_generator_reader[i].active, obsticale_generator_reader[i].action);
     }
     memcpy(state.obstacles, obsticale_generator_reader, sizeof(obsticale_generator_reader));
 }
@@ -541,6 +598,8 @@ void update_watchdog_file()
         if (!file)
         {
             perror("Failed to open log file");
+            append_to_log_file(LOG_FILE_NAME, "Failed to open log file\n");
+
             return;
         }
     }
@@ -559,6 +618,7 @@ void update_watchdog_file()
     if (!temp_file)
     {
         perror("Failed to create temporary file");
+        append_to_log_file(LOG_FILE_NAME, "Failed to create temporary file\n");
         flock(fd, LOCK_UN);
         fclose(file);
         return;
@@ -603,30 +663,50 @@ void update_watchdog_file()
     fclose(file);
 }
 
-
 // Function to clear the log file
-void clear_log_file(const char *filename) {
+void clear_log_file(const char *filename)
+{
     FILE *file = fopen(filename, "w"); // Open file in write mode to clear content
-    if (file == NULL) {
+    if (file == NULL)
+    {
         perror("Error opening log file to clear");
         exit(EXIT_FAILURE);
     }
     fclose(file); // Close the file after clearing
 }
 
-
 // Function to append data to the log file
-void append_to_log_file(const char *filename, const char *format, ...) {
-    FILE *file = fopen(filename, "a"); // Open file in append mode
-    if (file == NULL) {
-        perror("Error opening log file to append");
+void append_to_log_file(const char *filename, const char *format, ...)
+{
+    int fd = open(filename, O_WRONLY | O_APPEND | O_CREAT, 0644);
+    if (fd < 0)
+    {
+        perror("Error opening log file");
         exit(EXIT_FAILURE);
     }
 
+    // Acquire an exclusive lock
+    if (flock(fd, LOCK_EX) < 0)
+    {
+        perror("Error locking file");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    // Open a file stream for writing
+    FILE *file = fdopen(fd, "a");
+    if (file == NULL)
+    {
+        perror("Error opening file stream");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    // Write to the log file
     va_list args;
     va_start(args, format);
-    vfprintf(file, format, args); // Write formatted data to the log file
+    vfprintf(file, format, args);
     va_end(args);
 
-    fclose(file); // Close the file after appending
+    fclose(file); // This also unlocks the file and closes the file descriptor
 }
