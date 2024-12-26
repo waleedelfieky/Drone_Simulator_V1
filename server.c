@@ -12,8 +12,10 @@
 #include <sys/file.h>
 #include <string.h>
 #include <time.h>
+#include <stdarg.h>
 
 #define LOG_FILE "watchdog_log.txt"
+#define LOG_FILE_NAME "log.txt"
 void update_watchdog_file();
 
 #define READWRITEPERMISSION 0666
@@ -121,7 +123,12 @@ void send_target_signal();
 /*======================================================*/
 void send_obsticale_signal();
 /*======================================================*/
-
+//API to clear content of log file
+void clear_log_file(const char *filename);
+/*======================================================*/
+//API to appened content in log file
+void append_to_log_file(const char *filename, const char *format, ...);
+/*======================================================*/
 int main()
 {
     init();
@@ -135,6 +142,7 @@ int main()
 /*==========================================*/
 void init(void)
 {
+    clear_log_file(LOG_FILE_NAME);
     // assign default key as "stop"
     // strcpy(state.key_pressed,"stop");
     state.drone.x = 10;
@@ -593,4 +601,32 @@ void update_watchdog_file()
     fclose(temp_file);
     flock(fd, LOCK_UN);
     fclose(file);
+}
+
+
+// Function to clear the log file
+void clear_log_file(const char *filename) {
+    FILE *file = fopen(filename, "w"); // Open file in write mode to clear content
+    if (file == NULL) {
+        perror("Error opening log file to clear");
+        exit(EXIT_FAILURE);
+    }
+    fclose(file); // Close the file after clearing
+}
+
+
+// Function to append data to the log file
+void append_to_log_file(const char *filename, const char *format, ...) {
+    FILE *file = fopen(filename, "a"); // Open file in append mode
+    if (file == NULL) {
+        perror("Error opening log file to append");
+        exit(EXIT_FAILURE);
+    }
+
+    va_list args;
+    va_start(args, format);
+    vfprintf(file, format, args); // Write formatted data to the log file
+    va_end(args);
+
+    fclose(file); // Close the file after appending
 }

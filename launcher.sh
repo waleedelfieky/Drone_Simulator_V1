@@ -11,6 +11,58 @@ cleanup() {
 # Trap SIGINT (Ctrl + C) and SIGTERM (Terminal close)
 trap cleanup SIGINT SIGTERM
 
+
+# Paths to pipes
+PIPE_DIR="./pipes"
+KEYBOARD_REQUEST_PIPE="$PIPE_DIR/keyboard_Request"
+KEYBOARD_RESPONSE_PIPE="$PIPE_DIR/keyboard_Respond"
+VISUALIZER_REQUEST_PIPE="$PIPE_DIR/visualizer_Request"
+VISUALIZER_RESPONSE_PIPE="$PIPE_DIR/visualizer_Respond"
+DRONE_REQUEST_PIPE="$PIPE_DIR/drone_Request"
+DRONE_RESPONSE_PIPE="$PIPE_DIR/drone_Respond"
+OBSTACLE_REQUEST_PIPE="$PIPE_DIR/obsticale_Request"
+OBSTACLE_RESPONSE_PIPE="$PIPE_DIR/obsticale_Respond"
+TARGET_PIPE_GENERATOR="$PIPE_DIR/targetgenerator"
+OBSTACLE_PIPE_GENERATOR="$PIPE_DIR/obsticalegenerator"
+
+# Create the pipes directory if it doesn't exist
+mkdir -p $PIPE_DIR
+
+# Function to create a pipe
+create_pipe() {
+    if [[ ! -p $1 ]]; then
+        mkfifo $1
+        echo "Created pipe: $1"
+    else
+        echo "Pipe already exists: $1"
+    fi
+}
+
+# Create all required pipes
+create_pipe $KEYBOARD_REQUEST_PIPE
+create_pipe $KEYBOARD_RESPONSE_PIPE
+create_pipe $VISUALIZER_REQUEST_PIPE
+create_pipe $VISUALIZER_RESPONSE_PIPE
+create_pipe $DRONE_REQUEST_PIPE
+create_pipe $DRONE_RESPONSE_PIPE
+create_pipe $OBSTACLE_REQUEST_PIPE
+create_pipe $OBSTACLE_RESPONSE_PIPE
+create_pipe $TARGET_PIPE_GENERATOR
+create_pipe $OBSTACLE_PIPE_GENERATOR
+
+
+# Compilation Script
+gcc server.c -o server -lm
+gcc dynamic.c -o dynamic -lm
+gcc obsticalegenerator.c -o obsticalegenerator
+gcc targetgenerator.c -o targetgenerator
+gcc keyboard.c -o keyboard -lncurses
+gcc visualization.c -o vis -lncurses
+gcc watchdog.c -o watchdog
+
+echo "Compilation complete!"
+
+
 # Start background processes
 ./server &
 ./dynamic &
@@ -24,4 +76,3 @@ konsole --qwindowgeometry 900x300 -e ./watchdog &
 
 # Wait for all background processes to complete
 wait
-
