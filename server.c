@@ -16,7 +16,7 @@
 
 #define LOG_FILE "watchdog_log.txt"
 #define LOG_FILE_NAME "log_server.txt"
-//#define LOG_FILE_NAME "log.txt"
+// #define LOG_FILE_NAME "log.txt"
 void update_watchdog_file();
 
 #define READWRITEPERMISSION 0666
@@ -67,6 +67,7 @@ typedef struct
 } SharedState;
 
 SharedState state = {0};
+SharedState reset_state = {0};
 
 Target target_generator_reader[MAX_TARGETS];
 Obstacle obsticale_generator_reader[MAX_OBSTACLES];
@@ -371,7 +372,7 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                     // printf("============================================================\n");
                     // printf("the x and y update is x: (%f) y: (%f)\n", state.drone.x, state.drone.y);
                     // printf("============================================================\n");
-                    //append_to_log_file(LOG_FILE_NAME, "the x and y position update in server is x: (%f) y: (%f)\n", state.drone.x, state.drone.y);
+                    // append_to_log_file(LOG_FILE_NAME, "the x and y position update in server is x: (%f) y: (%f)\n", state.drone.x, state.drone.y);
 
                     write(pipes_paths[i]->fd_response, &state, sizeof(state));
                     // fflush(stdout);
@@ -537,6 +538,22 @@ void keyboard_pipe_Work(char *keyboard_input)
         send_obsticale_signal();
         append_to_log_file(LOG_FILE_NAME, "send obsticale singal sent successfully and waiting generation\n");
     }
+
+    else if (strcmp(keyboard_input, "reset") == 0)
+    {
+        append_to_log_file(LOG_FILE_NAME, "reset signal is recevied and now server is process it\n");
+        printf("Move down-right\n");
+        append_to_log_file(LOG_FILE_NAME, "key command on server down right\n");
+        // Add your action for "down-right"
+        strcpy(state.key_pressed, "reset");
+        
+        // send signals to generat new targets and obsticales
+        send_target_signal();
+        append_to_log_file(LOG_FILE_NAME, "targets generated successfuly\n");
+        send_obsticale_signal();
+        append_to_log_file(LOG_FILE_NAME, "obsticales generated successfuly\n");
+    }
+
     else
     {
         printf("Unknown input: %s\n", keyboard_input);

@@ -153,11 +153,11 @@ int main(void)
         write(fd_request_drone, &drone_tracker, sizeof(drone_tracker));
         // printf("================================================================\n");
         // printf("drone position sent succesffuly to the server x: (%f) y: (%f)\n", drone_tracker.x, drone_tracker.y);
-        append_to_log_file(LOG_FILE_NAME,"drone position sent succesffuly to the server x: (%f) y: (%f)\n", drone_tracker.x, drone_tracker.y);
+        append_to_log_file(LOG_FILE_NAME, "drone position sent succesffuly to the server x: (%f) y: (%f)\n", drone_tracker.x, drone_tracker.y);
         // printf("================================================================\n");
         // waiting response
         read(fd_response_drone, &state, sizeof(state));
-        append_to_log_file(LOG_FILE_NAME,"the data is receieved succesffuly from server\n");
+        append_to_log_file(LOG_FILE_NAME, "the data is receieved succesffuly from server\n");
         // printf("================================================================\n");
         // printf("pressed key is: %s\n", state.key_pressed);
         // printf("================================================================\n");
@@ -175,7 +175,7 @@ int main(void)
         /*==========================================================================*/
         // now we have the data and ready for do our calculations to be sent to server again as request next time
         update_Drone_dynamics(&state, params.F_max, &params);
-        append_to_log_file(LOG_FILE_NAME,"dorne dynamics updated correctly\n");
+        append_to_log_file(LOG_FILE_NAME, "dorne dynamics updated correctly\n");
         // printf("====================22222222222222222222=========================\n");
         // printf("====================process_keyboard_input=========================\n");
         // print_shared_state(&state);
@@ -370,6 +370,16 @@ void update_Drone_dynamics(SharedState *state, float F_max, Parameters *params)
     }
     else if (strcmp(state->key_pressed, "stop") == 0)
     {
+        state->drone.fx = 0.0f; // Stop all forces
+        state->drone.fy = 0.0f;
+        state->drone.vx = 0;
+        state->drone.vy = 0;
+    }
+    else if (strcmp(state->key_pressed, "reset") == 0)
+    {
+
+        state->drone.x = 10.0f; // put in initial x position
+        state->drone.y = 10.0f; // put in initial y position
         state->drone.fx = 0.0f; // Stop all forces
         state->drone.fy = 0.0f;
         state->drone.vx = 0;

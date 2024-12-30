@@ -39,22 +39,22 @@ int main()
     }
 
     initscr();
-    append_to_log_file(LOG_FILE_NAME,"init screen successed\n");
+    append_to_log_file(LOG_FILE_NAME, "init screen successed\n");
     cbreak();
-    append_to_log_file(LOG_FILE_NAME,"cbreak successed\n");
+    append_to_log_file(LOG_FILE_NAME, "cbreak successed\n");
     noecho();
-    append_to_log_file(LOG_FILE_NAME,"noecho successed\n");
+    append_to_log_file(LOG_FILE_NAME, "noecho successed\n");
     keypad(stdscr, TRUE);
-    append_to_log_file(LOG_FILE_NAME,"kaypad successed\n");
+    append_to_log_file(LOG_FILE_NAME, "kaypad successed\n");
     start_color();
-    append_to_log_file(LOG_FILE_NAME,"start_color successed\n");
+    append_to_log_file(LOG_FILE_NAME, "start_color successed\n");
     curs_set(0);
-    append_to_log_file(LOG_FILE_NAME,"curs_set successed\n");
+    append_to_log_file(LOG_FILE_NAME, "curs_set successed\n");
     init_pair(1, COLOR_GREEN, COLOR_BLACK);
     init_pair(2, COLOR_RED, COLOR_BLACK);
     init_pair(3, COLOR_WHITE, COLOR_BLACK);
     init_pair(4, COLOR_RED, COLOR_WHITE);
-    append_to_log_file(LOG_FILE_NAME,"init pair successed\n");
+    append_to_log_file(LOG_FILE_NAME, "init pair successed\n");
 
     WINDOW *win1 = newwin(30, 40, 2, 2);
     WINDOW *win2 = newwin(30, 40, 2, 46);
@@ -64,7 +64,7 @@ int main()
     wattron(win2, COLOR_PAIR(2));
     box(win2, 0, 0);
 
-    append_to_log_file(LOG_FILE_NAME,"inilization is ready to accept shaped which we will define\n");
+    append_to_log_file(LOG_FILE_NAME, "inilization is ready to accept shaped which we will define\n");
     // circle  shapes in RED(2)
     mvwprintw(win2, 9, 17, " @@@ ");
     mvwprintw(win2, 10, 16, "@@   @@");
@@ -223,57 +223,61 @@ int main()
             if (ch == '8')
             {
                 write(fd_request_keyboard, "up", 3);
-                append_to_log_file(LOG_FILE_NAME,"the up button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the up button is presses\n");
             }
             else if (ch == '2')
             {
                 write(fd_request_keyboard, "down", 5);
-                append_to_log_file(LOG_FILE_NAME,"the down button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the down button is presses\n");
             }
             else if (ch == '4')
             {
                 write(fd_request_keyboard, "left", 5);
-                append_to_log_file(LOG_FILE_NAME,"the left button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the left button is presses\n");
             }
             else if (ch == '6')
             {
                 write(fd_request_keyboard, "right", 6);
-                append_to_log_file(LOG_FILE_NAME,"the right button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the right button is presses\n");
             }
             else if (ch == '5')
             {
                 write(fd_request_keyboard, "stop", 5);
-                append_to_log_file(LOG_FILE_NAME,"the stop button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the stop button is presses\n");
             }
             else if (ch == '7')
             {
                 write(fd_request_keyboard, "up-left", 8);
-                append_to_log_file(LOG_FILE_NAME,"the up-left button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the up-left button is presses\n");
             }
             else if (ch == '9')
             {
                 write(fd_request_keyboard, "up-right", 9);
-                append_to_log_file(LOG_FILE_NAME,"the up-right button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the up-right button is presses\n");
             }
             else if (ch == '1')
             {
                 write(fd_request_keyboard, "down-left", 10);
-                append_to_log_file(LOG_FILE_NAME,"the down-left button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the down-left button is presses\n");
             }
             else if (ch == '3')
             {
                 write(fd_request_keyboard, "down-right", 11);
-                append_to_log_file(LOG_FILE_NAME,"the down-right button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the down-right button is presses\n");
             }
             else if (ch == 't')
             {
                 write(fd_request_keyboard, "target", 7);
-                append_to_log_file(LOG_FILE_NAME,"the t button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the t button is presses\n");
             }
             else if (ch == 'o')
             {
                 write(fd_request_keyboard, "obsticale", 10);
-                append_to_log_file(LOG_FILE_NAME,"the o button is presses\n");
+                append_to_log_file(LOG_FILE_NAME, "the o button is presses\n");
+            }
+            else if (ch == 'r')
+            {
+                write(fd_request_keyboard, "reset", 6);
             }
         }
 
