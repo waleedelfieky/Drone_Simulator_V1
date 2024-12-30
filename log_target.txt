@@ -1,0 +1,12 @@
+the singal is reveieved successfully and the target is being generated 
+Target Generator Process Started...
+Target Generator Process Started...
+x is: 46, y is: 6, value is: 1, active is: 1, action is: 32
+x is: 8, y is: 12, value is: 2, active is: 1, action is: 32
+x is: 52, y is: 20, value is: 3, active is: 1, action is: 32
+x is: 76, y is: 12, value is: 4, active is: 1, action is: 32
+x is: 76, y is: 16, value is: 5, active is: 1, action is: 32
+x is: 34, y is: 8, value is: 6, active is: 1, action is: 32
+x is: 4, y is: 2, value is: 7, active is: 1, action is: 32
+x is: 86, y is: 10, value is: 8, active is: 1, action is: 32
+x is: 84, y is: 20, value is: 9, active is: 1, action is: 32

@@ -1,0 +1,8 @@
+the fd request of vis is successfully opened
+the fd response of vis is successfully opened
+initscr is successfully called
+cbreak is successfully called
+noecho is successfully called
+curs_set is successfully called
+start color is successfully called
+system now is ready to update visualizer frequently with new value froom the server it will send request and wait response and then draw and so on 

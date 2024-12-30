@@ -1,5 +1,24 @@
 #!/bin/bash
 
+# List of files to create
+files=(
+    "log_server.txt"
+    "log_obsticale.txt"
+    "log_keyboard.txt"
+    "log_dynamic.txt"
+    "log_visualizer.txt"
+    "log_target.txt"
+)
+
+# Loop through the list and create/overwrite each file
+for file in "${files[@]}"; do
+    > "$file"
+    echo "Created/overwritten: $file"
+done
+
+echo "All files have been created/overwritten."
+
+
 # Function to handle termination signals
 cleanup() {
     echo "Terminating all background processes..."
@@ -53,11 +72,17 @@ create_pipe $OBSTACLE_PIPE_GENERATOR
 
 # Compilation Script
 gcc server.c -o server -lm
+sleep 0.2
 gcc dynamic.c -o dynamic -lm
+sleep 0.2
 gcc obsticalegenerator.c -o obsticalegenerator
+sleep 0.2
 gcc targetgenerator.c -o targetgenerator
+sleep 0.2
 gcc keyboard.c -o keyboard -lncurses
+sleep 0.2
 gcc visualization.c -o vis -lncurses
+sleep 0.2
 gcc watchdog.c -o watchdog
 
 echo "Compilation complete!"

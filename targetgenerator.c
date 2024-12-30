@@ -11,14 +11,27 @@
 #include <signal.h>
 #include <sys/file.h>
 #include <time.h>
+#include <stdarg.h>
+
 #define TIMEOUT 4 // Timeout in seconds
 
 
 
 
 #define LOG_FILE "watchdog_log.txt"
+#define LOG_FILE_NAME "log_target.txt"
+
+/*=================================================*/
+//API to update watchdog file with target generation paramters
 void update_watchdog_file();
 /*=================================================*/
+// API to clear content of log file
+void clear_log_file(const char *filename);
+/*======================================================*/
+// API to appened content in log file
+void append_to_log_file(const char *filename, const char *format, ...);
+/*======================================================*/
+
 #define MAX_TARGETS 10
 
 typedef struct
@@ -48,6 +61,7 @@ void signal_handler(int signum)
 {
     if (signum == SIGUSR1)
     {
+        append_to_log_file(LOG_FILE_NAME,"the singal is reveieved successfully and the target is being generated \n");
         // generate a new targets
         target_generator();
         // now we want to send our array of struct to the server !
@@ -58,6 +72,7 @@ void signal_handler(int signum)
 
 int main(void)
 {
+    clear_log_file(LOG_FILE_NAME);
 
     // target_generator();
     init();
@@ -80,8 +95,10 @@ void target_generator(void)
 {
     srand(time(NULL)); // Seed for random numbers
     printf("Target Generator Process Started...\n");
+    append_to_log_file(LOG_FILE_NAME,"Target Generator Process Started...\n");
 
     printf("Generating targets...\n");
+    append_to_log_file(LOG_FILE_NAME,"Target Generator Process Started...\n");
     for (int i = 1; i < MAX_TARGETS; i++)
     {
         // Generate even numbers between 0 and 50 for x and y
@@ -96,6 +113,7 @@ void target_generator(void)
         // write(fd_target, &t, sizeof(t));
         // printf("Generated targets: (%d ,%d), value: %d\n" t.x, t.y, t.value);
         printf("x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", generated_targets[i].x, generated_targets[i].y, generated_targets[i].value, generated_targets[i].active, generated_targets[i].action);
+        append_to_log_file(LOG_FILE_NAME,"x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", generated_targets[i].x, generated_targets[i].y, generated_targets[i].value, generated_targets[i].active, generated_targets[i].action);
     }
 }
 
@@ -110,6 +128,7 @@ void init(void)
         if (mkfifo(target_pipe_generator, 0666) == -1)
         {
             perror("Error creating target_pipe_generator FIFO");
+            append_to_log_file(LOG_FILE_NAME,"Error creating target_pipe_generator FIFO");
             exit(EXIT_FAILURE);
         }
     }
@@ -201,4 +220,53 @@ void update_watchdog_file()
     fclose(temp_file);
     flock(fd, LOCK_UN);
     fclose(file);
+}
+
+
+// Function to clear the log file
+void clear_log_file(const char *filename)
+{
+    FILE *file = fopen(filename, "w"); // Open file in write mode to clear content
+    if (file == NULL)
+    {
+        perror("Error opening log file to clear");
+        exit(EXIT_FAILURE);
+    }
+    fclose(file); // Close the file after clearing
+}
+
+// Function to append data to the log file
+void append_to_log_file(const char *filename, const char *format, ...)
+{
+    int fd = open(filename, O_WRONLY | O_APPEND | O_CREAT, 0644);
+    if (fd < 0)
+    {
+        perror("Error opening log file");
+        exit(EXIT_FAILURE);
+    }
+
+    // Acquire an exclusive lock
+    if (flock(fd, LOCK_EX) < 0)
+    {
+        perror("Error locking file");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    // Open a file stream for writing
+    FILE *file = fdopen(fd, "a");
+    if (file == NULL)
+    {
+        perror("Error opening file stream");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    // Write to the log file
+    va_list args;
+    va_start(args, format);
+    vfprintf(file, format, args);
+    va_end(args);
+
+    fclose(file); // This also unlocks the file and closes the file descriptor
 }

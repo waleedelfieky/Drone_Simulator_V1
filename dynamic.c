@@ -13,12 +13,23 @@
 #include <math.h>
 #include <sys/file.h>
 #include <time.h>
+#include <stdarg.h>
+
 #define TIMEOUT 8 // Timeout in seconds
 
-
 #define LOG_FILE "watchdog_log.txt"
-void update_watchdog_file();
+#define LOG_FILE_NAME "log_dynamic.txt"
 
+/*======================================================*/
+// API to update watchdog file with dynamic paramters
+void update_watchdog_file();
+/*======================================================*/
+// API to clear content of log file
+void clear_log_file(const char *filename);
+/*======================================================*/
+// API to appened content in log file
+void append_to_log_file(const char *filename, const char *format, ...);
+/*======================================================*/
 /*=========================================================*/
 #define PIPE_REQUEST_DRONE "./pipes/drone_Request"
 #define PIPE_RESPONSE_DRONE "./pipes/drone_Respond"
@@ -80,49 +91,58 @@ typedef struct
 
 /*=========================================================*/
 /*=========================================================*/
-
 /*=========================================================*/
-/*=========================================================*/
-
 void load_parameters(const char *filename, Parameters *params);
 void update_Drone_dynamics(SharedState *state, float F_max, Parameters *param);
 void print_shared_state(const SharedState *state);
+/*=========================================================*/
+
 /*=========================================================*/
 /*=========================================================*/
 Drone drone_tracker = {10, 10, 0, 0, 0, 0};
 
 int main(void)
 {
+    clear_log_file(LOG_FILE_NAME);
     // Load simulation parameters
     Parameters params = {0};
     load_parameters("parameters.txt", &params);
     printf(" Parameters used : \n");
+    append_to_log_file(LOG_FILE_NAME, "parameters used: \n");
     printf("M = %f \n", params.M);
+    append_to_log_file(LOG_FILE_NAME, "M: %f\n", params.M);
     printf("K = %f \n", params.K);
+    append_to_log_file(LOG_FILE_NAME, "K: %f\n", params.M);
     printf("T = %f \n", params.T);
     printf("F_MAX = %f \n", params.F_max);
+    append_to_log_file(LOG_FILE_NAME, "F_MAX: %f\n", params.M);
     printf("X_MAX = %f \n", params.X_max);
+    append_to_log_file(LOG_FILE_NAME, "X_MAX: %f\n", params.M);
     printf("Y_MAX = %f \n", params.Y_max);
+    append_to_log_file(LOG_FILE_NAME, "Y_MAX: %f\n", params.M);
 
     // define the data to be sent to the server
     // intial positon request
     // open pipes of the drone request and response
     int fd_request_drone = open(PIPE_REQUEST_DRONE, O_WRONLY);
     printf("fd request opened successfuly\n");
+    append_to_log_file(LOG_FILE_NAME, "fd request opened successfuly\n");
     int fd_response_drone = open(PIPE_RESPONSE_DRONE, O_RDONLY);
     printf("fd response opened successfuly\n");
+    append_to_log_file(LOG_FILE_NAME, "fd response opened successfuly\n");
     // check weather pipes is opened successfully or not
     if (fd_request_drone == -1)
     {
         perror("Failed to open pipe request visualization");
+        append_to_log_file(LOG_FILE_NAME, "failed to open pipe request visualizer\n");
         exit(1);
     }
     if (fd_response_drone == -1)
     {
-        perror("Failed to open pipe request visualization");
+        perror("Failed to open pipe response visualization");
+        append_to_log_file(LOG_FILE_NAME, "failed to open pipe response visualizer\n");
         exit(1);
     }
-    printf("4\n");
     // define the struct that we will read data in from the server so we can deal with it here and then send request to the server with new position
     SharedState state;
     time_t last_logged_time = 0;
@@ -133,9 +153,11 @@ int main(void)
         write(fd_request_drone, &drone_tracker, sizeof(drone_tracker));
         // printf("================================================================\n");
         // printf("drone position sent succesffuly to the server x: (%f) y: (%f)\n", drone_tracker.x, drone_tracker.y);
+        append_to_log_file(LOG_FILE_NAME,"drone position sent succesffuly to the server x: (%f) y: (%f)\n", drone_tracker.x, drone_tracker.y);
         // printf("================================================================\n");
         // waiting response
         read(fd_response_drone, &state, sizeof(state));
+        append_to_log_file(LOG_FILE_NAME,"the data is receieved succesffuly from server\n");
         // printf("================================================================\n");
         // printf("pressed key is: %s\n", state.key_pressed);
         // printf("================================================================\n");
@@ -153,6 +175,7 @@ int main(void)
         /*==========================================================================*/
         // now we have the data and ready for do our calculations to be sent to server again as request next time
         update_Drone_dynamics(&state, params.F_max, &params);
+        append_to_log_file(LOG_FILE_NAME,"dorne dynamics updated correctly\n");
         // printf("====================22222222222222222222=========================\n");
         // printf("====================process_keyboard_input=========================\n");
         // print_shared_state(&state);
@@ -510,4 +533,52 @@ void update_watchdog_file()
     fclose(temp_file);
     flock(fd, LOCK_UN);
     fclose(file);
+}
+
+// Function to clear the log file
+void clear_log_file(const char *filename)
+{
+    FILE *file = fopen(filename, "w"); // Open file in write mode to clear content
+    if (file == NULL)
+    {
+        perror("Error opening log file to clear");
+        exit(EXIT_FAILURE);
+    }
+    fclose(file); // Close the file after clearing
+}
+
+// Function to append data to the log file
+void append_to_log_file(const char *filename, const char *format, ...)
+{
+    int fd = open(filename, O_WRONLY | O_APPEND | O_CREAT, 0644);
+    if (fd < 0)
+    {
+        perror("Error opening log file");
+        exit(EXIT_FAILURE);
+    }
+
+    // Acquire an exclusive lock
+    if (flock(fd, LOCK_EX) < 0)
+    {
+        perror("Error locking file");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    // Open a file stream for writing
+    FILE *file = fdopen(fd, "a");
+    if (file == NULL)
+    {
+        perror("Error opening file stream");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    // Write to the log file
+    va_list args;
+    va_start(args, format);
+    vfprintf(file, format, args);
+    va_end(args);
+
+    fclose(file); // This also unlocks the file and closes the file descriptor
 }

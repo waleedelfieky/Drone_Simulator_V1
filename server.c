@@ -15,7 +15,8 @@
 #include <stdarg.h>
 
 #define LOG_FILE "watchdog_log.txt"
-#define LOG_FILE_NAME "log.txt"
+#define LOG_FILE_NAME "log_server.txt"
+//#define LOG_FILE_NAME "log.txt"
 void update_watchdog_file();
 
 #define READWRITEPERMISSION 0666

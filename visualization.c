@@ -7,12 +7,22 @@
 #include <sys/file.h>
 #include <string.h>
 #include <time.h>
+#include <stdarg.h>
+
 #define TIMEOUT 8 // Timeout in seconds
 
-
 #define LOG_FILE "watchdog_log.txt"
-void update_watchdog_file();
+#define LOG_FILE_NAME "log_visualizer.txt"
 
+/*======================================================*/
+// API to update watchdog file
+void update_watchdog_file();
+// API to clear content of log file
+void clear_log_file(const char *filename);
+/*======================================================*/
+// API to appened content in log file
+void append_to_log_file(const char *filename, const char *format, ...);
+/*======================================================*/
 #define PIPE_REQUEST_VISUALIZATION "./pipes/visualizer_Request"
 #define PIPE_RESPONSE_VISUALIZATION "./pipes/visualizer_Respond"
 /*======================================================================*/
@@ -112,35 +122,40 @@ void display(WINDOW *win, SharedState *state)
 
 int main()
 {
+    clear_log_file(LOG_FILE_NAME);
     char *request = "REQUEST";
-    printf("1\n");
     int fd_request_visualization = open(PIPE_REQUEST_VISUALIZATION, O_WRONLY);
-    printf("2\n");
+    append_to_log_file(LOG_FILE_NAME, "the fd request of vis is successfully opened\n");
     int fd_response_visualization = open(PIPE_RESPONSE_VISUALIZATION, O_RDONLY);
-    printf("3\n");
+    append_to_log_file(LOG_FILE_NAME, "the fd response of vis is successfully opened\n");
 
     if (fd_request_visualization == -1)
     {
         perror("Failed to open pipe request visualization");
+        append_to_log_file(LOG_FILE_NAME, "Failed to open pipe request visualization\n");
         exit(1);
     }
     if (fd_response_visualization == -1)
     {
-        perror("Failed to open pipe request visualization");
+        perror("Failed to open pipe response visualization");
+        append_to_log_file(LOG_FILE_NAME, "Failed to open pipe response visualization\n");
         exit(1);
     }
-    printf("4\n");
 
     SharedState state;
 
     // Initialize ncurses
     initscr();
+    append_to_log_file(LOG_FILE_NAME, "initscr is successfully called\n");
     cbreak();
+    append_to_log_file(LOG_FILE_NAME, "cbreak is successfully called\n");
     noecho();
+    append_to_log_file(LOG_FILE_NAME, "noecho is successfully called\n");
     curs_set(0);
+    append_to_log_file(LOG_FILE_NAME, "curs_set is successfully called\n");
     start_color();
+    append_to_log_file(LOG_FILE_NAME, "start color is successfully called\n");
 
-    printf("5\n");
     // Initialize colors
     init_pair(1, COLOR_BLUE, COLOR_BLACK);  // Drone color
     init_pair(2, COLOR_GREEN, COLOR_BLACK); // Target color
@@ -156,7 +171,8 @@ int main()
     printf("Visualization started and request is sent. Waiting for updates...\n");
     // now wait the response
     time_t last_logged_time = 0;
-
+    
+    append_to_log_file(LOG_FILE_NAME, "system now is ready to update visualizer frequently with new value froom the server it will send request and wait response and then draw and so on \n");
     while (1)
     {
         // request from server
@@ -257,4 +273,52 @@ void update_watchdog_file()
     fclose(temp_file);
     flock(fd, LOCK_UN);
     fclose(file);
+}
+
+// Function to clear the log file
+void clear_log_file(const char *filename)
+{
+    FILE *file = fopen(filename, "w"); // Open file in write mode to clear content
+    if (file == NULL)
+    {
+        perror("Error opening log file to clear");
+        exit(EXIT_FAILURE);
+    }
+    fclose(file); // Close the file after clearing
+}
+
+// Function to append data to the log file
+void append_to_log_file(const char *filename, const char *format, ...)
+{
+    int fd = open(filename, O_WRONLY | O_APPEND | O_CREAT, 0644);
+    if (fd < 0)
+    {
+        perror("Error opening log file");
+        exit(EXIT_FAILURE);
+    }
+
+    // Acquire an exclusive lock
+    if (flock(fd, LOCK_EX) < 0)
+    {
+        perror("Error locking file");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    // Open a file stream for writing
+    FILE *file = fdopen(fd, "a");
+    if (file == NULL)
+    {
+        perror("Error opening file stream");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    // Write to the log file
+    va_list args;
+    va_start(args, format);
+    vfprintf(file, format, args);
+    va_end(args);
+
+    fclose(file); // This also unlocks the file and closes the file descriptor
 }
