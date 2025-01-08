@@ -64,6 +64,7 @@ typedef struct
     int score;
     int next_target;
     char message[128]; // Stores collision or collection messages
+    int attemp;
 } SharedState;
 
 /*======================================================================*/

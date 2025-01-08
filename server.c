@@ -65,6 +65,7 @@ typedef struct
     int score;
     int next_target;
     char message[128]; // Stores collision or collection messages
+    int attemp;
 } SharedState;
 
 SharedState state = {0};
@@ -156,6 +157,9 @@ void init(void)
     state.drone.fy = 0;
     state.drone.vx = 0;
     state.drone.vy = 0;
+    state.next_target = 1;
+    state.attemp=1;
+
     // 2 temporary pipes for target generator and obsticale generator
 
     // make the fifo
@@ -300,7 +304,7 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
 
     time_t last_logged_time = 0;
 
-    state.next_target = 1; // Set the first target to be collected as 1
+    //state.next_target = 1; // Set the first target to be collected as 1
 
     while (1)
     {
@@ -560,6 +564,7 @@ void keyboard_pipe_Work(char *keyboard_input)
         //set score to zero
         state.score=0;
         state.next_target=1;
+        state.attemp=state.attemp+1;
         // send signals to generat new targets and obsticales
         send_target_signal();
         append_to_log_file(LOG_FILE_NAME, "targets generated successfuly\n");

@@ -47,6 +47,7 @@ typedef struct
     int score;
     int next_target;
     char message[128]; // Stores collision or collection messages
+    int attemp;
 } SharedState;
 
 /*======================================================*/
@@ -322,6 +323,22 @@ int main()
             else if (ch == 'r')
             {
                 write(fd_request_keyboard, "reset", 6);
+                werase(win1);    // Clear window content
+                box(win1, 0, 0); // Redraw the box around win1
+                mvwprintw(win1, 2, 10, "reset operation");
+                mvwprintw(win1, 4, 12, "is in progress");
+                mvwprintw(win1, 6, 13, "..........");
+                mvwprintw(win1, 8, 14, "........");
+                mvwprintw(win1, 10, 15, "......");
+                mvwprintw(win1, 12, 16, "....");
+                mvwprintw(win1, 14, 17, "..");
+                mvwprintw(win1, 16, 10, "Attemp No : %d  ", state.attemp+1);
+
+                // mvwprintw(win1, 16, 17, ".");
+
+                wrefresh(win1); // Refresh win1 to display updated content
+                wrefresh(win2); // Update win2 as necessary
+                sleep(2);
             }
             // else
             // {
@@ -344,6 +361,7 @@ int main()
             mvwprintw(win1, 16, 4, "X =  %.1f  ", state.drone.x);
             mvwprintw(win1, 17, 4, "Y =  %.1f  ", state.drone.y);
             mvwprintw(win1, 22, 4, "Score: %d  ", state.score);
+            mvwprintw(win1, 27, 4, "Attemp No : %d  ", state.attemp);
 
             wrefresh(win1); // Refresh win1 to display updated content
             wrefresh(win2); // Update win2 as necessary
@@ -354,20 +372,9 @@ int main()
             //  // read the response
             write(fd_request_keyboard, "request_data", 13);
             read(fd_response_keyboard, &state, sizeof(state));
-            // printf("============================================\n");
-            // printf("Drone -> Position: (%.2f, %.2f), Velocity: (%.2f, %.2f), Force: (%.2f, %.2f)\n"
-            //        "Score: %d\n"
-            //        "Message: %s\n",
-            //        state.drone.x, state.drone.y,
-            //        state.drone.vx, state.drone.vy,
-            //        state.drone.fx, state.drone.fy,
-            //        state.score,
-            //        state.message);
-            // printf("============================================\n");
-            //sleep(2);
 
             // Clear and update the window for displaying score
-            werase(win1); // Clear window content
+            werase(win1);    // Clear window content
             box(win1, 0, 0); // Redraw the box around win1
             mvwprintw(win1, 2, 4, "Force");
             mvwprintw(win1, 4, 4, "Fx =  %.1f  N", state.drone.fx);
@@ -379,6 +386,7 @@ int main()
             mvwprintw(win1, 16, 4, "X =  %.1f  ", state.drone.x);
             mvwprintw(win1, 17, 4, "Y =  %.1f  ", state.drone.y);
             mvwprintw(win1, 22, 4, "Score: %d  ", state.score);
+            mvwprintw(win1, 27, 4, "Attemp No : %d  ", state.attemp);
 
             wrefresh(win1); // Refresh win1 to display updated content
             wrefresh(win2); // Update win2 as necessary
