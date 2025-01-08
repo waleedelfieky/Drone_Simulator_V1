@@ -14,8 +14,7 @@
 #define MAX_TARGETS 10
 #define MAX_OBSTACLES 20
 
-// struct that the proces will receive to show the score
-
+/*======================================================================*/
 typedef struct
 {
     float x, y;   // Position
@@ -46,10 +45,9 @@ typedef struct
     Obstacle obstacles[MAX_OBSTACLES];
     char key_pressed[128];
     int score;
+    int next_target;
     char message[128]; // Stores collision or collection messages
 } SharedState;
-
-SharedState locat_state = {0};
 
 /*======================================================*/
 // API to update watchdog file
@@ -76,6 +74,8 @@ int main()
         append_to_log_file(LOG_FILE_NAME, "files to open pipe keyboard\n");
         exit(1);
     }
+    // intilize the struct
+    SharedState state;
 
     initscr();
     append_to_log_file(LOG_FILE_NAME, "init screen successed\n");
@@ -253,10 +253,15 @@ int main()
     timeout(100); // Set getch() to non-blocking with a 100 ms timeout
 
     time_t last_logged_time = time(NULL);
+
+    // Enable non-blocking input for the window
+    nodelay(stdscr, TRUE); // stdscr is the default window
+
     while ((ch = getch()) != 'q')
     {
-        time_t current_time = time(NULL);
 
+        time_t current_time = time(NULL);
+        // if a key was pressed
         if (ch != ERR)
         { // If a key was pressed
             if (ch == '8')
@@ -318,28 +323,65 @@ int main()
             {
                 write(fd_request_keyboard, "reset", 6);
             }
+            // else
+            // {
+            //     write(fd_request_keyboard, "request_data", 13);
+            // }
             // read the response
-            
-            read(fd_response_keyboard, &locat_state, sizeof(locat_state));
-            
-             // Clear and update the window for displaying score
-            werase(win1); // Clear window content
+
+            read(fd_response_keyboard, &state, sizeof(state));
+
+            // Clear and update the window for displaying score
+            werase(win1);    // Clear window content
             box(win1, 0, 0); // Redraw the box around win1
             mvwprintw(win1, 2, 4, "Force");
-            mvwprintw(win1, 4, 4, "Fx =  %.1f  N", locat_state.drone.fx);
-            mvwprintw(win1, 5, 4, "Fy =  %.1f  N", locat_state.drone.fy);
+            mvwprintw(win1, 4, 4, "Fx =  %.1f  N", state.drone.fx);
+            mvwprintw(win1, 5, 4, "Fy =  %.1f  N", state.drone.fy);
             mvwprintw(win1, 8, 4, "Velocity");
-            mvwprintw(win1, 10, 4, "Vx =  %.1f  m/s", locat_state.drone.vx);
-            mvwprintw(win1, 11, 4, "Vy =  %.1f  m/s", locat_state.drone.vy);
+            mvwprintw(win1, 10, 4, "Vx =  %.1f  m/s", state.drone.vx);
+            mvwprintw(win1, 11, 4, "Vy =  %.1f  m/s", state.drone.vy);
             mvwprintw(win1, 14, 4, "Position");
-            mvwprintw(win1, 16, 4, "X =  %.1f  ", locat_state.drone.x);
-            mvwprintw(win1, 17, 4, "Y =  %.1f  ", locat_state.drone.y);
-            mvwprintw(win1, 22, 4, "Score: %d  ", locat_state.score);
+            mvwprintw(win1, 16, 4, "X =  %.1f  ", state.drone.x);
+            mvwprintw(win1, 17, 4, "Y =  %.1f  ", state.drone.y);
+            mvwprintw(win1, 22, 4, "Score: %d  ", state.score);
 
             wrefresh(win1); // Refresh win1 to display updated content
             wrefresh(win2); // Update win2 as necessary
+        }
+        else
+        {
+            // printf("no key is presses\n");
+            //  // read the response
+            write(fd_request_keyboard, "request_data", 13);
+            read(fd_response_keyboard, &state, sizeof(state));
+            // printf("============================================\n");
+            // printf("Drone -> Position: (%.2f, %.2f), Velocity: (%.2f, %.2f), Force: (%.2f, %.2f)\n"
+            //        "Score: %d\n"
+            //        "Message: %s\n",
+            //        state.drone.x, state.drone.y,
+            //        state.drone.vx, state.drone.vy,
+            //        state.drone.fx, state.drone.fy,
+            //        state.score,
+            //        state.message);
+            // printf("============================================\n");
+            //sleep(2);
 
-               
+            // Clear and update the window for displaying score
+            werase(win1); // Clear window content
+            box(win1, 0, 0); // Redraw the box around win1
+            mvwprintw(win1, 2, 4, "Force");
+            mvwprintw(win1, 4, 4, "Fx =  %.1f  N", state.drone.fx);
+            mvwprintw(win1, 5, 4, "Fy =  %.1f  N", state.drone.fy);
+            mvwprintw(win1, 8, 4, "Velocity");
+            mvwprintw(win1, 10, 4, "Vx =  %.1f  m/s", state.drone.vx);
+            mvwprintw(win1, 11, 4, "Vy =  %.1f  m/s", state.drone.vy);
+            mvwprintw(win1, 14, 4, "Position");
+            mvwprintw(win1, 16, 4, "X =  %.1f  ", state.drone.x);
+            mvwprintw(win1, 17, 4, "Y =  %.1f  ", state.drone.y);
+            mvwprintw(win1, 22, 4, "Score: %d  ", state.score);
+
+            wrefresh(win1); // Refresh win1 to display updated content
+            wrefresh(win2); // Update win2 as necessary
         }
 
         if (current_time - last_logged_time >= TIMEOUT)
@@ -347,6 +389,7 @@ int main()
             update_watchdog_file();
             last_logged_time = current_time;
         }
+        usleep((int)10000);
     }
     endwin();
     return 0;

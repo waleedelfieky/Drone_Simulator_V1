@@ -68,7 +68,7 @@ typedef struct
 } SharedState;
 
 SharedState state = {0};
-   // Set the first target to be collected as 1
+// Set the first target to be collected as 1
 SharedState reset_state = {0};
 
 Target target_generator_reader[MAX_TARGETS];
@@ -300,8 +300,8 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
 
     time_t last_logged_time = 0;
 
-    state.next_target = 1;   // Set the first target to be collected as 1
-    
+    state.next_target = 1; // Set the first target to be collected as 1
+
     while (1)
     {
         FD_ZERO(&readfds);
@@ -348,11 +348,17 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                     }
                     // response to the keyboard by the struct
                     write(pipes_paths[i]->fd_response, &state, sizeof(state));
+                    printf("===========================================================\n");
+                    printf("Drone -> Position: (%.2f, %.2f), Velocity: (%.2f, %.2f), Force: (%.2f, %.2f)\n"
+                           "Score: %d\n"
+                           "Message: %s\n",
+                           state.drone.x, state.drone.y,
+                           state.drone.vx, state.drone.vy,
+                           state.drone.fx, state.drone.fy,
+                           state.score,
+                           state.message);
+                    printf("===========================================================\n");
                     keyboard_pipe_Work(buffer);
-                    // fflush(stdout);
-
-                    // interpret the data
-                    // the keyboard send to us only 1 character
                 }
 
                 else if (i == visualizer_pipe_index)
@@ -375,10 +381,6 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                         }
                     }
                     // the work to be done
-                    // printf("============================================================\n");
-                    // printf("the x and y update is x: (%f) y: (%f)\n", state.drone.x, state.drone.y);
-                    // printf("============================================================\n");
-                    // append_to_log_file(LOG_FILE_NAME, "the x and y position update in server is x: (%f) y: (%f)\n", state.drone.x, state.drone.y);
 
                     write(pipes_paths[i]->fd_response, &state, sizeof(state));
                     // fflush(stdout);
@@ -395,15 +397,6 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                     //  get data directly to our global struct
                     int bytes_read = read(pipes_paths[i]->fd_request, &state.drone, sizeof(state.drone));
                     // check if done succesfully
-                    // printf("================================================================\n");
-                    // printf("the x and y update is x: (%f) y: (%f)\n", state.drone.x, state.drone.y);
-                    // printf("================================================================\n");
-                    // printf("================================================================\n");
-                    // printf("the fx and fy update is x: (%f) y: (%f)\n", state.drone.fx, state.drone.fy);
-                    // printf("================================================================\n");
-                    // printf("================================================================\n");
-                    // printf("the vx and vy update is x: (%f) y: (%f)\n", state.drone.vx, state.drone.vy);
-                    // printf("================================================================\n");
                     // check condition rules
                     for (int i = 0; i < MAX_TARGETS; i++)
                     {
@@ -571,7 +564,9 @@ void keyboard_pipe_Work(char *keyboard_input)
         send_obsticale_signal();
         append_to_log_file(LOG_FILE_NAME, "obsticales generated successfuly\n");
     }
-
+    else if(strcmp(keyboard_input, "request_data")==0){
+        printf("struct is sent successfully to keyboard\n");
+    }
     else
     {
         printf("Unknown input: %s\n", keyboard_input);

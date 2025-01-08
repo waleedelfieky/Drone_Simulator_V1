@@ -189,924 +189,2526 @@ dorne dynamics updated correctly
 drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (10.052859) y: (9.947141)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (10.146232) y: (9.853768)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (10.265458) y: (9.734542)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (10.398632) y: (9.601368)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (10.537600) y: (9.462400)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (10.687188) y: (9.322812)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (10.843659) y: (9.185867)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (11.004578) y: (9.053535)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (11.168353) y: (8.926943)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (11.333940) y: (8.806680)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (11.501247) y: (8.692430)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (11.670190) y: (8.583892)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (11.840685) y: (8.480782)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.012655) y: (8.382827)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.186027) y: (8.289769)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.360729) y: (8.201365)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.536697) y: (8.117380)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.713867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.723867) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.743367) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.771893) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.808991) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.854236) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.907217) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (12.967549) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.034865) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.108815) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.189068) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.275308) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.367235) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.464567) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.567032) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.674374) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.786348) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (13.902724) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (14.023281) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (14.147810) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (14.276113) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (14.408000) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (14.543293) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (14.681822) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (14.823424) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (14.967946) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (15.115242) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (15.265173) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (15.417607) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (15.572420) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.000000) y: (10.000000)
+drone position sent succesffuly to the server x: (15.729492) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.010000) y: (10.000000)
+drone position sent succesffuly to the server x: (15.888711) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.029500) y: (10.000000)
+drone position sent succesffuly to the server x: (16.049969) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.068025) y: (10.000000)
+drone position sent succesffuly to the server x: (16.213163) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.134624) y: (10.000000)
+drone position sent succesffuly to the server x: (16.378199) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.227892) y: (10.000000)
+drone position sent succesffuly to the server x: (16.544983) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.346498) y: (10.000000)
+drone position sent succesffuly to the server x: (16.713427) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.489173) y: (10.000000)
+drone position sent succesffuly to the server x: (16.883448) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.654715) y: (10.000000)
+drone position sent succesffuly to the server x: (17.054968) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (10.841979) y: (10.000000)
+drone position sent succesffuly to the server x: (17.227913) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (11.049880) y: (10.000000)
+drone position sent succesffuly to the server x: (17.402210) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (11.277386) y: (10.000000)
+drone position sent succesffuly to the server x: (17.577793) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (11.523517) y: (10.000000)
+drone position sent succesffuly to the server x: (17.754597) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (11.787341) y: (10.000000)
+drone position sent succesffuly to the server x: (17.932560) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (12.067974) y: (10.000000)
+drone position sent succesffuly to the server x: (18.111626) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (12.364575) y: (10.000000)
+drone position sent succesffuly to the server x: (18.291739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (12.676347) y: (10.000000)
+drone position sent succesffuly to the server x: (18.472845) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (13.002529) y: (10.000000)
+drone position sent succesffuly to the server x: (18.654896) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (13.342402) y: (10.000000)
+drone position sent succesffuly to the server x: (18.837845) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (13.695282) y: (10.000000)
+drone position sent succesffuly to the server x: (19.021646) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (14.060518) y: (10.000000)
+drone position sent succesffuly to the server x: (19.206257) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (14.437492) y: (10.000000)
+drone position sent succesffuly to the server x: (19.391638) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (14.825618) y: (10.000000)
+drone position sent succesffuly to the server x: (19.577749) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (15.224337) y: (10.000000)
+drone position sent succesffuly to the server x: (19.764555) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (15.633120) y: (10.000000)
+drone position sent succesffuly to the server x: (19.952021) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (16.051464) y: (10.000000)
+drone position sent succesffuly to the server x: (20.140114) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (16.478891) y: (10.000000)
+drone position sent succesffuly to the server x: (20.328802) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (16.914948) y: (10.000000)
+drone position sent succesffuly to the server x: (20.518055) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (17.359200) y: (10.000000)
+drone position sent succesffuly to the server x: (20.707846) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (17.811239) y: (10.000000)
+drone position sent succesffuly to the server x: (20.898148) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (18.270678) y: (10.000000)
+drone position sent succesffuly to the server x: (21.088934) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (18.737144) y: (10.000000)
+drone position sent succesffuly to the server x: (21.280180) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (19.210287) y: (10.000000)
+drone position sent succesffuly to the server x: (21.471865) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (19.689774) y: (10.000000)
+drone position sent succesffuly to the server x: (21.663965) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (20.175285) y: (10.000000)
+drone position sent succesffuly to the server x: (21.856461) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (20.666521) y: (10.000000)
+drone position sent succesffuly to the server x: (22.049332) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (21.163195) y: (10.000000)
+drone position sent succesffuly to the server x: (22.242559) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (21.665035) y: (10.000000)
+drone position sent succesffuly to the server x: (22.436125) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (22.171783) y: (10.000000)
+drone position sent succesffuly to the server x: (22.630013) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (22.683195) y: (10.000000)
+drone position sent succesffuly to the server x: (22.824205) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (23.199036) y: (10.000000)
+drone position sent succesffuly to the server x: (23.018688) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (23.719084) y: (10.000000)
+drone position sent succesffuly to the server x: (23.213448) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (24.243130) y: (10.000000)
+drone position sent succesffuly to the server x: (23.408468) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (24.770973) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (25.302425) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (25.837305) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (26.375441) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (26.916668) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (27.460835) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (28.007793) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (28.557404) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (29.109533) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (29.664057) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (30.220854) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.037595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (30.779812) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.027595)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (31.340822) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (8.008095)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (31.903782) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.979570)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (32.468594) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.942471)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (33.035164) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.897227)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (33.603405) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.844245)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (34.173233) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.783913)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (34.744572) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.716597)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (35.317345) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.642646)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (35.891476) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.562394)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (36.466904) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.476154)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (37.043560) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.384226)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (37.621384) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.286894)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (38.200314) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.184429)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (38.780296) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (7.077087)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (39.361282) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (6.965113)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (39.943218) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (6.848737)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (40.526058) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (6.728179)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (41.109756) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (6.603650)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (41.694267) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (6.475347)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (42.279552) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (6.343459)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (42.865574) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (6.208166)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (43.452293) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (6.069637)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (44.039680) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.928035)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (44.627697) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.783513)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (45.216312) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (45.805496) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (46.395222) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (46.985462) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (47.576191) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (48.167381) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (48.759014) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (49.351063) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (49.943508) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (50.536331) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (51.129517) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (51.723042) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (52.316891) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (52.911045) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (53.505493) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (54.100220) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (54.695210) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (55.290451) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (55.885929) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (56.481632) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (57.077553) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (57.673676) y: (10.000000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (58.269993) y: (10.010000)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (58.866493) y: (10.029500)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (59.463169) y: (10.068025)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (60.060013) y: (10.134624)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (60.657013) y: (10.227892)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (61.254162) y: (10.346498)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (61.851456) y: (10.489173)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (62.448883) y: (10.654715)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (63.046440) y: (10.841979)
+drone position sent succesffuly to the server x: (23.603739) y: (5.636217)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (63.642540) y: (11.051369)
+drone position sent succesffuly to the server x: (23.590292) y: (5.623082)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (64.236168) y: (11.284324)
+drone position sent succesffuly to the server x: (23.564686) y: (5.598071)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (64.828323) y: (11.540982)
+drone position sent succesffuly to the server x: (23.528625) y: (5.562849)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (65.420624) y: (11.818459)
+drone position sent succesffuly to the server x: (23.484028) y: (5.519289)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (66.013435) y: (12.112917)
+drone position sent succesffuly to the server x: (23.432831) y: (5.469282)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (66.606606) y: (12.422653)
+drone position sent succesffuly to the server x: (23.376850) y: (5.414605)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (67.195450) y: (12.745775)
+drone position sent succesffuly to the server x: (23.317699) y: (5.356830)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (67.759155) y: (13.079122)
+drone position sent succesffuly to the server x: (23.256750) y: (5.297299)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (68.203079) y: (13.433555)
+drone position sent succesffuly to the server x: (23.195137) y: (5.237119)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (68.326538) y: (13.978853)
+drone position sent succesffuly to the server x: (23.133770) y: (5.177180)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (68.392189) y: (14.645543)
+drone position sent succesffuly to the server x: (23.073370) y: (5.118185)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (68.473900) y: (15.337764)
+drone position sent succesffuly to the server x: (23.014492) y: (5.060676)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (68.580238) y: (16.031082)
+drone position sent succesffuly to the server x: (22.957556) y: (5.005064)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (68.711258) y: (16.719734)
+drone position sent succesffuly to the server x: (22.902872) y: (4.951653)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (68.865730) y: (17.403954)
+drone position sent succesffuly to the server x: (22.850664) y: (4.900659)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (69.040588) y: (18.082548)
+drone position sent succesffuly to the server x: (22.801065) y: (4.852214)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (69.226730) y: (18.752544)
+drone position sent succesffuly to the server x: (22.753946) y: (4.806192)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (69.405739) y: (19.415157)
+drone position sent succesffuly to the server x: (22.709185) y: (4.762471)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (69.566765) y: (20.084805)
+drone position sent succesffuly to the server x: (22.666660) y: (4.720936)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (69.727722) y: (20.767630)
+drone position sent succesffuly to the server x: (22.626263) y: (4.681478)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (69.904434) y: (21.454926)
+drone position sent succesffuly to the server x: (22.587885) y: (4.643992)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (70.101440) y: (22.139811)
+drone position sent succesffuly to the server x: (22.551426) y: (4.608381)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (70.318596) y: (22.820452)
+drone position sent succesffuly to the server x: (22.516790) y: (4.574550)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (70.554893) y: (23.497061)
+drone position sent succesffuly to the server x: (22.483887) y: (4.542411)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (70.809372) y: (24.169840)
+drone position sent succesffuly to the server x: (22.452627) y: (4.511879)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (71.081131) y: (24.838980)
+drone position sent succesffuly to the server x: (22.422932) y: (4.482874)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (71.369301) y: (25.504662)
+drone position sent succesffuly to the server x: (22.394720) y: (4.455319)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (71.673065) y: (26.167061)
+drone position sent succesffuly to the server x: (22.367920) y: (4.429142)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (71.991638) y: (26.826340)
+drone position sent succesffuly to the server x: (22.342459) y: (4.404273)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (72.324280) y: (27.482655)
+drone position sent succesffuly to the server x: (22.318272) y: (4.380648)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (72.670288) y: (28.136154)
+drone position sent succesffuly to the server x: (22.295294) y: (4.358204)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (73.028999) y: (28.786978)
+drone position sent succesffuly to the server x: (22.273464) y: (4.336882)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (73.399773) y: (29.435261)
+drone position sent succesffuly to the server x: (22.252726) y: (4.316627)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (73.782013) y: (30.081129)
+drone position sent succesffuly to the server x: (22.233025) y: (4.297384)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (74.175140) y: (30.724705)
+drone position sent succesffuly to the server x: (22.214308) y: (4.279103)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (74.578606) y: (31.366100)
+drone position sent succesffuly to the server x: (22.196527) y: (4.261736)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (74.991898) y: (32.005428)
+drone position sent succesffuly to the server x: (22.179636) y: (4.245238)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (75.414528) y: (32.642788)
+drone position sent succesffuly to the server x: (22.163589) y: (4.229565)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (75.846024) y: (33.278282)
+drone position sent succesffuly to the server x: (22.148346) y: (4.214675)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (76.285950) y: (33.911999)
+drone position sent succesffuly to the server x: (22.133863) y: (4.200530)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (76.733879) y: (34.544029)
+drone position sent succesffuly to the server x: (22.120106) y: (4.187091)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (77.189407) y: (35.174461)
+drone position sent succesffuly to the server x: (22.107037) y: (4.174325)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (77.652161) y: (35.803371)
+drone position sent succesffuly to the server x: (22.094620) y: (4.162198)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (78.121780) y: (36.430836)
+drone position sent succesffuly to the server x: (22.082825) y: (4.150676)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (78.597916) y: (37.056927)
+drone position sent succesffuly to the server x: (22.071619) y: (4.139731)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (79.080246) y: (37.681713)
+drone position sent succesffuly to the server x: (22.060974) y: (4.129333)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (79.568459) y: (38.305260)
+drone position sent succesffuly to the server x: (22.050861) y: (4.119455)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (80.062263) y: (38.927628)
+drone position sent succesffuly to the server x: (22.041254) y: (4.110071)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (80.561378) y: (39.548878)
+drone position sent succesffuly to the server x: (22.032127) y: (4.101156)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (81.065536) y: (40.169067)
+drone position sent succesffuly to the server x: (22.023457) y: (4.092687)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (81.574486) y: (40.788246)
+drone position sent succesffuly to the server x: (22.015219) y: (4.084641)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (82.087990) y: (41.406467)
+drone position sent succesffuly to the server x: (22.007393) y: (4.076997)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (82.605820) y: (42.023777)
+drone position sent succesffuly to the server x: (21.999958) y: (4.069736)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (83.127754) y: (42.640221)
+drone position sent succesffuly to the server x: (21.992895) y: (4.062838)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (83.653595) y: (43.255840)
+drone position sent succesffuly to the server x: (21.986185) y: (4.056284)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (84.183144) y: (43.870682)
+drone position sent succesffuly to the server x: (21.979811) y: (4.050059)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (84.716209) y: (44.484779)
+drone position sent succesffuly to the server x: (21.983755) y: (4.044145)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (85.252625) y: (45.098171)
+drone position sent succesffuly to the server x: (21.997503) y: (4.038526)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (85.792221) y: (45.710896)
+drone position sent succesffuly to the server x: (22.020563) y: (4.033188)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (86.334839) y: (46.322983)
+drone position sent succesffuly to the server x: (22.052471) y: (4.028118)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (86.880325) y: (46.934467)
+drone position sent succesffuly to the server x: (22.092783) y: (4.023300)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (87.428535) y: (47.545376)
+drone position sent succesffuly to the server x: (22.141079) y: (4.018723)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (87.979332) y: (48.150822)
+drone position sent succesffuly to the server x: (22.196960) y: (4.014376)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (88.532593) y: (48.731728)
+drone position sent succesffuly to the server x: (22.260048) y: (4.010245)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (89.088188) y: (49.200405)
+drone position sent succesffuly to the server x: (22.329981) y: (4.006321)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (89.646004) y: (49.101757)
+drone position sent succesffuly to the server x: (22.406418) y: (4.002594)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (90.205933) y: (48.651371)
+drone position sent succesffuly to the server x: (22.489033) y: (3.999053)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (90.767860) y: (48.163742)
+drone position sent succesffuly to the server x: (22.577517) y: (3.995689)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (91.331696) y: (47.705433)
+drone position sent succesffuly to the server x: (22.671576) y: (3.992493)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (91.897339) y: (47.292252)
+drone position sent succesffuly to the server x: (22.770931) y: (3.989457)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (92.464699) y: (46.927769)
+drone position sent succesffuly to the server x: (22.875320) y: (3.986572)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (93.033691) y: (46.611507)
+drone position sent succesffuly to the server x: (22.984489) y: (3.983832)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (93.604233) y: (46.341061)
+drone position sent succesffuly to the server x: (23.098200) y: (3.981229)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (94.176247) y: (46.114136)
+drone position sent succesffuly to the server x: (23.216225) y: (3.978756)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (94.749664) y: (45.928558)
+drone position sent succesffuly to the server x: (23.338348) y: (3.976407)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.324409) y: (45.782261)
+drone position sent succesffuly to the server x: (23.464367) y: (3.974175)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.900414) y: (45.673275)
+drone position sent succesffuly to the server x: (23.594084) y: (3.972055)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.477623) y: (45.599739)
+drone position sent succesffuly to the server x: (23.727314) y: (3.970041)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.055969) y: (45.559879)
+drone position sent succesffuly to the server x: (23.863884) y: (3.968127)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.635101) y: (45.552013)
+drone position sent succesffuly to the server x: (24.003626) y: (3.966309)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.208878) y: (45.574543)
+drone position sent succesffuly to the server x: (24.146379) y: (3.964582)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.755913) y: (45.625946)
+drone position sent succesffuly to the server x: (24.291996) y: (3.962942)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (99.184013) y: (45.704777)
+drone position sent succesffuly to the server x: (24.440332) y: (3.961383)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (99.084732) y: (45.809666)
+drone position sent succesffuly to the server x: (24.591251) y: (3.959903)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.657883) y: (45.939312)
+drone position sent succesffuly to the server x: (24.744625) y: (3.958496)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.190941) y: (46.092476)
+drone position sent succesffuly to the server x: (24.900330) y: (3.957160)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.750526) y: (46.267982)
+drone position sent succesffuly to the server x: (25.058249) y: (3.955890)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.353340) y: (46.464714)
+drone position sent succesffuly to the server x: (25.218271) y: (3.954684)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.003471) y: (46.681606)
+drone position sent succesffuly to the server x: (25.380293) y: (3.953538)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.701080) y: (46.917656)
+drone position sent succesffuly to the server x: (25.544214) y: (3.952450)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.443810) y: (47.171902)
+drone position sent succesffuly to the server x: (25.709938) y: (3.951416)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.229401) y: (47.442421)
+drone position sent succesffuly to the server x: (25.877377) y: (3.950434)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.055710) y: (47.725891)
+drone position sent succesffuly to the server x: (26.046444) y: (3.949501)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.920708) y: (48.016956)
+drone position sent succesffuly to the server x: (26.217056) y: (3.948614)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.822456) y: (48.306080)
+drone position sent succesffuly to the server x: (26.389139) y: (3.947772)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.759117) y: (48.574921)
+drone position sent succesffuly to the server x: (26.562618) y: (3.946972)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.728943) y: (48.787762)
+drone position sent succesffuly to the server x: (26.737423) y: (3.946212)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.730278) y: (48.886150)
+drone position sent succesffuly to the server x: (26.913486) y: (3.945490)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.761543) y: (48.827637)
+drone position sent succesffuly to the server x: (27.090748) y: (3.944804)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.821251) y: (48.650818)
+drone position sent succesffuly to the server x: (27.269146) y: (3.944152)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (95.907967) y: (48.423214)
+drone position sent succesffuly to the server x: (27.448624) y: (3.943533)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.020348) y: (48.188587)
+drone position sent succesffuly to the server x: (27.629128) y: (3.942945)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.157112) y: (47.969025)
+drone position sent succesffuly to the server x: (27.810606) y: (3.942386)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.317039) y: (47.775021)
+drone position sent succesffuly to the server x: (27.993011) y: (3.941855)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.498970) y: (47.611336)
+drone position sent succesffuly to the server x: (28.176296) y: (3.941351)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.701805) y: (47.479855)
+drone position sent succesffuly to the server x: (28.360416) y: (3.940872)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (96.924500) y: (47.380947)
+drone position sent succesffuly to the server x: (28.545330) y: (3.940417)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.166054) y: (47.314159)
+drone position sent succesffuly to the server x: (28.730999) y: (3.939985)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.424561) y: (47.278549)
+drone position sent succesffuly to the server x: (28.917385) y: (3.939574)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.696831) y: (47.272877)
+drone position sent succesffuly to the server x: (29.104452) y: (3.939184)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.977882) y: (47.295692)
+drone position sent succesffuly to the server x: (29.292166) y: (3.938813)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.259109) y: (47.345375)
+drone position sent succesffuly to the server x: (29.480494) y: (3.938461)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.524460) y: (47.420113)
+drone position sent succesffuly to the server x: (29.669405) y: (3.938126)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.743271) y: (47.517849)
+drone position sent succesffuly to the server x: (29.858870) y: (3.937809)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.864037) y: (47.636185)
+drone position sent succesffuly to the server x: (30.048862) y: (3.937507)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.839211) y: (47.772182)
+drone position sent succesffuly to the server x: (30.239355) y: (3.937220)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.688835) y: (47.922070)
+drone position sent succesffuly to the server x: (30.430323) y: (3.936947)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.476082) y: (48.080757)
+drone position sent succesffuly to the server x: (30.621742) y: (3.936688)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.248360) y: (48.241127)
+drone position sent succesffuly to the server x: (30.813591) y: (3.936443)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (98.031052) y: (48.393066)
+drone position sent succesffuly to the server x: (31.005848) y: (3.936209)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.836601) y: (48.522648)
+drone position sent succesffuly to the server x: (31.198492) y: (3.935987)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.670853) y: (48.612785)
+drone position sent succesffuly to the server x: (31.391502) y: (3.935776)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.536316) y: (48.647861)
+drone position sent succesffuly to the server x: (31.584864) y: (3.935576)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.433723) y: (48.622307)
+drone position sent succesffuly to the server x: (31.778557) y: (3.935386)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.362839) y: (48.545311)
+drone position sent succesffuly to the server x: (31.972565) y: (3.935205)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.322861) y: (48.435230)
+drone position sent succesffuly to the server x: (32.166874) y: (3.935033)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
-drone position sent succesffuly to the server x: (97.312637) y: (48.310707)
+drone position sent succesffuly to the server x: (32.361465) y: (3.934870)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (32.556328) y: (3.934715)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (32.751446) y: (3.934568)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (32.946808) y: (3.934428)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (33.142403) y: (3.934295)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (33.338219) y: (3.934169)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (33.534245) y: (3.934049)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (33.730469) y: (3.933935)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (33.926880) y: (3.933827)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (34.123470) y: (3.933724)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (34.320232) y: (3.933626)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (34.517155) y: (3.933534)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (34.714233) y: (3.933445)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (34.911457) y: (3.933362)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (35.108818) y: (3.933282)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (35.306313) y: (3.933207)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (35.503933) y: (3.933135)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (35.701672) y: (3.933067)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (35.899525) y: (3.933002)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (36.097485) y: (3.932940)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (36.295547) y: (3.932882)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (36.493706) y: (3.932826)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (36.691956) y: (3.932774)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (36.890293) y: (3.932724)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.088715) y: (3.932676)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (3.932631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (3.932631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (3.932631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (3.932631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (3.932631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (3.932631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (3.932631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (3.942631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (3.962131)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (4.000656)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (4.057254)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (4.131023)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (4.231103)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (4.356180)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (4.505002)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (4.676383)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (4.869196)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287216) y: (5.082368)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.287273) y: (5.314832)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.288074) y: (5.565124)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.290550) y: (5.831826)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.295898) y: (6.113665)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.305477) y: (6.409675)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.320518) y: (6.719364)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.341675) y: (7.042737)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.368603) y: (7.380066)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.399914) y: (7.731449)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.433628) y: (8.096472)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.467770) y: (8.474195)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.500206) y: (8.863033)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.531017) y: (9.262429)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.560291) y: (9.671855)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.588100) y: (10.090810)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.614517) y: (10.518817)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.639614) y: (10.955423)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.663456) y: (11.400200)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.686108) y: (11.852737)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.707626) y: (12.312648)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.728069) y: (12.779563)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.747490) y: (13.253132)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.765938) y: (13.733023)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.783463) y: (14.218919)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.800114) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.810112) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.829613) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.868137) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (37.934734) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (38.028004) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (38.146610) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (38.289284) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (38.454826) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (38.642090) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (38.849991) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (39.077496) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (39.323627) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (39.587452) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (39.868084) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (40.164684) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (40.476456) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (40.802639) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (41.142513) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (41.495392) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (41.850628) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (42.208103) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (42.557705) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (42.899826) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (43.234840) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (43.563103) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (43.884953) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (44.200710) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (44.510681) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (44.815151) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (45.114399) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (45.408684) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (45.698254) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (45.983345) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (46.264183) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (46.540977) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (46.813934) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.083244) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.710521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.700521)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.681021)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.642496)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.575897)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.482629)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.364023)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.221348)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (14.055806)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (13.868542)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (13.660641)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (13.433135)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (13.187004)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (12.923180)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (12.642547)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (12.345945)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (12.034174)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (11.707992)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (11.368118)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (11.015239)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (10.650002)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (10.273028)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (9.884903)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (9.486184)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (9.077401)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (8.659058)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.349087) y: (8.231631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.359085) y: (7.795576)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.388584) y: (7.351324)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.446609) y: (6.899283)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.531734) y: (6.439846)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.642601) y: (5.973380)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.777924) y: (5.500237)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (47.936481) y: (5.020751)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (48.117111) y: (4.535240)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (48.318710) y: (4.044004)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (48.540230) y: (3.547330)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (48.780674) y: (3.045490)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.039093) y: (2.538742)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.314594) y: (2.031090)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.606319) y: (1.534238)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.606319) y: (1.588354)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.606319) y: (1.686734)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.606319) y: (1.816684)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.606319) y: (1.966450)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.606319) y: (2.126851)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.606319) y: (2.291333)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.616318) y: (2.455445)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.635818) y: (2.616256)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.664345) y: (2.771884)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.711445) y: (2.921158)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.776188) y: (3.063391)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.867695) y: (3.198512)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (49.984627) y: (3.326876)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (50.125713) y: (3.448823)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (50.289745) y: (3.564672)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (50.475574) y: (3.674729)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (50.681355) y: (3.778885)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (50.904358) y: (3.876523)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (51.140774) y: (3.966363)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (51.384800) y: (4.045837)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (51.627083) y: (4.109792)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (51.852425) y: (4.147968)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.038914) y: (4.141479)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.166569) y: (4.064290)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.239098) y: (3.902557)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.284901) y: (3.672324)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.330906) y: (3.402531)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.392036) y: (3.116209)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.386646) y: (3.099513)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.376369) y: (3.067672)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.361866) y: (3.022727)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.343876) y: (2.966982)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.323154) y: (2.902950)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.310421) y: (2.833205)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.305828) y: (2.760077)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.309460) y: (2.685659)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.321327) y: (2.611821)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.341370) y: (2.540246)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.369461) y: (2.472450)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.405430) y: (2.409807)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.449055) y: (2.353549)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.500092) y: (2.304754)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.558270) y: (2.264323)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.623310) y: (2.232948)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.623138) y: (2.240875)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.622795) y: (2.256085)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.622272) y: (2.277740)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.621555) y: (2.304861)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.620617) y: (2.336371)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.619427) y: (2.371147)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.617947) y: (2.408053)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.626129) y: (2.445978)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.643433) y: (2.483843)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.679348) y: (2.520615)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.732922) y: (2.555310)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.813290) y: (2.587004)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (52.919216) y: (2.614857)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (53.049644) y: (2.638175)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (53.203686) y: (2.656507)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (53.380600) y: (2.669755)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (53.579712) y: (2.678269)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (53.800297) y: (2.682860)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (54.041473) y: (2.684718)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (54.302135) y: (2.685228)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (54.580963) y: (2.685746)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (54.876526) y: (2.687414)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (55.187378) y: (2.691060)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (55.512688) y: (2.696638)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (55.851734) y: (2.704000)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (56.203827) y: (2.712989)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (56.568314) y: (2.723446)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (56.944576) y: (2.735205)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (57.332027) y: (2.748102)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (57.730106) y: (2.761972)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (58.138279) y: (2.776655)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (58.556046) y: (2.791995)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (58.982922) y: (2.807842)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (59.418453) y: (2.824054)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (59.862209) y: (2.840497)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (60.313778) y: (2.857046)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (60.772766) y: (2.873585)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (61.238808) y: (2.890007)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (61.711548) y: (2.906216)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (62.190651) y: (2.922124)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (62.675797) y: (2.937652)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.166687) y: (2.952732)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.967303)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.967470)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.967794)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.968267)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.968878)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.969617)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.970473)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.961437)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.943051)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.915881)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.880523)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.837599)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.787769)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.731737)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.670261)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.604167)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.534367)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.461871)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.387809)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.313445)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.240192)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.169614)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.103405)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.043353)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (1.991254)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (1.948795)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (1.917396)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (1.898045)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (1.891149)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (1.913008)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (1.954477)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.012543)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.083858)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.165106)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.253260)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.663033) y: (2.345709)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.673031) y: (2.440295)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.692532) y: (2.535287)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.721058) y: (2.629332)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.758156) y: (2.721393)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.803398) y: (2.810694)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.856380) y: (2.896667)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (63.926712) y: (2.978909)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (64.013527) y: (3.057144)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (64.116005) y: (3.131468)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (64.233353) y: (3.202075)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (64.364838) y: (3.269152)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (64.509750) y: (3.332875)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (64.667412) y: (3.393413)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (64.837196) y: (3.450923)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (65.018486) y: (3.505558)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (65.210716) y: (3.557461)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (65.413330) y: (3.606769)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (65.625816) y: (3.653611)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (65.847679) y: (3.698112)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (66.078445) y: (3.740387)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (66.317673) y: (3.780549)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (66.564941) y: (3.818702)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (66.819847) y: (3.854948)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.889381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.879381)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.859881)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.831356)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.794258)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.749014)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.696032)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.635700)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.568384)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.494434)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.414181)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.327941)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.236013)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.138682)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.036217)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.928875)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.817278)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.702350)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.585180)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.467069)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.339596)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.195373)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.038500)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.874605)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.711682)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.561159)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.438582)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.362062)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.345795)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.390829)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.483360)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.545316)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.656734)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.801967)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (1.967239)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.142334)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.320305)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.496632)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.668455)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.834014)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (2.992267)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.082008) y: (3.142646)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.092010) y: (3.285506)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.111511) y: (3.421224)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.140038) y: (3.550155)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.177139) y: (3.672640)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.222382) y: (3.789000)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.275360) y: (3.899542)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.335693) y: (4.004558)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.403008) y: (4.104322)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.476959) y: (4.199098)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.557213) y: (4.289135)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.643456) y: (4.374671)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.735382) y: (4.455930)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.832710) y: (4.533126)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (67.935173) y: (4.606462)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.042511) y: (4.676131)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.154488) y: (4.742317)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.270866) y: (4.805194)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.391426) y: (4.864927)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.515953) y: (4.921673)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.644257) y: (4.975582)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.776146) y: (5.026795)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.911438) y: (5.065448)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.049736) y: (5.092400)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.049194) y: (5.092981)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.048141) y: (5.094112)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.046608) y: (5.095758)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.044632) y: (5.097881)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.042244) y: (5.100445)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.039482) y: (5.103410)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.036377) y: (5.106739)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.032974) y: (5.100390)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.029274) y: (5.084859)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.025246) y: (5.050643)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.020805) y: (4.998775)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.015800) y: (4.930297)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.010002) y: (4.846259)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.003098) y: (4.747716)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.994682) y: (4.635728)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.984230) y: (4.511344)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.971092) y: (4.375583)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.954498) y: (4.229397)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.933578) y: (4.073620)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.907417) y: (3.908900)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.875160) y: (3.735631)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.836189) y: (3.553908)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.790283) y: (3.363545)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.737762) y: (3.164166)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.679527) y: (2.955362)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.616966) y: (2.737089)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.551735) y: (2.510800)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.485535) y: (2.279101)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.419899) y: (2.046318)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.418404) y: (2.060604)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.415451) y: (2.087935)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.411064) y: (2.126701)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.406898) y: (2.175634)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.402939) y: (2.232794)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.399178) y: (2.296286)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.395607) y: (2.364352)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.392212) y: (2.435428)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.388985) y: (2.508161)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.385918) y: (2.581413)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.383011) y: (2.654247)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.380249) y: (2.725905)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.377625) y: (2.795784)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.385132) y: (2.863416)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.402260) y: (2.928441)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.428535) y: (2.990595)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.463493) y: (3.049688)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.506706) y: (3.105827)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.557755) y: (3.159158)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.616257) y: (3.209824)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.681831) y: (3.257956)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.754128) y: (3.303681)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.347120)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.347120)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.347120)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.347120)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.337120)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.317620)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.289095)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.251996)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.196752)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.124271)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (3.025413)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (2.901498)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (2.754317)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (2.586063)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (2.399412)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (2.197891)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (1.986519)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (1.772953)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (1.569422)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (1.395411)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (1.278841)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (1.247826)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (1.308602)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.832809) y: (1.436978)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.842812) y: (1.599170)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.862312) y: (1.768923)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.890839) y: (1.929844)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.927940) y: (2.072571)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (68.973183) y: (2.192052)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.026161) y: (2.285786)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.086494) y: (2.352807)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.153809) y: (2.393102)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.227760) y: (2.407287)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.308014) y: (2.396428)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.394257) y: (2.361959)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.486183) y: (2.305670)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.583511) y: (2.229748)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.685974) y: (2.136887)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.793312) y: (2.030462)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (69.905289) y: (1.914801)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (70.021667) y: (1.795533)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (70.142227) y: (1.679972)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (70.266754) y: (1.577309)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (70.395058) y: (1.498119)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (70.526947) y: (1.452445)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (70.662239) y: (1.446397)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (70.800766) y: (1.479108)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (70.942368) y: (1.542851)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.086891) y: (1.626308)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.234184) y: (1.718174)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.384117) y: (1.809141)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.536552) y: (1.892375)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.691368) y: (1.963241)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.848442) y: (2.018831)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.007660) y: (2.057541)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.168915) y: (2.078742)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.332108) y: (2.082557)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.497139) y: (2.069726)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.663925) y: (2.041525)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.822372) y: (1.999754)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.972893) y: (1.946749)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.115891) y: (1.885428)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.251740) y: (1.819346)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.380791) y: (1.752709)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.503395) y: (1.690290)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.609863) y: (1.637153)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.701012) y: (1.598084)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.777603) y: (1.576767)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.840363) y: (1.574924)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.889984) y: (1.591814)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.927124) y: (1.624409)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.952408) y: (1.668165)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.966431) y: (1.717986)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.969749) y: (1.769027)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.962906) y: (1.817164)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.946404) y: (1.859177)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.920723) y: (1.892759)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.886330) y: (1.916434)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.843651) y: (1.929451)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.793106) y: (1.931690)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.735092) y: (1.923579)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.669975) y: (1.906037)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.598114) y: (1.880437)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.519852) y: (1.848567)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.435501) y: (1.812594)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.345367) y: (1.775005)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.249741) y: (1.738501)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.148895) y: (1.705833)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (73.043091) y: (1.679562)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.932579) y: (1.661765)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.817589) y: (1.653740)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.698349) y: (1.655805)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.575073) y: (1.667246)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.447960) y: (1.686459)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.317200) y: (1.711225)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.182983) y: (1.739044)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (72.045471) y: (1.767440)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.904839) y: (1.794182)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.761238) y: (1.817423)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.614815) y: (1.835769)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.465714) y: (1.848289)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.287071) y: (1.869430)
+the data is receieved succesffuly from server
+dorne dynamics updated correctly
+drone position sent succesffuly to the server x: (71.089256) y: (1.891775)
 the data is receieved succesffuly from server
 dorne dynamics updated correctly
