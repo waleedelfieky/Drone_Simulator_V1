@@ -557,7 +557,9 @@ void keyboard_pipe_Work(char *keyboard_input)
         append_to_log_file(LOG_FILE_NAME, "key command on server down right\n");
         // Add your action for "down-right"
         strcpy(state.key_pressed, "reset");
-
+        //set score to zero
+        state.score=0;
+        state.next_target=1;
         // send signals to generat new targets and obsticales
         send_target_signal();
         append_to_log_file(LOG_FILE_NAME, "targets generated successfuly\n");
@@ -565,7 +567,7 @@ void keyboard_pipe_Work(char *keyboard_input)
         append_to_log_file(LOG_FILE_NAME, "obsticales generated successfuly\n");
     }
     else if(strcmp(keyboard_input, "request_data")==0){
-        printf("struct is sent successfully to keyboard\n");
+        //printf("struct is sent successfully to keyboard\n");
     }
     else
     {

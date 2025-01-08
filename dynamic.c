@@ -385,6 +385,7 @@ void update_Drone_dynamics(SharedState *state, float F_max, Parameters *params)
         state->drone.fy = 0.0f;
         state->drone.vx = 0;
         state->drone.vy = 0;
+        state->drone.vy = 0;
     }
 
     // Repulsive forces from obstacles
