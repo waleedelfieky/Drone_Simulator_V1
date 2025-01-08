@@ -342,6 +342,8 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                             continue;
                         }
                     }
+                    // response to the keyboard by the struct 
+                    write(pipes_paths[i]->fd_response, &state, sizeof(state));
                     keyboard_pipe_Work(buffer);
                     // fflush(stdout);
 
@@ -546,7 +548,7 @@ void keyboard_pipe_Work(char *keyboard_input)
         append_to_log_file(LOG_FILE_NAME, "key command on server down right\n");
         // Add your action for "down-right"
         strcpy(state.key_pressed, "reset");
-        
+
         // send signals to generat new targets and obsticales
         send_target_signal();
         append_to_log_file(LOG_FILE_NAME, "targets generated successfuly\n");

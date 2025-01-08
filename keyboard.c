@@ -11,6 +11,45 @@
 #define TIMEOUT 3 // Timeout in seconds
 #define LOG_FILE "watchdog_log.txt"
 #define LOG_FILE_NAME "log_keyboard.txt"
+#define MAX_TARGETS 10
+#define MAX_OBSTACLES 20
+
+// struct that the proces will receive to show the score
+
+typedef struct
+{
+    float x, y;   // Position
+    float vx, vy; // Velocity
+    float fx, fy; // Force
+} Drone;
+
+typedef struct
+{
+    int x, y;
+    int value; // Value from 1 to 9
+    int active;
+    char action; // q (quit) or r (reload game), s (suspend game)
+} Target;
+
+typedef struct
+{
+    int x, y;
+    int size;
+    int active;
+    char action; // q (quit) or r (reload game), s (suspend game)
+} Obstacle;
+
+typedef struct
+{
+    Drone drone;
+    Target targets[MAX_TARGETS];
+    Obstacle obstacles[MAX_OBSTACLES];
+    char key_pressed[128];
+    int score;
+    char message[128]; // Stores collision or collection messages
+} SharedState;
+
+SharedState locat_state = {0};
 
 /*======================================================*/
 // API to update watchdog file
@@ -279,6 +318,11 @@ int main()
             {
                 write(fd_request_keyboard, "reset", 6);
             }
+            // read the response
+            read(fd_response_keyboard, &locat_state, sizeof(locat_state));
+            //printf("the keyboard pipe read the struct successfuly\n");
+            //printf("the keyboard pipe read the struct successfuly\n");
+            //printf("the keyboard pipe read the struct successfuly\n");
         }
 
         if (current_time - last_logged_time >= TIMEOUT)
