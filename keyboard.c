@@ -319,10 +319,27 @@ int main()
                 write(fd_request_keyboard, "reset", 6);
             }
             // read the response
+            
             read(fd_response_keyboard, &locat_state, sizeof(locat_state));
-            //printf("the keyboard pipe read the struct successfuly\n");
-            //printf("the keyboard pipe read the struct successfuly\n");
-            //printf("the keyboard pipe read the struct successfuly\n");
+            
+             // Clear and update the window for displaying score
+            werase(win1); // Clear window content
+            box(win1, 0, 0); // Redraw the box around win1
+            mvwprintw(win1, 2, 4, "Force");
+            mvwprintw(win1, 4, 4, "Fx =  %.1f  N", locat_state.drone.fx);
+            mvwprintw(win1, 5, 4, "Fy =  %.1f  N", locat_state.drone.fy);
+            mvwprintw(win1, 8, 4, "Velocity");
+            mvwprintw(win1, 10, 4, "Vx =  %.1f  m/s", locat_state.drone.vx);
+            mvwprintw(win1, 11, 4, "Vy =  %.1f  m/s", locat_state.drone.vy);
+            mvwprintw(win1, 14, 4, "Position");
+            mvwprintw(win1, 16, 4, "X =  %.1f  ", locat_state.drone.x);
+            mvwprintw(win1, 17, 4, "Y =  %.1f  ", locat_state.drone.y);
+            mvwprintw(win1, 22, 4, "Score: %d  ", locat_state.score);
+
+            wrefresh(win1); // Refresh win1 to display updated content
+            wrefresh(win2); // Update win2 as necessary
+
+               
         }
 
         if (current_time - last_logged_time >= TIMEOUT)
