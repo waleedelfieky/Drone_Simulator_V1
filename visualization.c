@@ -62,6 +62,7 @@ typedef struct
     Obstacle obstacles[MAX_OBSTACLES];
     char key_pressed[128];
     int score;
+    int next_target;
     char message[128]; // Stores collision or collection messages
 } SharedState;
 
@@ -73,18 +74,7 @@ void display(WINDOW *win, SharedState *state)
     werase(win);
     wrefresh(win);
     refresh();
-
-    // Display scoreboard and message
-    mvwprintw(win, 0, 2, "Score: %d", state->score);
-    mvwprintw(win, 0, 20, "Message: %s", state->message);
-
-    // Draw the border fence
-    int height, width;
-    getmaxyx(win, height, width);
-    for (int i = 1; i < width - 1; i++)
-    {
-        mvwaddch(win, 1, i, '=' | A_BOLD);
-    }
+    
 
     // Display drone (position received from the drone process)
     mvwaddch(win, state->drone.y + 2, state->drone.x + 1, '+' | A_BOLD | COLOR_PAIR(1));

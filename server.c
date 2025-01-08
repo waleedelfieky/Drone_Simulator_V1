@@ -63,10 +63,12 @@ typedef struct
     Obstacle obstacles[MAX_OBSTACLES];
     char key_pressed[128];
     int score;
+    int next_target;
     char message[128]; // Stores collision or collection messages
 } SharedState;
 
 SharedState state = {0};
+   // Set the first target to be collected as 1
 SharedState reset_state = {0};
 
 Target target_generator_reader[MAX_TARGETS];
@@ -298,6 +300,8 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
 
     time_t last_logged_time = 0;
 
+    state.next_target = 1;   // Set the first target to be collected as 1
+    
     while (1)
     {
         FD_ZERO(&readfds);
@@ -342,7 +346,7 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                             continue;
                         }
                     }
-                    // response to the keyboard by the struct 
+                    // response to the keyboard by the struct
                     write(pipes_paths[i]->fd_response, &state, sizeof(state));
                     keyboard_pipe_Work(buffer);
                     // fflush(stdout);
@@ -413,12 +417,24 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                             // Target collection threshold
                             if (distance < 1.0f)
                             { // 1m proximity
+                                if (state.targets[i].value == state.next_target)
+                                {
+                                    // Correct target collected
+                                    state.score += state.targets[i].value; // Add value to score
+                                    state.next_target++;                   // Move to the next target in sequence (from 1 to 9)
+                                    if (state.next_target > 9)
+                                    {
+                                        state.next_target = 1; // Reset to 1 if all targets have been collected
+                                    }
+                                }
+                                else
+                                {
+                                    // Incorrect target collected (penalty)
+                                    state.score -= state.targets[i].value; // Subtract value as penalty
+                                }
+
+                                // Mark the target as inactive once collected
                                 state.targets[i].active = 0;
-                                state.score += state.targets[i].value;
-                                // printf("=======================================================\n");
-                                // printf("target collected\n");
-                                // printf("target number (%d): status is (%d) now", i, state.targets[i].active);
-                                // printf("=======================================================\n");
                             }
                         }
                     }

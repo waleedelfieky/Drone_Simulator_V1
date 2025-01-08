@@ -86,6 +86,7 @@ typedef struct
     Obstacle obstacles[MAX_OBSTACLES];
     char key_pressed[128];
     int score;
+    int next_target;
     char message[128]; // Stores collision or collection messages
 } SharedState;
 
