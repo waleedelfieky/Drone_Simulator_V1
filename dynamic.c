@@ -96,7 +96,6 @@ typedef struct
 /*=========================================================*/
 void load_parameters(const char *filename, Parameters *params);
 void update_Drone_dynamics(SharedState *state, float F_max, Parameters *param);
-void print_shared_state(const SharedState *state);
 /*=========================================================*/
 
 /*=========================================================*/
@@ -160,27 +159,9 @@ int main(void)
         // waiting response
         read(fd_response_drone, &state, sizeof(state));
         append_to_log_file(LOG_FILE_NAME, "the data is receieved succesffuly from server\n");
-        // printf("================================================================\n");
-        // printf("pressed key is: %s\n", state.key_pressed);
-        // printf("================================================================\n");
-
-        /*==========================================================================*/
-        // printing the whole struct to see that is happeping !
-        // printf("====================1111111111111111111=========================\n");
-        // printf("====================before update function=======================\n");
-        // print_shared_state(&state);
-        // printf("================================================================\n");
-
-        // printf("====================2222222222222222222=========================\n");
-        // printf("====================after update function========================\n");
-
-        /*==========================================================================*/
         // now we have the data and ready for do our calculations to be sent to server again as request next time
         update_Drone_dynamics(&state, params.F_max, &params);
         append_to_log_file(LOG_FILE_NAME, "dorne dynamics updated correctly\n");
-        // printf("====================22222222222222222222=========================\n");
-        // printf("====================process_keyboard_input=========================\n");
-        // print_shared_state(&state);
 
         // update drone_tracker;
         drone_tracker.x = state.drone.x;
@@ -205,34 +186,6 @@ int main(void)
     }
 }
 
-void print_shared_state(const SharedState *state)
-{
-    printf("Drone(x=%.2f, y=%.2f, vx=%.2f, vy=%.2f, fx=%.2f, fy=%.2f), \n",
-           state->drone.x, state->drone.y, state->drone.vx, state->drone.vy,
-           state->drone.fx, state->drone.fy);
-
-    // printf("Targets=[");
-    // for (int i = 0; i < MAX_TARGETS; i++) {
-    //     printf("(x=%d, y=%d, value=%d, active=%d, action='%c')\n",
-    //            state->targets[i].x, state->targets[i].y, state->targets[i].value,
-    //            state->targets[i].active, state->targets[i].action);
-    //     if (i < MAX_TARGETS - 1) printf(", ");
-    // }
-    // printf("], ");
-
-    // printf("Obstacles=[");
-    // for (int i = 0; i < MAX_OBSTACLES; i++) {
-    //     printf("(x=%d, y=%d, size=%d, active=%d, action='%c')\n",
-    //            state->obstacles[i].x, state->obstacles[i].y, state->obstacles[i].size,
-    //            state->obstacles[i].active, state->obstacles[i].action);
-    //     if (i < MAX_OBSTACLES - 1) printf(", ");
-    // }
-    // printf("], ");
-
-    printf("KeyPressed='%s', \n", state->key_pressed);
-    printf("Score=%d, \n", state->score);
-    printf("Message='%s'\n", state->message);
-}
 
 /// Function to load simulation parameters from a file
 void load_parameters(const char *filename, Parameters *params)
@@ -287,18 +240,6 @@ void load_parameters(const char *filename, Parameters *params)
 
     fclose(file);
 
-    // // Debugging: Print loaded parameters
-    // printf("Loaded Parameters:\n");
-    // printf("M = %f\n", params->M);
-    // printf("K = %f\n", params->K);
-    // printf("T = %f\n", params->T);
-    // printf("F_max = %f\n", params->F_max);
-    // printf("X_max = %f\n", params->X_max);
-    // printf("Y_max = %f\n", params->Y_max);
-    // printf("rho = %f\n", params->rho);
-    // printf("eta = %f\n", params->eta);
-    // printf("zeta = %f\n", params->zeta);
-    // printf("d_goal = %f\n", params->d_goal);
 }
 
 // Function to process keyboard inputs
@@ -437,44 +378,19 @@ void update_Drone_dynamics(SharedState *state, float F_max, Parameters *params)
 
     total_fx = F_rep_x + state->drone.fx;
     total_fy = F_rep_y + state->drone.fy;
-    // else if (strcmp(state->key_pressed, "default") == 0)
-    // {
-    //     state->drone.fx = state->drone.fx; // same previos force
-    //     state->drone.fy = state->drone.fx;
-    // }
 
     // Calculate acceleration
 
     float ax = (total_fx - params->K * state->drone.vx) / params->M;
     float ay = (total_fy - params->K * state->drone.vy) / params->M;
 
-    // printf("=======================================================\n");
-    // printf("ax is: %f ay is: %f\n", ax, ay);
-    // printf("=======================================================\n");
     // // Update velocity
     state->drone.vx += (ax * params->T);
     state->drone.vy += (ay * params->T);
-    // printf("=======================================================\n");
-    // printf("vx is: %f vy is: %f\n", state->drone.vx, state->drone.vy);
-    // printf("parameter k is: %f \n", params->K);
-    // printf("parameter T is: %f \n", params->T);
-    // printf("parameter T is: %f \n", params->rho);
-    // printf("=======================================================\n");
     // Update position
     state->drone.x += (state->drone.vx * params->T);
     state->drone.y += (state->drone.vy * params->T);
 
-    // printf("=======================================================\n");
-    // printf("KeyPressed='%s', \n", state->key_pressed);
-    // printf("=======================================================\n");
-
-    // printf("=======================================================\n");
-    // printf("postion x is: %f position y is: %f\n", state->drone.x, state->drone.y);
-    // printf("=======================================================\n");
-    // printf("=======================================================\n");
-    // printf("repulsion fx is: %f fy is: %f\n", F_rep_x, F_rep_y);
-    // printf("fx is: %f fy is: %f\n", total_fx, total_fy);
-    // printf("=======================================================\n");
 }
 
 void update_watchdog_file()

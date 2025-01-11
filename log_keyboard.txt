@@ -8,12 +8,3 @@ start_color successed
 curs_set successed
 init pair successed
 inilization is ready to accept shaped which we will define
-the left button is presses
-the left button is presses
-the left button is presses
-the left button is presses
-the left button is presses
-the left button is presses
-the left button is presses
-the left button is presses
-the left button is presses

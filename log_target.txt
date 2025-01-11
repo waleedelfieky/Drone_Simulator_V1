@@ -1,96 +1,12 @@
 the singal is reveieved successfully and the target is being generated 
 Target Generator Process Started...
 Target Generator Process Started...
-x is: 62, y is: 14, value is: 1, active is: 1, action is: 32
-x is: 54, y is: 6, value is: 2, active is: 1, action is: 32
-x is: 76, y is: 0, value is: 3, active is: 1, action is: 32
-x is: 40, y is: 0, value is: 4, active is: 1, action is: 32
-x is: 40, y is: 20, value is: 5, active is: 1, action is: 32
-x is: 94, y is: 0, value is: 6, active is: 1, action is: 32
-x is: 18, y is: 2, value is: 7, active is: 1, action is: 32
-x is: 48, y is: 2, value is: 8, active is: 1, action is: 32
-x is: 30, y is: 12, value is: 9, active is: 1, action is: 32
-the singal is reveieved successfully and the target is being generated 
-Target Generator Process Started...
-Target Generator Process Started...
-x is: 82, y is: 14, value is: 1, active is: 1, action is: 32
-x is: 12, y is: 6, value is: 2, active is: 1, action is: 32
-x is: 84, y is: 14, value is: 3, active is: 1, action is: 32
-x is: 86, y is: 18, value is: 4, active is: 1, action is: 32
-x is: 72, y is: 16, value is: 5, active is: 1, action is: 32
-x is: 32, y is: 10, value is: 6, active is: 1, action is: 32
-x is: 76, y is: 20, value is: 7, active is: 1, action is: 32
-x is: 40, y is: 16, value is: 8, active is: 1, action is: 32
-x is: 96, y is: 2, value is: 9, active is: 1, action is: 32
-the singal is reveieved successfully and the target is being generated 
-Target Generator Process Started...
-Target Generator Process Started...
-x is: 48, y is: 8, value is: 1, active is: 1, action is: 32
-x is: 86, y is: 20, value is: 2, active is: 1, action is: 32
-x is: 76, y is: 14, value is: 3, active is: 1, action is: 32
-x is: 92, y is: 8, value is: 4, active is: 1, action is: 32
-x is: 22, y is: 18, value is: 5, active is: 1, action is: 32
-x is: 56, y is: 2, value is: 6, active is: 1, action is: 32
-x is: 78, y is: 12, value is: 7, active is: 1, action is: 32
-x is: 42, y is: 12, value is: 8, active is: 1, action is: 32
-x is: 10, y is: 18, value is: 9, active is: 1, action is: 32
-the singal is reveieved successfully and the target is being generated 
-Target Generator Process Started...
-Target Generator Process Started...
-x is: 26, y is: 16, value is: 1, active is: 1, action is: 32
-x is: 96, y is: 12, value is: 2, active is: 1, action is: 32
-x is: 40, y is: 2, value is: 3, active is: 1, action is: 32
-x is: 88, y is: 0, value is: 4, active is: 1, action is: 32
-x is: 20, y is: 2, value is: 5, active is: 1, action is: 32
-x is: 32, y is: 20, value is: 6, active is: 1, action is: 32
-x is: 96, y is: 2, value is: 7, active is: 1, action is: 32
-x is: 98, y is: 12, value is: 8, active is: 1, action is: 32
-x is: 54, y is: 0, value is: 9, active is: 1, action is: 32
-the singal is reveieved successfully and the target is being generated 
-Target Generator Process Started...
-Target Generator Process Started...
-x is: 96, y is: 18, value is: 1, active is: 1, action is: 32
-x is: 74, y is: 12, value is: 2, active is: 1, action is: 32
-x is: 36, y is: 20, value is: 3, active is: 1, action is: 32
-x is: 42, y is: 18, value is: 4, active is: 1, action is: 32
-x is: 86, y is: 18, value is: 5, active is: 1, action is: 32
-x is: 50, y is: 4, value is: 6, active is: 1, action is: 32
-x is: 96, y is: 6, value is: 7, active is: 1, action is: 32
-x is: 66, y is: 10, value is: 8, active is: 1, action is: 32
-x is: 46, y is: 18, value is: 9, active is: 1, action is: 32
-the singal is reveieved successfully and the target is being generated 
-Target Generator Process Started...
-Target Generator Process Started...
-x is: 10, y is: 8, value is: 1, active is: 1, action is: 32
-x is: 40, y is: 4, value is: 2, active is: 1, action is: 32
-x is: 4, y is: 6, value is: 3, active is: 1, action is: 32
-x is: 68, y is: 6, value is: 4, active is: 1, action is: 32
-x is: 68, y is: 10, value is: 5, active is: 1, action is: 32
-x is: 46, y is: 20, value is: 6, active is: 1, action is: 32
-x is: 50, y is: 16, value is: 7, active is: 1, action is: 32
-x is: 36, y is: 8, value is: 8, active is: 1, action is: 32
-x is: 46, y is: 4, value is: 9, active is: 1, action is: 32
-the singal is reveieved successfully and the target is being generated 
-Target Generator Process Started...
-Target Generator Process Started...
-x is: 6, y is: 4, value is: 1, active is: 1, action is: 32
-x is: 80, y is: 0, value is: 2, active is: 1, action is: 32
-x is: 88, y is: 20, value is: 3, active is: 1, action is: 32
-x is: 60, y is: 2, value is: 4, active is: 1, action is: 32
-x is: 36, y is: 8, value is: 5, active is: 1, action is: 32
-x is: 92, y is: 14, value is: 6, active is: 1, action is: 32
-x is: 54, y is: 20, value is: 7, active is: 1, action is: 32
-x is: 98, y is: 14, value is: 8, active is: 1, action is: 32
-x is: 10, y is: 16, value is: 9, active is: 1, action is: 32
-the singal is reveieved successfully and the target is being generated 
-Target Generator Process Started...
-Target Generator Process Started...
-x is: 62, y is: 0, value is: 1, active is: 1, action is: 32
-x is: 88, y is: 6, value is: 2, active is: 1, action is: 32
-x is: 62, y is: 16, value is: 3, active is: 1, action is: 32
-x is: 46, y is: 8, value is: 4, active is: 1, action is: 32
-x is: 64, y is: 12, value is: 5, active is: 1, action is: 32
-x is: 28, y is: 2, value is: 6, active is: 1, action is: 32
-x is: 10, y is: 12, value is: 7, active is: 1, action is: 32
-x is: 32, y is: 20, value is: 8, active is: 1, action is: 32
-x is: 42, y is: 20, value is: 9, active is: 1, action is: 32
+x is: 78, y is: 0, value is: 1, active is: 1, action is: 32
+x is: 22, y is: 0, value is: 2, active is: 1, action is: 32
+x is: 98, y is: 2, value is: 3, active is: 1, action is: 32
+x is: 60, y is: 16, value is: 4, active is: 1, action is: 32
+x is: 40, y is: 8, value is: 5, active is: 1, action is: 32
+x is: 86, y is: 0, value is: 6, active is: 1, action is: 32
+x is: 94, y is: 8, value is: 7, active is: 1, action is: 32
+x is: 80, y is: 6, value is: 8, active is: 1, action is: 32
+x is: 30, y is: 14, value is: 9, active is: 1, action is: 32

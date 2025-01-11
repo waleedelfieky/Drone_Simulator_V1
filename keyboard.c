@@ -332,13 +332,14 @@ int main()
                 mvwprintw(win1, 10, 15, "......");
                 mvwprintw(win1, 12, 16, "....");
                 mvwprintw(win1, 14, 17, "..");
-                mvwprintw(win1, 16, 10, "Attemp No : %d  ", state.attemp+1);
+                mvwprintw(win1, 16, 10, "Attemp No : %d  ", state.attemp);
+                mvwprintw(win1, 16, 10, "Score : %d  ", state.score);
 
                 // mvwprintw(win1, 16, 17, ".");
 
                 wrefresh(win1); // Refresh win1 to display updated content
                 wrefresh(win2); // Update win2 as necessary
-                sleep(2);
+                sleep(3);
             }
             // else
             // {
