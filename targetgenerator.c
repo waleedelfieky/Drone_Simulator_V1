@@ -15,14 +15,11 @@
 
 #define TIMEOUT 4 // Timeout in seconds
 
-
-
-
 #define LOG_FILE "watchdog_log.txt"
 #define LOG_FILE_NAME "log_target.txt"
 
 /*=================================================*/
-//API to update watchdog file with target generation paramters
+// API to update watchdog file with target generation paramters
 void update_watchdog_file();
 /*=================================================*/
 // API to clear content of log file
@@ -61,7 +58,7 @@ void signal_handler(int signum)
 {
     if (signum == SIGUSR1)
     {
-        append_to_log_file(LOG_FILE_NAME,"the singal is reveieved successfully and the target is being generated \n");
+        append_to_log_file(LOG_FILE_NAME, "the singal is reveieved successfully and the target is being generated \n");
         // generate a new targets
         target_generator();
         // now we want to send our array of struct to the server !
@@ -95,10 +92,10 @@ void target_generator(void)
 {
     srand(time(NULL)); // Seed for random numbers
     printf("Target Generator Process Started...\n");
-    append_to_log_file(LOG_FILE_NAME,"Target Generator Process Started...\n");
+    append_to_log_file(LOG_FILE_NAME, "Target Generator Process Started...\n");
 
     printf("Generating targets...\n");
-    append_to_log_file(LOG_FILE_NAME,"Target Generator Process Started...\n");
+    append_to_log_file(LOG_FILE_NAME, "Target Generator Process Started...\n");
     for (int i = 1; i < MAX_TARGETS; i++)
     {
         // Generate even numbers between 0 and 50 for x and y
@@ -113,7 +110,7 @@ void target_generator(void)
         // write(fd_target, &t, sizeof(t));
         // printf("Generated targets: (%d ,%d), value: %d\n" t.x, t.y, t.value);
         printf("x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", generated_targets[i].x, generated_targets[i].y, generated_targets[i].value, generated_targets[i].active, generated_targets[i].action);
-        append_to_log_file(LOG_FILE_NAME,"x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", generated_targets[i].x, generated_targets[i].y, generated_targets[i].value, generated_targets[i].active, generated_targets[i].action);
+        append_to_log_file(LOG_FILE_NAME, "x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", generated_targets[i].x, generated_targets[i].y, generated_targets[i].value, generated_targets[i].active, generated_targets[i].action);
     }
 }
 
@@ -128,18 +125,24 @@ void init(void)
         if (mkfifo(target_pipe_generator, 0666) == -1)
         {
             perror("Error creating target_pipe_generator FIFO");
-            append_to_log_file(LOG_FILE_NAME,"Error creating target_pipe_generator FIFO");
+            append_to_log_file(LOG_FILE_NAME, "Error creating target_pipe_generator FIFO");
             exit(EXIT_FAILURE);
         }
     }
     printf("created success\n");
+    append_to_log_file(LOG_FILE_NAME, "Target Generator pipe is created successfully...\n");
+
     // open the fifo in writing mood
     fd_target_generator = open(target_pipe_generator, O_WRONLY);
-    printf("open sucess success\n");
+    printf("open sucess \n");
+    append_to_log_file(LOG_FILE_NAME, "Target Generator pipe is opened successfully...\n");
+
     // read the pid and save it into our global varibale
     write(fd_target_generator, &pid, sizeof(pid));
+    append_to_log_file(LOG_FILE_NAME, "PID Target Generator process is sent successfully to the server...\n");
+
     // close the pipes
-    printf("write sucess success\n");
+    printf("write sucess \n");
     // close(fd_target_generator);
     // printf("close sucess success\n");
 
@@ -221,7 +224,6 @@ void update_watchdog_file()
     flock(fd, LOCK_UN);
     fclose(file);
 }
-
 
 // Function to clear the log file
 void clear_log_file(const char *filename)

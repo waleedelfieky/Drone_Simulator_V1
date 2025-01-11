@@ -1,0 +1,18 @@
+to build and run the system all you need to do is the follwoing
+1. Prerequisites
+Make sure you have the following installed on your system:
+
+- A GCC compiler (gcc)
+- make utility
+- konsole terminal emulator
+- Development libraries for ncurses (if required by your system)
+
+2. make sure that launcher.sh has executable permission 
+	- if it don't have just run chmod +x launcher.sh
+
+3. from terminal run ./launcher.sh
+	- the launcher file will build the system by the make file
+	- do some initilization
+	- start all nodes
+
+4. just play and have fun !!

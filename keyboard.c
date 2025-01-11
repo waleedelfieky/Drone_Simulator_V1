@@ -333,7 +333,7 @@ int main()
                 mvwprintw(win1, 12, 16, "....");
                 mvwprintw(win1, 14, 17, "..");
                 mvwprintw(win1, 16, 10, "Attemp No : %d  ", state.attemp);
-                mvwprintw(win1, 16, 10, "Score : %d  ", state.score);
+                mvwprintw(win1, 18, 10, "Score : %d  ", state.score);
 
                 // mvwprintw(win1, 16, 17, ".");
 

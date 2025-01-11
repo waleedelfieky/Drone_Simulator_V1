@@ -70,22 +70,15 @@ create_pipe $TARGET_PIPE_GENERATOR
 create_pipe $OBSTACLE_PIPE_GENERATOR
 
 
-# Compilation Script
-gcc server.c -o server -lm
-sleep 0.2
-gcc dynamic.c -o dynamic -lm
-sleep 0.2
-gcc obsticalegenerator.c -o obsticalegenerator
-sleep 0.2
-gcc targetgenerator.c -o targetgenerator
-sleep 0.2
-gcc keyboard.c -o keyboard -lncurses
-sleep 0.2
-gcc visualization.c -o vis -lncurses
-sleep 0.2
-gcc watchdog.c -o watchdog
+# Build the project using the Makefile
+echo "Building the project..."
+make
+if [[ $? -ne 0 ]]; then
+    echo "Build failed. Exiting."
+    exit 1
+fi
 
-echo "Compilation complete!"
+echo "Build complete!"
 
 
 # Start background processes

@@ -204,7 +204,7 @@ void init(void)
     printf("the pid of obsticale generation is: %d\n", pid_obsticale_generator);
     append_to_log_file(LOG_FILE_NAME, "read of obsricales PID is done succesffuly and pid is %d\n", pid_obsticale_generator);
     send_target_signal();
-    send_obsticale_signal();
+    //send_obsticale_signal();
 }
 /*======================================================*/
 
