@@ -88,9 +88,9 @@ echo "Build complete!"
 ./targetgenerator &
 
 # Start Konsole processes
-konsole --qwindowgeometry 922x700 -e ./keyboard &
 konsole --qwindowgeometry 1000x1000 -e ./vis &
 konsole --qwindowgeometry 900x300 -e ./watchdog &
+konsole --qwindowgeometry 922x700 -e ./keyboard &
 
 # Wait for all background processes to complete
 wait
