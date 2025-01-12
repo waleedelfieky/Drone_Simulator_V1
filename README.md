@@ -15,12 +15,14 @@
 ## overview-of-system:
 ### Overall system Overview
 ![image](https://github.com/user-attachments/assets/af120573-d717-4359-9e5f-72b8471cfb19)
-
+<div style="text-indent: 40px;">
 The system comprises five processes, each connected to a server process through a request-response mechanism. Each process can send requests to the server, which in turn responds accordingly. In this setup, requests and responses consist of data that is processed either on the node side or the server side. Communication between the server and the nodes is facilitated through named pipes, ensuring seamless data exchange. 
 
 The system employs the select function to guarantee non-blocking behavior, allowing a smooth flow of operations. Additionally, the flow may be interrupted by signal commands issued by the user through a keyboard pipe. These signals are processed by the server, which determines an appropriate time to execute the interrupt routine without disrupting the overall system flow. This ensures the system remains responsive while maintaining consistent operation. 
 
 The parameters file is used with dynamic node, also each process is logging its progress to a log file so user can track what’s going on at any time or in case of any error, a make file is used to build the code and launcher file is used to first build system using the make file then do some initialization and then run the system. 
+</div>
+
 ### Each process responsibilities: 
 **Dynamic Node**: Responsible for position, forces, velocities, accelerations of the system 
 **Keyboard Node**: Responsible for user friendly GUI interaction 
@@ -31,20 +33,31 @@ The parameters file is used with dynamic node, also each process is logging its 
 
 ## Watchdog_process:
 **Diagram**:
+
 ![image](https://github.com/user-attachments/assets/7023fe5a-b303-4b2a-bac4-787ef3cdaf5b)
 
+<div style="text-indent: 40px;">
 Each of the five processes, along with the server process, periodically writes its last execution timestamp to a shared file. This shared file serves as a centralized log for monitoring the activity of all processes in the system. The watchdog process continuously monitors this shared file to ensure that each process is actively writing its timestamp within a predefined time limit. Each process when writing to the file used file Locking to prevent race conditions 
 
 If the watchdog process detects that any of the six processes has exceeded the allowed time limit without updating its timestamp in the shared file, it takes corrective action. Specifically, the watchdog terminates the entire system by sending kill signals to all six running processes. Once this is done, it informs the user about the termination event and the reason behind it, ensuring transparency in system operations. 
 
 During its execution, the watchdog process also provides real-time feedback to the user by displaying the last recorded execution times of all processes on the terminal. This allows the user to monitor the flow and activity of the processes as they execute, offering a clear and detailed view of the system's status. The following diagram illustrates this monitoring mechanism and the flow of information. 
+</div>
+
 ![image](https://github.com/user-attachments/assets/1abd73f6-7f3f-463e-b910-2078022cd675)
 
 ## Server_Node:
 
+<div style="text-indent: 40px;">
+
 The server node acts as the central hub within the system, responsible for managing and coordinating all processes. It communicates with the five individual processes through named pipes, which serve as inter-process communication channels. The server node's primary role is to receive data from one or more of these processes, process or analyze the information as required, and then distribute the results or relevant data back to the other processes. This centralized management ensures that the system operates efficiently and maintains synchronization between all interconnected components. Additionally, the server node's design allows for streamlined communication, enabling seamless data transfer and reducing potential conflicts or delays in the system's operation. 
+</div>
+
 ![image](https://github.com/user-attachments/assets/3fe2d630-a278-44bc-af1c-3f375af7671b)
+
+<div style="text-indent: 40px;">
 Init will initialize the system as shown in the figure and create fifo will create the pipes if they do not exist and open will open those pipes. For select monitor we would discuss it in detail in the following:
+</div>
 
 ### Select Monitor - Main Functionalities
 
@@ -83,10 +96,176 @@ Init will initialize the system as shown in the figure and create fifo will crea
 ![image](https://github.com/user-attachments/assets/137aad1e-b9b3-4c94-9d7e-d850b0ffdd88)
 
 ## Target_Generator_Node
-This node simply notifies the server first by its PID so the server can use it later and then at any time the server wants targets it sends a signal to the target generation node, and it responds in return by sending 10 random targets with their positions. Also, it updates it’s log data and watchdog shared file memory. 
+
+![image](https://github.com/user-attachments/assets/6badc6bd-3e3b-465a-ab6f-e366325632ef)
+
+
+This node is responsible for generating targets dynamically, handling signals for target generation, and maintaining communication with other processes through a FIFO (named pipe). Below is the detailed explanation:
+
+### 1. Start
+
+The program begins execution by clearing the log file and initializing the required resources.
+
+---
+
+### 2. Clear Log File
+
+The program clears the log file (`log_target.txt`) to ensure a clean start for logging target generation activities during the session.
+
+---
+
+### 3. Initialize Program
+
+The `init` function performs the following steps:
+
+- **Checks if the FIFO file (`./pipes/targetgenerator`) exists:**
+  - If it does not exist, it creates the FIFO.
+
+- **Opens the FIFO in write mode.**
+
+- **Writes the process ID (PID)** of the target generator program to the FIFO.
+
+- **Registers the signal handler for SIGUSR1.**
+
+---
+
+### 4. Main Loop
+
+After initialization, the program enters the main loop to perform periodic operations and wait for signals.
+
+---
+
+### 5. SIGUSR1 Signal Received?
+
+The program waits for the **SIGUSR1** signal to initiate target generation. The signal handler performs the following:
+
+- **Logs the receipt of the signal.**
+
+- **Calls the `target_generator` function** to generate a new set of targets.
+
+- **Sends the generated targets to the server** via the FIFO.
+
+- If no signal is received, the program continues checking the watchdog timeout.
+
+---
+
+### 6. Generate Targets
+
+The `target_generator` function:
+
+- **Logs the start of target generation.**
+
+- **Generates up to 10 targets** with random positions (`x, y`) and values:
+  - Positions are even numbers within a defined range.
+  - Each target is marked as active (`active = 1`).
+
+- **Logs the generated targets** and writes them to the FIFO.
+
+---
+
+### 7. Check Watchdog Timeout
+
+The program periodically checks if the watchdog timeout (4 seconds) has been reached. If the timeout is reached:
+
+- **Updates the watchdog file** to signal that the process is still active.
+
+- **Logs this activity** in the log file.
+
+If the timeout has not been reached, the program continues the main loop.
+
 
 ## Obstcale_Generator_Node
-This node simply notifies the server first by its PID so the server can use it later and then at any time the server wants obstacles it sends a signal to the obstacle generation node, and it responds back by sending random obstacles with their positions. Also, it updates it’s log data and watchdog shared file memory. This node periodically sent obstacles to the server so obstacles in the environment change periodically with time or when obstacle generation key is pressed. 
+
+![image](https://github.com/user-attachments/assets/6fbfbceb-c245-47ca-806f-ed64d8467812)
+
+This node dynamically generates obstacles for a simulation, handles communication with other processes using named pipes (FIFO), and ensures process activity monitoring via a watchdog mechanism. The obstacles are periodically sent to the server so that the environment changes over time or when the obstacle generation key is pressed.
+
+Below is a detailed explanation of the flowchart:
+
+---
+
+### 1. Start
+
+The program begins execution, initializing required resources and configurations.
+
+---
+
+### 2. Initialize Program
+
+The `init` function performs the following tasks:
+
+- **Clears the log file (`log_obsticale.txt`)** to ensure a clean start for logging activities.
+
+- **Checks if the FIFO file (`./pipes/obsticalegenerator`) exists:**
+  - If it does not exist, the program creates the FIFO file.
+
+- **Opens the FIFO in write mode** and writes the process ID (PID) of the obstacle generator to the FIFO so the server can use it later.
+
+- **Registers a signal handler for SIGUSR1.**
+
+---
+
+### 3. Create and Open Pipes
+
+- **Request Pipe (`PIPE_REQUEST_OBSTICALE`)**: Used to send generated obstacle data to the server.
+
+- **Response Pipe (`PIPE_RESPONSE_OBSTICALE`)**: Used to receive responses from the server.
+
+- If either pipe fails to open, the program logs the error and exits.
+
+---
+
+### 4. Pipes Opened Successfully?
+
+- **Yes**: The program proceeds to register the signal handler for **SIGUSR1** and enters the main loop.
+- **No**: Logs the error and terminates.
+
+---
+
+### 5. Register Signal Handler
+
+The program registers a signal handler for **SIGUSR1**, which is used to trigger obstacle generation on-demand.
+
+---
+
+### 6. Generate Obstacles
+
+The `obsticale_generator` function dynamically creates obstacles. The steps include:
+
+- **Randomly generating positions (`x, y`)** for each obstacle:
+  - Odd numbers are generated to ensure placement within a specific grid.
+  - Example: `x = (rand() % 45) * 2 + 1` generates random odd positions between 1 and 89.
+
+- **Assigning properties to each obstacle:**
+  - **Size**: Fixed size (1x1) in this implementation.
+  - **Active**: All obstacles are marked as active (`active = 1`).
+
+- **Logging the generated obstacles** to the log file.
+
+---
+
+### 7. Send Obstacles to Server
+
+Once obstacles are generated, they are sent to the server using the **request pipe (`PIPE_REQUEST_OBSTICALE`)**.
+
+---
+
+### 8. Watchdog Timeout?
+
+The program periodically checks if the watchdog timeout (4 seconds) has been reached. If the timeout is reached:
+
+- **Updates the watchdog file** to signal that the process is still active.
+
+- **Logs this activity** in the log file.
+
+If the timeout has not been reached, the program continues the loop.
+
+---
+
+### Purpose
+
+The obstacle generator node ensures that the environment remains dynamic by periodically generating new obstacles and sending them to the server. It also enables on-demand obstacle updates triggered by external signals.
+
 
 ## Dynamic_Node
 **Diagram**
@@ -129,63 +308,189 @@ The node begins by initializing parameters and setting up the environment for th
 **Diagram**
 ![image](https://github.com/user-attachments/assets/68a54f06-4824-42ec-8d3e-cf878508e4ba)
 
-### Process Workflow
+The **dynamic process** in the Drone Simulator, implemented in the `dynamic.c` file, simulates the drone's movement based on **user-applied forces** from the motors and **repulsive forces** from obstacles and geofence boundaries. The drone's **acceleration** and **velocity** are then calculated based on its **mass**, **viscosity** (air resistance), and the applied forces. This process ensures the drone behaves realistically by updating its position, velocity, and forces over time.
 
-1. **Initialization**
-   - The process begins by initializing all forces related to the drone. These include:
-     - `F_rep_x`, `F_rep_y`: Repulsive forces from obstacles and geofence boundaries.
+## Key Components
 
-2. **Key Press Detection**
-   - The process checks if a key press is detected (`key_pressed` field in the `SharedState` structure):
-     1. If a key press is detected:
-        - The corresponding force is applied based on the key input (e.g., "up", "down", "left", "right"), as shown below.
-     2. If no key press is detected:
-        - No input forces are applied, and the process proceeds to check obstacles.
+### 1. **Motor Force (Input Force)**
 
-3. **Obstacle Interaction**
-   - The process checks for obstacles within the drone’s perception radius (`rho`):
-     1. **If obstacles are detected:**
-        - Repulsive forces (`F_rep_x`, `F_rep_y`) are calculated based on the obstacle’s position and distance from the drone:
-          \[
-          F_{rep_x} = \left( \frac{1}{d_{obs}^2} \right) \cdot \frac{x_{obs} - x}{distance}
-          \]
-          \[
-          F_{rep_y} = \left( \frac{1}{d_{obs}^2} \right) \cdot \frac{y_{obs} - y}{distance}
-          \]
-     2. **If no obstacles are detected:**
-        - The process skips obstacle repulsion and moves to geofence boundary checks.
+The **motor forces** (`fx`, `fy`) are directly controlled by user input, specifying the force applied by the drone's motors in the X and Y directions. These forces define the drone’s desired movement, including directional movements like **up**, **down**, **left**, **right**, and **diagonals**.
 
-4. **Geofence Boundary Check**
-   - The process ensures the drone stays within the geofence boundaries (`x_max`, `y_max`):
-     1. If the drone is near a boundary, repulsive forces are added to push it back within the boundaries.
+### 2. **Repulsive Force (Kathib’s Model)**
 
-5. **Combine Forces**
-   - All forces are combined, including:
-     - Repulsive forces (`F_rep`).
-     - Forces applied due to key inputs.
+The **repulsive force** used for obstacle avoidance is based on **Kathib’s model**. The model applies a **repulsive force** when the drone is within a specified **perception radius** (`rho`) of an obstacle. The force increases as the drone gets closer to the obstacle, pushing the drone away to avoid collisions. The strength of this repulsive force is governed by the **repulsion strength coefficient** (`eta`).
 
-6. **Update Velocity and Position**
-   - **Velocity Update:**
-     - The drone’s velocity is updated using the calculated acceleration:
-       \[
-       a = \frac{F_{total}}{M}
-       \]
-   - **Position Update:**
-     - The drone’s position is updated based on the new velocity:
-       \[
-       x = x + v \cdot T
-       \]
-       \[
-       y = y + v \cdot T
-       \]
+The formula for the repulsive force is based on an inverse-square law:
 
-7. **Apply Boundary Constraints**
-   - The program ensures the drone remains within the geofence limits. If violations are detected, the position is adjusted accordingly.
+```
+F_rep = eta * (1 / distance - 1 / rho) * (1 / distance^2)
+```
 
+Where:
+- **`distance`**: The distance between the drone and the obstacle.
+- **`eta`**: The repulsion strength.
+- **`rho`**: The perception radius, within which repulsive forces are applied.
 
-8. **Update Shared State**
-   - The updated state (position, velocity, and forces) are written back to the `SharedState` structure for use in the next loop iteration.
+### 3. **Viscosity of Air (`K`)**
 
+The **viscous drag** force (air resistance) opposes the drone’s motion. It is proportional to the drone’s velocity and is calculated using the **viscosity coefficient** (`K`). This drag force slows the drone down as it moves through the air, simulating air resistance.
+
+```
+F_drag = -K * velocity
+```
+
+Where:
+- **`K`**: The **viscous coefficient** that defines the air resistance.
+- **`velocity`**: The drone's current velocity.
+
+### 4. **Mass of the Drone (`M`)**
+
+The **mass** of the drone directly affects its **acceleration**. The greater the mass, the less it accelerates for the same applied force. The acceleration is calculated using **Newton’s second law**:
+
+```
+a = F / M
+```
+
+Where:
+- **`a`**: The **acceleration** of the drone.
+- **`F`**: The total applied force (motor forces + repulsive forces).
+- **`M`**: The mass of the drone.
+
+### 5. **Acceleration and Velocity Update**
+
+Once the **total forces** (motor forces + repulsive forces) are calculated, the drone’s **acceleration** is determined based on its mass. The **velocity** and **position** are then updated over time, with air resistance (viscosity) further slowing the drone's motion.
+
+### 6. **Geofence Enforcement with Repulsive Effect (`X_max`, `Y_max`)**
+
+The drone must remain within the **geofence boundaries**. If the drone approaches or exceeds these boundaries (`X_max`, `Y_max`), a **repulsive force** is applied to push the drone back within the limits, similar to how it avoids obstacles.
+
+---
+
+## Dynamic Process - `update_Drone_dynamics`
+
+The `update_Drone_dynamics()` function is responsible for updating the drone's position, velocity, and acceleration based on user input and the forces applied. The function accounts for the **input forces**, **repulsive forces** from obstacles and geofence boundaries, and the **viscous drag** (air resistance).
+
+### Key Steps:
+
+1. **Force Calculation**:
+   - The drone’s movement is controlled by **motor forces** (`fx`, `fy`), which are determined by user input.
+   - The **repulsive forces** are calculated if the drone is near obstacles or the geofence boundary.
+   - **Viscous drag** forces are calculated based on the drone’s velocity and air viscosity (`K`).
+
+2. **Acceleration Calculation**:
+   - The drone’s **acceleration** is calculated using the total applied forces divided by its mass (`M`):
+
+   ```
+   a = (F_motor + F_repulsive ) / M
+   ```
+
+3. **Velocity and Position Update**:
+   - The drone’s **velocity** is updated based on the calculated **acceleration**.
+   - The drone’s **position** is then updated using the new **velocity**.
+
+---
+
+## Example Code for Dynamic Update
+
+Here’s an example of how the forces are applied and how the **acceleration** and **velocity** are computed:
+
+```c
+// Calculate the total force (motor forces + repulsive forces)
+float total_fx = state->drone.fx + F_repulsive_x + F_geofence_x;
+float total_fy = state->drone.fy + F_repulsive_y + F_geofence_y;
+
+// Calculate drag forces based on velocity
+float F_drag_x = -K * state->drone.vx;
+float F_drag_y = -K * state->drone.vy;
+
+// Calculate total forces in both X and Y directions
+float total_force_x = total_fx + F_drag_x;
+float total_force_y = total_fy + F_drag_y;
+
+// Calculate acceleration using Newton’s second law: a = F / M
+float ax = total_force_x / M;
+float ay = total_force_y / M;
+
+// Update velocity based on acceleration
+state->drone.vx += ax * T;  // Update velocity in X direction
+state->drone.vy += ay * T;  // Update velocity in Y direction
+
+// Update position based on velocity
+state->drone.x += state->drone.vx * T;  // Update position in X direction
+state->drone.y += state->drone.vy * T;  // Update position in Y direction
+```
+
+In this example:
+- **`total_fx`** and **`total_fy`** represent the forces applied by the motors and the repulsive forces from obstacles and the geofence.
+- **`F_drag_x`** and **`F_drag_y`** are the drag forces due to viscosity.
+- The **acceleration** is computed by dividing the total forces by the drone's **mass** (`M`), and this is used to update the drone’s **velocity** and **position**.
+
+---
+
+## Example Code for Repulsive and Geofence Forces
+
+The drone applies **repulsive forces** for both obstacles and geofence boundaries:
+
+```c
+// Repulsive force for obstacles (Kathib’s Model)
+if (distance_to_obstacle < rho) {
+    float repulsive_force = eta * (1.0f / distance_to_obstacle - 1.0f / rho) / (distance_to_obstacle * distance_to_obstacle);
+    state->drone.fx -= repulsive_force * (obstacle_x - state->drone.x); // X direction
+    state->drone.fy -= repulsive_force * (obstacle_y - state->drone.y); // Y direction
+}
+
+// Geofence enforcement (Kathib’s Model)
+if (state->drone.x > X_max) {
+    float distance_to_boundary = state->drone.x - X_max;
+    float F_geofence_x = eta * (1.0f / distance_to_boundary - 1.0f / X_max) / (distance_to_boundary * distance_to_boundary);
+    state->drone.fx -= F_geofence_x; // Push the drone back within the X boundary
+}
+
+if (state->drone.y > Y_max) {
+    float distance_to_boundary = state->drone.y - Y_max;
+    float F_geofence_y = eta * (1.0f / distance_to_boundary - 1.0f / Y_max) / (distance_to_boundary * distance_to_boundary);
+    state->drone.fy -= F_geofence_y; // Push the drone back within the Y boundary
+}
+```
+
+---
+
+## Parameter File - `parameters.txt`
+
+The behavior of the drone is governed by several key parameters set in the **parameter file** (`parameters.txt`). These parameters define important aspects such as the drone's mass, viscosity, the force limits, and the perception radius for obstacle avoidance.
+
+### Example Parameter File:
+
+```
+M       1.0   # Mass of the drone (kg)
+K       0.5   # Viscous coefficient (N·s/m)
+T       0.1   # Time step (s)
+F_max   3.0   # Maximum force (N)
+X_max   100.0 # Geofence X boundary (m)
+Y_max   50.0  # Geofence Y boundary (m)
+rho     3     # Obstacle perception radius (m)
+eta     40    # Obstacle repulsion strength coefficient
+zeta    0.5   # Target attraction strength coefficient
+d_goal  10.0  # Distance threshold for full attraction (m)
+```
+
+### Key Parameters:
+
+- **`M`**: Mass of the drone, affecting how it accelerates in response to applied forces.
+- **`K`**: Viscous drag coefficient, simulating air resistance.
+- **`T`**: Time step for the simulation, determining the frequency of updates.
+- **`F_max`**: The maximum force the motors can apply.
+- **`X_max`, `Y_max`**: The geofence boundaries, limiting the drone's movement.
+- **`rho`**: The radius within which the drone perceives obstacles for collision avoidance.
+- **`eta`**: The repulsion strength for obstacles and geofence enforcement.
+- **`zeta`**: The strength of the attraction force for targets (not discussed here).
+- **`d_goal`**: The distance at which the drone is fully attracted to a target.
+
+---
+
+## Conclusion
+
+The **dynamic process** in `dynamic.c` models the drone's movement by applying **motor forces** and **repulsive forces** for obstacle avoidance and geofence enforcement. The drone’s **acceleration** and **velocity** are influenced by **viscosity**, **mass**, and the applied forces, ensuring realistic motion. The behavior of the drone can be easily adjusted through the **parameter file**, allowing for flexible simulation configurations.
 
 ## Keyboard_Node
 
