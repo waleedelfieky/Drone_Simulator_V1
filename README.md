@@ -16,18 +16,19 @@
 
 ![image](https://github.com/user-attachments/assets/c97985e6-5255-46af-aa15-7f07394ce1f8)
 
-This drone simulator allows user-controlled movement via a keyboard interface, with real-time updates on force, velocity, position, score, and attempt displayed on the screen. The drone avoids dynamically generated obstacles and collects targets to increase the score, following a modular architecture based on a request-response model. Communication between components, including visualization, keyboard input, obstacle generation, target generation and Dynamic, is handled via named pipes, with a central server managing these interactions and sending signals to coordinate updates. The system is designed for real-time feedback and efficient inter-process communication.
+> This drone simulator allows user-controlled movement via a keyboard interface, with real-time updates on force, velocity, position, score, and attempt displayed on the screen. The drone avoids dynamically generated obstacles and collects targets to increase the score, following a modular architecture based on a request-response model. Communication between components, including visualization, keyboard input, obstacle generation, target generation and Dynamic, is handled via named pipes, with a central server managing these interactions and sending signals to coordinate updates. The system is designed for real-time feedback and efficient inter-process communication.
 
 ## overview-of-system:
 ### Overall system Overview
+
 ![image](https://github.com/user-attachments/assets/af120573-d717-4359-9e5f-72b8471cfb19)
-<div style="text-indent: 40px;">
-The system comprises five processes, each connected to a server process through a request-response mechanism. Each process can send requests to the server, which in turn responds accordingly. In this setup, requests and responses consist of data that is processed either on the node side or the server side. Communication between the server and the nodes is facilitated through named pipes, ensuring seamless data exchange. 
 
-The system employs the select function to guarantee non-blocking behavior, allowing a smooth flow of operations. Additionally, the flow may be interrupted by signal commands issued by the user through a keyboard pipe. These signals are processed by the server, which determines an appropriate time to execute the interrupt routine without disrupting the overall system flow. This ensures the system remains responsive while maintaining consistent operation. 
+> The system comprises five processes, each connected to a server process through a request-response mechanism. Each process can send requests to the server, which in turn responds accordingly. In this setup, requests and responses consist of data that is processed either on the node side or the server side. Communication between the server and the nodes is facilitated through named pipes, ensuring seamless data exchange. 
 
-The parameters file is used with dynamic node, also each process is logging its progress to a log file so user can track what’s going on at any time or in case of any error, a make file is used to build the code and launcher file is used to first build system using the make file then do some initialization and then run the system. 
-</div>
+> The system employs the select function to guarantee non-blocking behavior, allowing a smooth flow of operations. Additionally, the flow may be interrupted by signal commands issued by the user through a keyboard pipe. These signals are processed by the server, which determines an appropriate time to execute the interrupt routine without disrupting the overall system flow. This ensures the system remains responsive while maintaining consistent operation. 
+
+> The parameters file is used with dynamic node, also each process is logging its progress to a log file so user can track what’s going on at any time or in case of any error, a make file is used to build the code and launcher file is used to first build system using the make file then do some initialization and then run the system. 
+
 
 ### Each process responsibilities: 
 **Dynamic Node**: Responsible for position, forces, velocities, accelerations of the system 
@@ -42,28 +43,23 @@ The parameters file is used with dynamic node, also each process is logging its 
 
 ![image](https://github.com/user-attachments/assets/7023fe5a-b303-4b2a-bac4-787ef3cdaf5b)
 
-<div style="text-indent: 40px;">
-Each of the five processes, along with the server process, periodically writes its last execution timestamp to a shared file. This shared file serves as a centralized log for monitoring the activity of all processes in the system. The watchdog process continuously monitors this shared file to ensure that each process is actively writing its timestamp within a predefined time limit. Each process when writing to the file used file Locking to prevent race conditions 
 
-If the watchdog process detects that any of the six processes has exceeded the allowed time limit without updating its timestamp in the shared file, it takes corrective action. Specifically, the watchdog terminates the entire system by sending kill signals to all six running processes. Once this is done, it informs the user about the termination event and the reason behind it, ensuring transparency in system operations. 
+> Each of the five processes, along with the server process, periodically writes its last execution timestamp to a shared file. This shared file serves as a centralized log for monitoring the activity of all processes in the system. The watchdog process continuously monitors this shared file to ensure that each process is actively writing its timestamp within a predefined time limit. Each process when writing to the file used file Locking to prevent race conditions 
 
-During its execution, the watchdog process also provides real-time feedback to the user by displaying the last recorded execution times of all processes on the terminal. This allows the user to monitor the flow and activity of the processes as they execute, offering a clear and detailed view of the system's status. The following diagram illustrates this monitoring mechanism and the flow of information. 
-</div>
+> If the watchdog process detects that any of the six processes has exceeded the allowed time limit without updating its timestamp in the shared file, it takes corrective action. Specifically, the watchdog terminates the entire system by sending kill signals to all six running processes. Once this is done, it informs the user about the termination event and the reason behind it, ensuring transparency in system operations. 
+
+> During its execution, the watchdog process also provides real-time feedback to the user by displaying the last recorded execution times of all processes on the terminal. This allows the user to monitor the flow and activity of the processes as they execute, offering a clear and detailed view of the system's status. The following diagram illustrates this monitoring mechanism and the flow of information. 
+
 
 ![image](https://github.com/user-attachments/assets/1abd73f6-7f3f-463e-b910-2078022cd675)
 
 ## Server_Node:
 
-<div style="text-indent: 40px;">
-
-The server node acts as the central hub within the system, responsible for managing and coordinating all processes. It communicates with the five individual processes through named pipes, which serve as inter-process communication channels. The server node's primary role is to receive data from one or more of these processes, process or analyze the information as required, and then distribute the results or relevant data back to the other processes. This centralized management ensures that the system operates efficiently and maintains synchronization between all interconnected components. Additionally, the server node's design allows for streamlined communication, enabling seamless data transfer and reducing potential conflicts or delays in the system's operation. 
-</div>
+> The server node acts as the central hub within the system, responsible for managing and coordinating all processes. It communicates with the five individual processes through named pipes, which serve as inter-process communication channels. The server node's primary role is to receive data from one or more of these processes, process or analyze the information as required, and then distribute the results or relevant data back to the other processes. This centralized management ensures that the system operates efficiently and maintains synchronization between all interconnected components. Additionally, the server node's design allows for streamlined communication, enabling seamless data transfer and reducing potential conflicts or delays in the system's operation. 
 
 ![image](https://github.com/user-attachments/assets/3fe2d630-a278-44bc-af1c-3f375af7671b)
 
-<div style="text-indent: 40px;">
-Init will initialize the system as shown in the figure and create fifo will create the pipes if they do not exist and open will open those pipes. For select monitor we would discuss it in detail in the following:
-</div>
+> Init will initialize the system as shown in the figure and create fifo will create the pipes if they do not exist and open will open those pipes. For select monitor we would discuss it in detail in the following:
 
 ### Select Monitor - Main Functionalities
 
@@ -106,7 +102,7 @@ Init will initialize the system as shown in the figure and create fifo will crea
 ![image](https://github.com/user-attachments/assets/6badc6bd-3e3b-465a-ab6f-e366325632ef)
 
 
-This node is responsible for generating targets dynamically, handling signals for target generation, and maintaining communication with other processes through a FIFO (named pipe). Below is the detailed explanation:
+> This node is responsible for generating targets dynamically, handling signals for target generation, and maintaining communication with other processes through a FIFO (named pipe). Below is the detailed explanation:
 
 ### 1. Start
 
@@ -184,7 +180,7 @@ If the timeout has not been reached, the program continues the main loop.
 
 ![image](https://github.com/user-attachments/assets/6fbfbceb-c245-47ca-806f-ed64d8467812)
 
-This node dynamically generates obstacles for a simulation, handles communication with other processes using named pipes (FIFO), and ensures process activity monitoring via a watchdog mechanism. The obstacles are periodically sent to the server so that the environment changes over time or when the obstacle generation key is pressed.
+> This node dynamically generates obstacles for a simulation, handles communication with other processes using named pipes (FIFO), and ensures process activity monitoring via a watchdog mechanism. The obstacles are periodically sent to the server so that the environment changes over time or when the obstacle generation key is pressed.
 
 Below is a detailed explanation of the flowchart:
 
@@ -281,7 +277,7 @@ The obstacle generator node ensures that the environment remains dynamic by peri
 
 #### Overview
 
-The provided schematic represents the main workflow of the dynamic node, which is designed to simulate and control the dynamics of a drone. It highlights the initialization process, communication setup, and the main control loop.
+> The provided schematic represents the main workflow of the dynamic node, which is designed to simulate and control the dynamics of a drone. It highlights the initialization process, communication setup, and the main control loop.
 
 ### Workflow
 
@@ -318,17 +314,17 @@ The node begins by initializing parameters and setting up the environment for th
 
 ![image](https://github.com/user-attachments/assets/68a54f06-4824-42ec-8d3e-cf878508e4ba)
 
-The **dynamic process** in the Drone Simulator, implemented in the `dynamic.c` file, simulates the drone's movement based on **user-applied forces** from the motors and **repulsive forces** from obstacles and geofence boundaries. The drone's **acceleration** and **velocity** are then calculated based on its **mass**, **viscosity** (air resistance), and the applied forces. This process ensures the drone behaves realistically by updating its position, velocity, and forces over time.
+> The **dynamic process** in the Drone Simulator, implemented in the `dynamic.c` file, simulates the drone's movement based on **user-applied forces** from the motors and **repulsive forces** from obstacles and geofence boundaries. The drone's **acceleration** and **velocity** are then calculated based on its **mass**, **viscosity** (air resistance), and the applied forces. This process ensures the drone behaves realistically by updating its position, velocity, and forces over time.
 
 ## Key Components
 
 ### 1. **Motor Force (Input Force)**
 
-The **motor forces** (`fx`, `fy`) are directly controlled by user input, specifying the force applied by the drone's motors in the X and Y directions. These forces define the drone’s desired movement, including directional movements like **up**, **down**, **left**, **right**, and **diagonals**.
+> The **motor forces** (`fx`, `fy`) are directly controlled by user input, specifying the force applied by the drone's motors in the X and Y directions. These forces define the drone’s desired movement, including directional movements like **up**, **down**, **left**, **right**, and **diagonals**.
 
 ### 2. **Repulsive Force (Kathib’s Model)**
 
-The **repulsive force** used for obstacle avoidance is based on **Kathib’s model**. The model applies a **repulsive force** when the drone is within a specified **perception radius** (`rho`) of an obstacle. The force increases as the drone gets closer to the obstacle, pushing the drone away to avoid collisions. The strength of this repulsive force is governed by the **repulsion strength coefficient** (`eta`).
+> The **repulsive force** used for obstacle avoidance is based on **Kathib’s model**. The model applies a **repulsive force** when the drone is within a specified **perception radius** (`rho`) of an obstacle. The force increases as the drone gets closer to the obstacle, pushing the drone away to avoid collisions. The strength of this repulsive force is governed by the **repulsion strength coefficient** (`eta`).
 
 The formula for the repulsive force is based on an inverse-square law:
 
@@ -343,7 +339,7 @@ Where:
 
 ### 3. **Viscosity of Air (`K`)**
 
-The **viscous drag** force (air resistance) opposes the drone’s motion. It is proportional to the drone’s velocity and is calculated using the **viscosity coefficient** (`K`). This drag force slows the drone down as it moves through the air, simulating air resistance.
+> The **viscous drag** force (air resistance) opposes the drone’s motion. It is proportional to the drone’s velocity and is calculated using the **viscosity coefficient** (`K`). This drag force slows the drone down as it moves through the air, simulating air resistance.
 
 ```
 F_drag = -K * velocity
@@ -368,17 +364,17 @@ Where:
 
 ### 5. **Acceleration and Velocity Update**
 
-Once the **total forces** (motor forces + repulsive forces) are calculated, the drone’s **acceleration** is determined based on its mass. The **velocity** and **position** are then updated over time, with air resistance (viscosity) further slowing the drone's motion.
+> Once the **total forces** (motor forces + repulsive forces) are calculated, the drone’s **acceleration** is determined based on its mass. The **velocity** and **position** are then updated over time, with air resistance (viscosity) further slowing the drone's motion.
 
 ### 6. **Geofence Enforcement with Repulsive Effect (`X_max`, `Y_max`)**
 
-The drone must remain within the **geofence boundaries**. If the drone approaches or exceeds these boundaries (`X_max`, `Y_max`), a **repulsive force** is applied to push the drone back within the limits, similar to how it avoids obstacles.
+> The drone must remain within the **geofence boundaries**. If the drone approaches or exceeds these boundaries (`X_max`, `Y_max`), a **repulsive force** is applied to push the drone back within the limits, similar to how it avoids obstacles.
 
 ---
 
 ## Dynamic Process - `update_Drone_dynamics`
 
-The `update_Drone_dynamics()` function is responsible for updating the drone's position, velocity, and acceleration based on user input and the forces applied. The function accounts for the **input forces**, **repulsive forces** from obstacles and geofence boundaries, and the **viscous drag** (air resistance).
+> The `update_Drone_dynamics()` function is responsible for updating the drone's position, velocity, and acceleration based on user input and the forces applied. The function accounts for the **input forces**, **repulsive forces** from obstacles and geofence boundaries, and the **viscous drag** (air resistance).
 
 ### Key Steps:
 
@@ -467,7 +463,7 @@ if (state->drone.y > Y_max) {
 
 ## Parameter File - `parameters.txt`
 
-The behavior of the drone is governed by several key parameters set in the **parameter file** (`parameters.txt`). These parameters define important aspects such as the drone's mass, viscosity, the force limits, and the perception radius for obstacle avoidance.
+> The behavior of the drone is governed by several key parameters set in the **parameter file** (`parameters.txt`). These parameters define important aspects such as the drone's mass, viscosity, the force limits, and the perception radius for obstacle avoidance.
 
 ### Example Parameter File:
 
@@ -500,7 +496,7 @@ d_goal  10.0  # Distance threshold for full attraction (m)
 
 ## Conclusion
 
-The **dynamic process** in `dynamic.c` models the drone's movement by applying **motor forces** and **repulsive forces** for obstacle avoidance and geofence enforcement. The drone’s **acceleration** and **velocity** are influenced by **viscosity**, **mass**, and the applied forces, ensuring realistic motion. The behavior of the drone can be easily adjusted through the **parameter file**, allowing for flexible simulation configurations.
+> The **dynamic process** in `dynamic.c` models the drone's movement by applying **motor forces** and **repulsive forces** for obstacle avoidance and geofence enforcement. The drone’s **acceleration** and **velocity** are influenced by **viscosity**, **mass**, and the applied forces, ensuring realistic motion. The behavior of the drone can be easily adjusted through the **parameter file**, allowing for flexible simulation configurations.
 
 ## Keyboard_Node
 
@@ -508,7 +504,7 @@ The **dynamic process** in `dynamic.c` models the drone's movement by applying *
 # Keyboard-Based GUI and Server Interaction System
 
 ## Overview
-This program facilitates interaction between a **keyboard interface**, **GUI windows**, and a **server** to control actions, display metrics, and manage signals in real-time.
+> This program facilitates interaction between a **keyboard interface**, **GUI windows**, and a **server** to control actions, display metrics, and manage signals in real-time.
 
 ## Features
 1. **Dual GUI Windows:**
@@ -601,7 +597,8 @@ This program provides a robust and user-friendly interface for managing real-tim
 
 ![image](https://github.com/user-attachments/assets/66dbe939-8983-4212-b1f1-0641beac7acb)
 
-The program begins by initializing required resources, including clearing the log file and preparing for inter-process communication.  
+> The program begins by initializing required resources, including clearing the log file and preparing for inter-process communication.  
+
 ### Visualization System
 
 1. **Init:**
