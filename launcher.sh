@@ -89,8 +89,9 @@ echo "Build complete!"
 
 # Start Konsole processes
 konsole --qwindowgeometry 1000x1000 -e ./vis &
+sleep 1   # Delay of 5 seconds
 konsole --qwindowgeometry 900x300 -e ./watchdog &
-sleep 2   # Delay of 5 seconds
+sleep 1   # Delay of 5 seconds
 konsole --qwindowgeometry 922x700 -e ./keyboard &
 
 
