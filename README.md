@@ -1,6 +1,7 @@
 # Drone_Simulator_V1
 
 ## Table of Contents:
+- [System_in_action](#System_in_action)
 - [overview-of-system](#overview-of-system)
 - [Watchdog_process](#Watchdog_process)
 - [Server_Node](#Server_Node)
@@ -11,7 +12,13 @@
 - [Visualizer_Node](#Visualizer_Node)
 - [video](#video)
 - [Contact Information](#contact-information)
+## System_in_action
 
+![image](https://github.com/user-attachments/assets/c97985e6-5255-46af-aa15-7f07394ce1f8)
+
+This drone simulator allows user-controlled movement via a keyboard interface, with real-time updates on force, velocity, position, score, and attempt displayed on the screen. The drone avoids dynamically generated obstacles and collects targets to increase the score, following a modular architecture based on a request-response model. Communication between components, including visualization, keyboard input, obstacle generation, target generation and Dynamic, is handled via named pipes, with a central server managing these interactions and sending signals to coordinate updates. The system is designed for real-time feedback and efficient inter-process communication.
+
+this is a drone simulator system
 ## overview-of-system:
 ### Overall system Overview
 ![image](https://github.com/user-attachments/assets/af120573-d717-4359-9e5f-72b8471cfb19)
@@ -268,7 +275,9 @@ The obstacle generator node ensures that the environment remains dynamic by peri
 
 
 ## Dynamic_Node
+
 **Diagram**
+
 ![image](https://github.com/user-attachments/assets/19548e00-3a30-44f4-a602-3b88d281ea34)
 
 #### Overview
@@ -305,7 +314,9 @@ The node begins by initializing parameters and setting up the environment for th
    - The node loops back to sending the updated drone state to the server.
 
 ### Update Drone Dynamics: 
+
 **Diagram**
+
 ![image](https://github.com/user-attachments/assets/68a54f06-4824-42ec-8d3e-cf878508e4ba)
 
 The **dynamic process** in the Drone Simulator, implemented in the `dynamic.c` file, simulates the drone's movement based on **user-applied forces** from the motors and **repulsive forces** from obstacles and geofence boundaries. The drone's **acceleration** and **velocity** are then calculated based on its **mass**, **viscosity** (air resistance), and the applied forces. This process ensures the drone behaves realistically by updating its position, velocity, and forces over time.
@@ -586,8 +597,11 @@ This program provides a robust and user-friendly interface for managing real-tim
 
 
 ## Visualizer_Node
+
 **Diagram**
+
 ![image](https://github.com/user-attachments/assets/66dbe939-8983-4212-b1f1-0641beac7acb)
+
 The program begins by initializing required resources, including clearing the log file and preparing for inter-process communication.  
 ### Visualization System
 
@@ -654,7 +668,14 @@ The program begins by initializing required resources, including clearing the lo
 ![image](https://github.com/user-attachments/assets/420d8d2f-9ecb-407e-a1b7-690644e86591)
 
 
+
 ## video for the final output:
+
+
+
+https://github.com/user-attachments/assets/4ceccc65-b639-4c72-83a2-41cc41983df4
+
+
 
 ## Contact Information:
 
