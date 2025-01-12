@@ -18,7 +18,6 @@
 
 This drone simulator allows user-controlled movement via a keyboard interface, with real-time updates on force, velocity, position, score, and attempt displayed on the screen. The drone avoids dynamically generated obstacles and collects targets to increase the score, following a modular architecture based on a request-response model. Communication between components, including visualization, keyboard input, obstacle generation, target generation and Dynamic, is handled via named pipes, with a central server managing these interactions and sending signals to coordinate updates. The system is designed for real-time feedback and efficient inter-process communication.
 
-this is a drone simulator system
 ## overview-of-system:
 ### Overall system Overview
 ![image](https://github.com/user-attachments/assets/af120573-d717-4359-9e5f-72b8471cfb19)
