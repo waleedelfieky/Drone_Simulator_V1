@@ -1,3 +1,4 @@
+/*======================================================*/
 #include <ncurses.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -8,30 +9,18 @@
 #include <string.h>
 #include <time.h>
 #include <stdarg.h>
+/*======================================================*/
 
 #define TIMEOUT 8 // Timeout in seconds
-
 #define LOG_FILE "watchdog_log.txt"
 #define LOG_FILE_NAME "log_visualizer.txt"
-
-/*======================================================*/
-// API to update watchdog file
-void update_watchdog_file();
-// API to clear content of log file
-void clear_log_file(const char *filename);
-/*======================================================*/
-// API to appened content in log file
-void append_to_log_file(const char *filename, const char *format, ...);
-/*======================================================*/
 #define PIPE_REQUEST_VISUALIZATION "./pipes/visualizer_Request"
 #define PIPE_RESPONSE_VISUALIZATION "./pipes/visualizer_Respond"
-/*======================================================================*/
-
 #define MAX_TARGETS 10
 #define MAX_OBSTACLES 20
-/*======================================================================*/
 
-/*======================================================================*/
+/*======================================================*/
+
 typedef struct
 {
     float x, y;   // Position
@@ -66,51 +55,18 @@ typedef struct
     char message[128]; // Stores collision or collection messages
     int attemp;
 } SharedState;
+/*======================================================*/
 
+/*======================================================*/
+// API to update watchdog file
+void update_watchdog_file();
+// API to clear content of log file
+void clear_log_file(const char *filename);
+/*======================================================*/
+// API to appened content in log file
+void append_to_log_file(const char *filename, const char *format, ...);
+void display(WINDOW *win, SharedState *state);
 /*======================================================================*/
-
-/*======================================================================*/
-void display(WINDOW *win, SharedState *state)
-{
-    werase(win);
-    wrefresh(win);
-    refresh();
-    
-
-    // Display drone (position received from the drone process)
-    mvwaddch(win, state->drone.y + 2, state->drone.x + 1, '+' | A_BOLD | COLOR_PAIR(1));
-
-    // Display targets
-    for (int i = 0; i < MAX_TARGETS; i++)
-    {
-        if (state->targets[i].active)
-        {
-            mvwaddch(win, state->targets[i].y + 2, state->targets[i].x + 1, state->targets[i].value + '0' | A_BOLD | COLOR_PAIR(2));
-        }
-    }
-
-    // Display obstacles
-    for (int i = 0; i < MAX_OBSTACLES; i++)
-    {
-        if (state->obstacles[i].active)
-        {
-            for (int dx = 0; dx < state->obstacles[i].size; dx++)
-            {
-                for (int dy = 0; dy < state->obstacles[i].size; dy++)
-                {
-                    mvwaddch(win, state->obstacles[i].y + dy + 2, state->obstacles[i].x + dx + 1, 'O' | A_BOLD | COLOR_PAIR(3));
-                }
-            }
-        }
-    }
-
-    // Refresh the window
-    box(win, 0, 0);
-    wrefresh(win);
-}
-
-/*======================================================================*/
-
 int main()
 {
     clear_log_file(LOG_FILE_NAME);
@@ -194,6 +150,47 @@ int main()
 
     return 0;
 }
+
+
+void display(WINDOW *win, SharedState *state)
+{
+    werase(win);
+    wrefresh(win);
+    refresh();
+    
+
+    // Display drone (position received from the drone process)
+    mvwaddch(win, state->drone.y + 2, state->drone.x + 1, '+' | A_BOLD | COLOR_PAIR(1));
+
+    // Display targets
+    for (int i = 0; i < MAX_TARGETS; i++)
+    {
+        if (state->targets[i].active)
+        {
+            mvwaddch(win, state->targets[i].y + 2, state->targets[i].x + 1, state->targets[i].value + '0' | A_BOLD | COLOR_PAIR(2));
+        }
+    }
+
+    // Display obstacles
+    for (int i = 0; i < MAX_OBSTACLES; i++)
+    {
+        if (state->obstacles[i].active)
+        {
+            for (int dx = 0; dx < state->obstacles[i].size; dx++)
+            {
+                for (int dy = 0; dy < state->obstacles[i].size; dy++)
+                {
+                    mvwaddch(win, state->obstacles[i].y + dy + 2, state->obstacles[i].x + dx + 1, 'O' | A_BOLD | COLOR_PAIR(3));
+                }
+            }
+        }
+    }
+
+    // Refresh the window
+    box(win, 0, 0);
+    wrefresh(win);
+}
+
 
 void update_watchdog_file()
 {

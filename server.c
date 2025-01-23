@@ -1,3 +1,4 @@
+//==========================================================
 #include <stdio.h>
 #include <string.h>
 #include <fcntl.h>
@@ -13,25 +14,25 @@
 #include <string.h>
 #include <time.h>
 #include <stdarg.h>
+//==========================================================
 
+//==========================================================
+//define macros
 #define LOG_FILE "watchdog_log.txt"
 #define LOG_FILE_NAME "log_server.txt"
-// #define LOG_FILE_NAME "log.txt"
-void update_watchdog_file();
-
 #define READWRITEPERMISSION 0666
 #define DEFAULT_FDVALUE 0
 #define pair 2
 #define NUMBER_OF_CLIENTS 4
-
 #define keyboard_pipe_index 0
 #define visualizer_pipe_index 1
 #define drone_pipe_index 2
 #define obsticale_pipe_index 3
-
 #define MAX_TARGETS 10
 #define MAX_OBSTACLES 20
 #define TIMEOUT 8 // Timeout in seconds
+//==========================================================
+//structures
 
 typedef struct
 {
@@ -68,17 +69,6 @@ typedef struct
     int attemp;
 } SharedState;
 
-SharedState state = {0};
-// Set the first target to be collected as 1
-SharedState reset_state = {0};
-
-Target target_generator_reader[MAX_TARGETS];
-Obstacle obsticale_generator_reader[MAX_OBSTACLES];
-
-const int NUMBER_OF_PIPES = NUMBER_OF_CLIENTS * 2;
-
-int closed_pipe_flags[NUMBER_OF_CLIENTS] = {0};
-
 struct PIPES_T
 {
     char *request_path;
@@ -88,25 +78,11 @@ struct PIPES_T
     int fd_response;
 };
 
-/*=========================================================*/
-/*=========================================================*/
-// global variables
-pid_t pid_targt_generator;
-pid_t pid_obsticale_generator;
-// define file descriptors varibales
-int fd_target_generator;
-int fd_obsticale_generator;
-// define the paths
-char *target_pipe_generator = "./pipes/targetgenerator";
-char *obsticale_pipe_generator = "./pipes/obsticalegenerator";
-/*=========================================================*/
-// global varibales contains the fifos info
-struct PIPES_T keyboard_pipe = {"./pipes/keyboard_Request", "./pipes/keyboard_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
-struct PIPES_T visualizer_pipe = {"./pipes/visualizer_Request", "./pipes/visualizer_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
-struct PIPES_T drone_pipe = {"./pipes/drone_Request", "./pipes/drone_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
-struct PIPES_T obsticale_pipe = {"./pipes/obsticale_Request", "./pipes/obsticale_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
-struct PIPES_T *pipes_paths[NUMBER_OF_CLIENTS] = {&keyboard_pipe, &visualizer_pipe, &drone_pipe, &obsticale_pipe};
-
+//=====================================================================
+//APIs
+/*======================================================*/
+//function to update watchdog file
+void update_watchdog_file();
 /*======================================================*/
 // api create all fifo special files
 void create_fifos(struct PIPES_T **pipes_paths, int number_of_clients, int permission);
@@ -117,16 +93,20 @@ void open_fifos(struct PIPES_T **pipes_paths, int number_of_clients);
 // the purpose of this function is to see which request is filled with data then if it's ready call the crosspoinding function
 void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients);
 /*======================================================*/
+//Helper funcyiond
 int max_request_fd(struct PIPES_T **pipes_paths, int number_of_clients);
-/*======================================================*/
 void fill_read_fds(struct PIPES_T **pipes_paths, int number_of_clients, fd_set *readfds_l);
 /*======================================================*/
+//associate every key pressed with certin tasks
 void keyboard_pipe_Work(char *keyboard_input);
 /*======================================================*/
+//initlize the system
 void init(void);
 /*======================================================*/
+//send signal to target
 void send_target_signal();
 /*======================================================*/
+//send signal to obsticale
 void send_obsticale_signal();
 /*======================================================*/
 // API to clear content of log file
@@ -135,6 +115,36 @@ void clear_log_file(const char *filename);
 // API to appened content in log file
 void append_to_log_file(const char *filename, const char *format, ...);
 /*======================================================*/
+
+/*======================================================*/
+//Create global varibales
+SharedState state = {0};
+// Set the first target to be collected as 1
+SharedState reset_state = {0};
+Target target_generator_reader[MAX_TARGETS];
+Obstacle obsticale_generator_reader[MAX_OBSTACLES];
+const int NUMBER_OF_PIPES = NUMBER_OF_CLIENTS * 2;
+int closed_pipe_flags[NUMBER_OF_CLIENTS] = {0};
+pid_t pid_targt_generator;
+pid_t pid_obsticale_generator;
+// define file descriptors varibales
+int fd_target_generator;
+int fd_obsticale_generator;
+// define the paths
+char *target_pipe_generator = "./pipes/targetgenerator";
+char *obsticale_pipe_generator = "./pipes/obsticalegenerator";
+
+// global varibales contains the fifos info
+struct PIPES_T keyboard_pipe = {"./pipes/keyboard_Request", "./pipes/keyboard_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
+struct PIPES_T visualizer_pipe = {"./pipes/visualizer_Request", "./pipes/visualizer_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
+struct PIPES_T drone_pipe = {"./pipes/drone_Request", "./pipes/drone_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
+struct PIPES_T obsticale_pipe = {"./pipes/obsticale_Request", "./pipes/obsticale_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
+struct PIPES_T *pipes_paths[NUMBER_OF_CLIENTS] = {&keyboard_pipe, &visualizer_pipe, &drone_pipe, &obsticale_pipe};
+/*======================================================*/
+
+
+
+
 int main()
 {
     init();
@@ -144,6 +154,9 @@ int main()
     select_monitor(pipes_paths, NUMBER_OF_CLIENTS);
     return 0;
 }
+
+
+
 
 /*==========================================*/
 void init(void)

@@ -69,6 +69,9 @@ create_pipe $OBSTACLE_RESPONSE_PIPE
 create_pipe $TARGET_PIPE_GENERATOR
 create_pipe $OBSTACLE_PIPE_GENERATOR
 
+# Clean the project (optional, if Makefile has a clean target)
+echo "Cleaning the project..."
+make clean
 
 # Build the project using the Makefile
 echo "Building the project..."

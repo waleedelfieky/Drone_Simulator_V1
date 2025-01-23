@@ -1,3 +1,4 @@
+//===========================================================
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -7,20 +8,26 @@
 #include <dirent.h>
 #include <string.h>
 #include <signal.h>
+//===========================================================
 
+//===========================================================
 #define LOG_FILE "watchdog_log.txt"
 #define TEMP_FILE "temp_log.txt" // Ensure TEMP_FILE is properly defined
-
 #define TIMEOUT 10 // Timeout in seconds
+//===========================================================
 
+//===========================================================
 void clear_log_file();
 void get_process_name(pid_t pid, char *process_name, size_t size);
 void check_processes();
 void terminate_all_processes();
+//===========================================================
 
 
+//===========================================================
 const char *process_names[] = {"vis", "keyboard", "obsticalegenerator", "server", "targetgenerator", "dynamic"};
 const int process_count = sizeof(process_names) / sizeof(process_names[0]);
+//===========================================================
 
 
 int main() {

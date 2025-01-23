@@ -1,3 +1,4 @@
+/*======================================================================*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -7,14 +8,15 @@
 #include <sys/file.h>
 #include <time.h>
 #include <stdarg.h>
-
+/*======================================================================*/
+//define macros
 #define TIMEOUT 3 // Timeout in seconds
 #define LOG_FILE "watchdog_log.txt"
 #define LOG_FILE_NAME "log_keyboard.txt"
 #define MAX_TARGETS 10
 #define MAX_OBSTACLES 20
-
 /*======================================================================*/
+//define structures
 typedef struct
 {
     float x, y;   // Position
@@ -50,6 +52,8 @@ typedef struct
     int attemp;
 } SharedState;
 
+//=========================================================
+//APIs decleration
 /*======================================================*/
 // API to update watchdog file
 void update_watchdog_file();
@@ -60,6 +64,7 @@ void clear_log_file(const char *filename);
 // API to appened content in log file
 void append_to_log_file(const char *filename, const char *format, ...);
 /*======================================================*/
+
 int main()
 {
     // clear log content
