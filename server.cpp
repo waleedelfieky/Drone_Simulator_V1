@@ -15,24 +15,40 @@
 #include <time.h>
 #include <stdarg.h>
 //==========================================================
+// DDS headers
+#include "Generated/TargetsPubSubTypes.hpp"
+#include "Generated/ObstaclesPubSubTypes.hpp"
+
+#include <chrono>
+#include <thread>
+
+#include <fastdds/dds/domain/DomainParticipant.hpp>
+#include <fastdds/dds/domain/DomainParticipantFactory.hpp>
+#include <fastdds/dds/subscriber/DataReader.hpp>
+#include <fastdds/dds/subscriber/DataReaderListener.hpp>
+#include <fastdds/rtps/transport/shared_mem/SharedMemTransportDescriptor.hpp>
+#include <fastdds/dds/subscriber/qos/DataReaderQos.hpp>
+#include <fastdds/dds/subscriber/SampleInfo.hpp>
+#include <fastdds/dds/subscriber/Subscriber.hpp>
+#include <fastdds/dds/topic/TypeSupport.hpp>
 
 //==========================================================
-//define macros
+// define macros
 #define LOG_FILE "watchdog_log.txt"
 #define LOG_FILE_NAME "log_server.txt"
 #define READWRITEPERMISSION 0666
 #define DEFAULT_FDVALUE 0
 #define pair 2
-#define NUMBER_OF_CLIENTS 4
+#define NUMBER_OF_CLIENTS 3 // Number of clients
 #define keyboard_pipe_index 0
 #define visualizer_pipe_index 1
 #define drone_pipe_index 2
-#define obsticale_pipe_index 3
 #define MAX_TARGETS 10
 #define MAX_OBSTACLES 20
 #define TIMEOUT 8 // Timeout in seconds
 //==========================================================
-//structures
+
+// structures
 
 typedef struct
 {
@@ -46,7 +62,6 @@ typedef struct
     int x, y;
     int value; // Value from 1 to 9
     int active;
-    char action; // q (quit) or r (reload game), s (suspend game)
 } Target;
 
 typedef struct
@@ -54,7 +69,6 @@ typedef struct
     int x, y;
     int size;
     int active;
-    char action; // q (quit) or r (reload game), s (suspend game)
 } Obstacle;
 
 typedef struct
@@ -71,17 +85,17 @@ typedef struct
 
 struct PIPES_T
 {
-    char *request_path;
-    char *response_path;
+    const char *request_path;
+    const char *response_path;
     int permission;
     int fd_request;
     int fd_response;
 };
 
 //=====================================================================
-//APIs
+// APIs
 /*======================================================*/
-//function to update watchdog file
+// function to update watchdog file
 void update_watchdog_file();
 /*======================================================*/
 // api create all fifo special files
@@ -93,20 +107,20 @@ void open_fifos(struct PIPES_T **pipes_paths, int number_of_clients);
 // the purpose of this function is to see which request is filled with data then if it's ready call the crosspoinding function
 void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients);
 /*======================================================*/
-//Helper funcyiond
+// Helper funcyiond
 int max_request_fd(struct PIPES_T **pipes_paths, int number_of_clients);
 void fill_read_fds(struct PIPES_T **pipes_paths, int number_of_clients, fd_set *readfds_l);
 /*======================================================*/
-//associate every key pressed with certin tasks
+// associate every key pressed with certin tasks
 void keyboard_pipe_Work(char *keyboard_input);
 /*======================================================*/
-//initlize the system
+// initlize the system
 void init(void);
 /*======================================================*/
-//send signal to target
+// send signal to target
 void send_target_signal();
 /*======================================================*/
-//send signal to obsticale
+// send signal to obsticale
 void send_obsticale_signal();
 /*======================================================*/
 // API to clear content of log file
@@ -117,33 +131,369 @@ void append_to_log_file(const char *filename, const char *format, ...);
 /*======================================================*/
 
 /*======================================================*/
-//Create global varibales
+// Create global varibales
 SharedState state = {0};
 // Set the first target to be collected as 1
 SharedState reset_state = {0};
-Target target_generator_reader[MAX_TARGETS];
-Obstacle obsticale_generator_reader[MAX_OBSTACLES];
+
+Target generated_targets[MAX_TARGETS];
+Obstacle generated_obsticales[MAX_OBSTACLES];
+
 const int NUMBER_OF_PIPES = NUMBER_OF_CLIENTS * 2;
 int closed_pipe_flags[NUMBER_OF_CLIENTS] = {0};
-pid_t pid_targt_generator;
-pid_t pid_obsticale_generator;
-// define file descriptors varibales
-int fd_target_generator;
-int fd_obsticale_generator;
-// define the paths
-char *target_pipe_generator = "./pipes/targetgenerator";
-char *obsticale_pipe_generator = "./pipes/obsticalegenerator";
 
 // global varibales contains the fifos info
 struct PIPES_T keyboard_pipe = {"./pipes/keyboard_Request", "./pipes/keyboard_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
 struct PIPES_T visualizer_pipe = {"./pipes/visualizer_Request", "./pipes/visualizer_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
 struct PIPES_T drone_pipe = {"./pipes/drone_Request", "./pipes/drone_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
-struct PIPES_T obsticale_pipe = {"./pipes/obsticale_Request", "./pipes/obsticale_Respond", READWRITEPERMISSION, DEFAULT_FDVALUE, DEFAULT_FDVALUE};
-struct PIPES_T *pipes_paths[NUMBER_OF_CLIENTS] = {&keyboard_pipe, &visualizer_pipe, &drone_pipe, &obsticale_pipe};
+struct PIPES_T *pipes_paths[NUMBER_OF_CLIENTS] = {&keyboard_pipe, &visualizer_pipe, &drone_pipe};
 /*======================================================*/
+// DDS classes
+// unpack the namespaces here to use it later
+using namespace eprosima::fastdds::dds;
+using namespace eprosima::fastdds::rtps;
 
+// Subscriber Targets class
+class TargetsSubscriber
+{
+private:
+    DomainParticipant *participant_;
 
+    Subscriber *subscriber_;
 
+    DataReader *reader_;
+
+    Topic *topic_;
+
+    TypeSupport type_;
+
+    class SubListener : public DataReaderListener
+    {
+    public:
+        SubListener()
+            : samples_(0)
+        {
+        }
+
+        ~SubListener() override
+        {
+        }
+
+        void on_subscription_matched(
+            DataReader *reader,
+            const SubscriptionMatchedStatus &info) override
+        {
+            if (info.current_count_change == 1)
+            {
+                std::cout << "Subscriber matched." << std::endl;
+                eprosima::fastdds::rtps::LocatorList locators;
+                reader->get_listening_locators(locators);
+                for (const eprosima::fastdds::rtps::Locator &locator : locators)
+                {
+                    print_transport_protocol(locator);
+                }
+            }
+            else if (info.current_count_change == -1)
+            {
+                std::cout << "Subscriber unmatched." << std::endl;
+            }
+            else
+            {
+                std::cout << info.current_count_change
+                          << " is not a valid value for SubscriptionMatchedStatus current count change" << std::endl;
+            }
+        }
+
+        void on_data_available(DataReader *reader) override
+        {
+            SampleInfo info;
+            if (reader->take_next_sample(&targets_, &info) == eprosima::fastdds::dds::RETCODE_OK)
+            {
+                if (info.valid_data)
+                {
+                    samples_++;
+                    std::cout << "Received " << targets_.targets_number() << " targets:" << std::endl;
+
+                    // Process each target
+                    for (size_t i = 0; i < targets_.targets_x().size(); ++i)
+                    {
+                        generated_targets[i].x = targets_.targets_x()[i];
+                        generated_targets[i].y = targets_.targets_y()[i];
+                        generated_targets[i].value = i;
+                        generated_targets[i].active = 1;
+                        std::cout << "Target " << i + 1 << ": ("
+                                  << generated_targets[i].x << ", "
+                                  << generated_targets[i].y << ")" << std::endl;
+
+                        // assign the reccieved data to the global array of struct that would be send later to the other processes
+                        // this assignation happens under condition that the flag is matched
+                        memcpy(state.targets, generated_targets, sizeof(generated_targets));
+                    }
+                }
+            }
+        }
+
+    public:
+        Targets targets_;
+
+        std::atomic_int samples_;
+
+    private:
+        void print_transport_protocol(const eprosima::fastdds::rtps::Locator &locator)
+        {
+            switch (locator.kind)
+            {
+            case LOCATOR_KIND_UDPv4:
+                std::cout << "Using UDPv4" << std::endl;
+                break;
+            case LOCATOR_KIND_UDPv6:
+                std::cout << "Using UDPv6" << std::endl;
+                break;
+            case LOCATOR_KIND_SHM:
+                std::cout << "Using Shared Memory" << std::endl;
+                break;
+            default:
+                std::cout << "Unknown Transport" << std::endl;
+                break;
+            }
+        }
+
+    } listener_;
+
+public:
+    TargetsSubscriber()
+        : participant_(nullptr), subscriber_(nullptr), topic_(nullptr), reader_(nullptr), type_(new TargetsPubSubType())
+    {
+    }
+
+    virtual ~TargetsSubscriber()
+    {
+        if (reader_ != nullptr)
+        {
+            subscriber_->delete_datareader(reader_);
+        }
+        if (topic_ != nullptr)
+        {
+            participant_->delete_topic(topic_);
+        }
+        if (subscriber_ != nullptr)
+        {
+            participant_->delete_subscriber(subscriber_);
+        }
+        DomainParticipantFactory::get_instance()->delete_participant(participant_);
+    }
+
+    //! Initialize the subscriber
+    bool init()
+    {
+        DomainParticipantQos participantQos;
+        participantQos.name("Participant_subscriber");
+
+        participant_ = DomainParticipantFactory::get_instance()->create_participant(1, participantQos);
+
+        if (participant_ == nullptr)
+        {
+            return false;
+        }
+
+        // Register the Type
+        type_.register_type(participant_);
+
+        // Create the subscriptions Topic
+        topic_ = participant_->create_topic("TargetsTopic", type_.get_type_name(), TOPIC_QOS_DEFAULT);
+
+        if (topic_ == nullptr)
+        {
+            return false;
+        }
+
+        // Create the Subscriber
+        subscriber_ = participant_->create_subscriber(SUBSCRIBER_QOS_DEFAULT, nullptr);
+
+        if (subscriber_ == nullptr)
+        {
+            return false;
+        }
+
+        // Create the DataReader
+        reader_ = subscriber_->create_datareader(topic_, DATAREADER_QOS_DEFAULT, &listener_);
+
+        if (reader_ == nullptr)
+        {
+            return false;
+        }
+
+        return true;
+    }
+};
+
+// Obsticale Subscriber class
+
+class ObstaclesSubscriber
+{
+private:
+    DomainParticipant *participant_;
+    Subscriber *subscriber_;
+    DataReader *reader_;
+    Topic *topic_;
+    TypeSupport type_;
+
+    class SubListener : public DataReaderListener
+    {
+    public:
+        SubListener()
+            : samples_(0)
+        {
+        }
+
+        ~SubListener() override
+        {
+        }
+
+        void on_subscription_matched(
+            DataReader *reader,
+            const SubscriptionMatchedStatus &info) override
+        {
+            if (info.current_count_change == 1)
+            {
+                std::cout << "Subscriber matched." << std::endl;
+                eprosima::fastdds::rtps::LocatorList locators;
+                reader->get_listening_locators(locators);
+                for (const eprosima::fastdds::rtps::Locator &locator : locators)
+                {
+                    print_transport_protocol(locator);
+                }
+            }
+            else if (info.current_count_change == -1)
+            {
+                std::cout << "Subscriber unmatched." << std::endl;
+            }
+            else
+            {
+                std::cout << info.current_count_change
+                          << " is not a valid value for SubscriptionMatchedStatus current count change" << std::endl;
+            }
+        }
+
+        void on_data_available(DataReader *reader) override
+        {
+            SampleInfo info;
+            if (reader->take_next_sample(&obstacles_, &info) == eprosima::fastdds::dds::RETCODE_OK)
+            {
+                if (info.valid_data)
+                {
+                    samples_++;
+                    std::cout << "Received " << obstacles_.obstacles_number() << " obstacles:" << std::endl;
+
+                    // Process each obstacle
+                    for (size_t i = 0; i < obstacles_.obstacles_x().size(); ++i)
+                    {
+                        generated_obsticales[i].x = obstacles_.obstacles_x()[i];
+                        generated_obsticales[i].y = obstacles_.obstacles_y()[i];
+                        generated_obsticales[i].size = 1;
+                        generated_obsticales[i].active = 1;
+                        std::cout << "Obstacle " << i + 1 << ": ("
+                                  << generated_obsticales[i].x << ", "
+                                  << generated_obsticales[i].y << ")" << std::endl;
+                        // Assign new target values to the global array of struct when flag is matched
+                        memcpy(state.obstacles, generated_obsticales, sizeof(generated_obsticales));
+                    }
+                }
+            }
+        }
+
+    public:
+        Obstacles obstacles_;
+        std::atomic_int samples_;
+
+    private:
+        void print_transport_protocol(const eprosima::fastdds::rtps::Locator &locator)
+        {
+            switch (locator.kind)
+            {
+            case LOCATOR_KIND_UDPv4:
+                std::cout << "Using UDPv4" << std::endl;
+                break;
+            case LOCATOR_KIND_UDPv6:
+                std::cout << "Using UDPv6" << std::endl;
+                break;
+            case LOCATOR_KIND_SHM:
+                std::cout << "Using Shared Memory" << std::endl;
+                break;
+            default:
+                std::cout << "Unknown Transport" << std::endl;
+                break;
+            }
+        }
+
+    } listener_;
+
+public:
+    ObstaclesSubscriber()
+        : participant_(nullptr), subscriber_(nullptr), topic_(nullptr), reader_(nullptr), type_(new ObstaclesPubSubType())
+    {
+    }
+
+    virtual ~ObstaclesSubscriber()
+    {
+        if (reader_ != nullptr)
+        {
+            subscriber_->delete_datareader(reader_);
+        }
+        if (topic_ != nullptr)
+        {
+            participant_->delete_topic(topic_);
+        }
+        if (subscriber_ != nullptr)
+        {
+            participant_->delete_subscriber(subscriber_);
+        }
+        DomainParticipantFactory::get_instance()->delete_participant(participant_);
+    }
+
+    //! Initialize the subscriber
+    bool init()
+    {
+        DomainParticipantQos participantQos;
+        participantQos.name("Participant_subscriber");
+
+        participant_ = DomainParticipantFactory::get_instance()->create_participant(1, participantQos);
+
+        if (participant_ == nullptr)
+        {
+            return false;
+        }
+
+        // Register the Type
+        type_.register_type(participant_);
+
+        // Create the subscriptions Topic
+        topic_ = participant_->create_topic("ObstaclesTopic", type_.get_type_name(), TOPIC_QOS_DEFAULT);
+
+        if (topic_ == nullptr)
+        {
+            return false;
+        }
+
+        // Create the Subscriber
+        subscriber_ = participant_->create_subscriber(SUBSCRIBER_QOS_DEFAULT, nullptr);
+
+        if (subscriber_ == nullptr)
+        {
+            return false;
+        }
+
+        // Create the DataReader
+        reader_ = subscriber_->create_datareader(topic_, DATAREADER_QOS_DEFAULT, &listener_);
+
+        if (reader_ == nullptr)
+        {
+            return false;
+        }
+
+        return true;
+    }
+};
 
 int main()
 {
@@ -152,15 +502,21 @@ int main()
     create_fifos(pipes_paths, NUMBER_OF_CLIENTS, READWRITEPERMISSION);
     open_fifos(pipes_paths, NUMBER_OF_CLIENTS);
     select_monitor(pipes_paths, NUMBER_OF_CLIENTS);
+
     return 0;
 }
-
-
-
 
 /*==========================================*/
 void init(void)
 {
+    // create instance of Subscriber target and obstacles
+    std::cout << "Starting Obstacle subscriber." << std::endl;
+    ObstaclesSubscriber *my_obstacles_sub = new ObstaclesSubscriber();
+    my_obstacles_sub->init();
+    std::cout << "Starting Target subscriber." << std::endl;
+    TargetsSubscriber *my_targets_sub = new TargetsSubscriber();
+    my_targets_sub->init();
+
     clear_log_file(LOG_FILE_NAME);
     // assign default key as "stop"
     // strcpy(state.key_pressed,"stop");
@@ -171,53 +527,7 @@ void init(void)
     state.drone.vx = 0;
     state.drone.vy = 0;
     state.next_target = 1;
-    state.attemp=1;
-
-    // 2 temporary pipes for target generator and obsticale generator
-
-    // make the fifo
-    // create the fifo but check if it's already exist
-    if (access(target_pipe_generator, F_OK) != 0)
-    {
-        if (mkfifo(target_pipe_generator, 0666) == -1)
-        {
-            perror("Error creating target_pipe_generator FIFO");
-            exit(EXIT_FAILURE);
-        }
-    }
-    if (access(obsticale_pipe_generator, F_OK) != 0)
-    {
-        if (mkfifo(obsticale_pipe_generator, 0666) == -1)
-        {
-            perror("Error creating target_pipe_generator FIFO");
-            exit(EXIT_FAILURE);
-        }
-    }
-    printf("create both pipes success sucess success\n");
-
-    // now we are ready to open both fifos and send and recieve data
-    //  we will read the pid of the processes so open fifos as read mood
-    fd_target_generator = open(target_pipe_generator, O_RDONLY);
-    printf("open for target sucess success\n");
-    append_to_log_file(LOG_FILE_NAME, "open for first target generaotor pipe successfully done\n");
-    // read the pid and save it into our global varibale
-    read(fd_target_generator, &pid_targt_generator, sizeof(pid_t));
-    printf("read for target success sucess success\n");
-    // print pid to make sure
-    printf("the pid of target generation is: %d\n", pid_targt_generator);
-    append_to_log_file(LOG_FILE_NAME, "read of tareget PID done succesffuly and pid is %d\n", pid_targt_generator);
-    // close(fd_target_generator);
-    // printf("close for target sucess success\n");
-
-    fd_obsticale_generator = open(obsticale_pipe_generator, O_RDONLY);
-    printf("open for obsticale sucess success\n");
-    append_to_log_file(LOG_FILE_NAME, "successfuly open pipe of obsicale for first time generation\n");
-    read(fd_obsticale_generator, &pid_obsticale_generator, sizeof(pid_t));
-    printf("read for obsticale sucess success\n");
-    printf("the pid of obsticale generation is: %d\n", pid_obsticale_generator);
-    append_to_log_file(LOG_FILE_NAME, "read of obsricales PID is done succesffuly and pid is %d\n", pid_obsticale_generator);
-    send_target_signal();
-    //send_obsticale_signal();
+    state.attemp = 1;
 }
 /*======================================================*/
 
@@ -317,7 +627,7 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
 
     time_t last_logged_time = 0;
 
-    //state.next_target = 1; // Set the first target to be collected as 1
+    // state.next_target = 1; // Set the first target to be collected as 1
 
     while (1)
     {
@@ -365,16 +675,16 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                     }
                     // response to the keyboard by the struct
                     write(pipes_paths[i]->fd_response, &state, sizeof(state));
-                    printf("===========================================================\n");
-                    printf("Drone -> Position: (%.2f, %.2f), Velocity: (%.2f, %.2f), Force: (%.2f, %.2f)\n"
-                           "Score: %d\n"
-                           "Message: %s\n",
-                           state.drone.x, state.drone.y,
-                           state.drone.vx, state.drone.vy,
-                           state.drone.fx, state.drone.fy,
-                           state.score,
-                           state.message);
-                    printf("===========================================================\n");
+                    // printf("===========================================================\n");
+                    //  printf("Drone -> Position: (%.2f, %.2f), Velocity: (%.2f, %.2f), Force: (%.2f, %.2f)\n"
+                    //         "Score: %d\n"
+                    //         "Message: %s\n",
+                    //         state.drone.x, state.drone.y,
+                    //         state.drone.vx, state.drone.vy,
+                    //         state.drone.fx, state.drone.fy,
+                    //         state.score,
+                    //         state.message);
+                    //  printf("===========================================================\n");
                     keyboard_pipe_Work(buffer);
                 }
 
@@ -467,13 +777,6 @@ void select_monitor(struct PIPES_T **pipes_paths, int number_of_clients)
                     // respond to the drone with the new struct
                     write(pipes_paths[i]->fd_response, &state, sizeof(state));
                     strcpy(state.key_pressed, "default");
-                }
-                else if (i == obsticale_pipe_index)
-                {
-                    // get obsticale request
-                    read(pipes_paths[i]->fd_request, obsticale_generator_reader, sizeof(obsticale_generator_reader));
-                    // update it in our main struct
-                    memcpy(state.obstacles, obsticale_generator_reader, sizeof(obsticale_generator_reader));
                 }
             }
 
@@ -574,18 +877,19 @@ void keyboard_pipe_Work(char *keyboard_input)
         append_to_log_file(LOG_FILE_NAME, "key command on server down right\n");
         // Add your action for "down-right"
         strcpy(state.key_pressed, "reset");
-        //set score to zero
-        state.score=0;
-        state.next_target=1;
-        state.attemp=state.attemp+1;
+        // set score to zero
+        state.score = 0;
+        state.next_target = 1;
+        state.attemp = state.attemp + 1;
         // send signals to generat new targets and obsticales
         send_target_signal();
         append_to_log_file(LOG_FILE_NAME, "targets generated successfuly\n");
         send_obsticale_signal();
         append_to_log_file(LOG_FILE_NAME, "obsticales generated successfuly\n");
     }
-    else if(strcmp(keyboard_input, "request_data")==0){
-        //printf("struct is sent successfully to keyboard\n");
+    else if (strcmp(keyboard_input, "request_data") == 0)
+    {
+        // printf("struct is sent successfully to keyboard\n");
     }
     else
     {
@@ -597,47 +901,15 @@ void keyboard_pipe_Work(char *keyboard_input)
 
 void send_target_signal()
 {
-    // send signal to the target generator pipe
-    if (kill(pid_targt_generator, SIGUSR1) == -1)
-    {
-        perror("Failed to send SIGUSR1");
-        append_to_log_file(LOG_FILE_NAME, "Failed to send SIGUSR1\n");
-        exit(EXIT_FAILURE);
-    }
-    printf("SIGUSR1 sent to process %d.\n", pid_targt_generator);
-    append_to_log_file(LOG_FILE_NAME, "SIGUSR1 sent to process %d.\n", pid_targt_generator);
-    // sleep(3);
-    read(fd_target_generator, target_generator_reader, sizeof(target_generator_reader));
-    // output to test
-    for (int i = 1; i < MAX_TARGETS; i++)
-    {
-        printf("x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", target_generator_reader[i].x, target_generator_reader[i].y, target_generator_reader[i].value, target_generator_reader[i].active, target_generator_reader[i].action);
-        append_to_log_file(LOG_FILE_NAME, "server received targets for first time is obsticale number [%d] x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", i, target_generator_reader[i].x, target_generator_reader[i].y, target_generator_reader[i].value, target_generator_reader[i].active, target_generator_reader[i].action);
-    }
-    // upadte in global varibale
-    memcpy(state.targets, target_generator_reader, sizeof(target_generator_reader));
+    // implement our logic here
+    //  upadte in global varibale
+    // memcpy(state.targets, target_generator_reader, sizeof(target_generator_reader));
 }
 
 void send_obsticale_signal()
 {
-    // send signal to the obsticale generator pipe
-    if (kill(pid_obsticale_generator, SIGUSR1) == -1)
-    {
-        perror("Failed to send SIGUSR1");
-        append_to_log_file(LOG_FILE_NAME, "Failed to send SIGUSR1\n");
-        exit(EXIT_FAILURE);
-    }
-    printf("SIGUSR1 sent to process %d.\n", pid_obsticale_generator);
-    append_to_log_file(LOG_FILE_NAME, "SIGUSR1 sent to process %d.\n", pid_obsticale_generator);
-    // sleep(3);
-    read(fd_obsticale_generator, obsticale_generator_reader, sizeof(obsticale_generator_reader));
-    // output to test
-    for (int i = 1; i < MAX_TARGETS; i++)
-    {
-        printf("x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", obsticale_generator_reader[i].x, obsticale_generator_reader[i].y, obsticale_generator_reader[i].size, obsticale_generator_reader[i].active, obsticale_generator_reader[i].action);
-        append_to_log_file(LOG_FILE_NAME, "obsticle received for first time is number [ %d] x is: %d, y is: %d, value is: %d, active is: %d, action is: %d\n", i, obsticale_generator_reader[i].x, obsticale_generator_reader[i].y, obsticale_generator_reader[i].size, obsticale_generator_reader[i].active, obsticale_generator_reader[i].action);
-    }
-    memcpy(state.obstacles, obsticale_generator_reader, sizeof(obsticale_generator_reader));
+    // implement our logic here
+    // memcpy(state.obstacles, obsticale_generator_reader, sizeof(obsticale_generator_reader));
 }
 
 void update_watchdog_file()

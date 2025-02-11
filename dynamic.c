@@ -50,14 +50,12 @@ typedef struct {
     int x, y;
     int value; // Value from 1 to 9
     int active;
-    char action; // q (quit) or r (reload game), s (suspend game)
 } Target;
 
 typedef struct {
     int x, y;
     int size;
     int active;
-    char action; // q (quit) or r (reload game), s (suspend game)
 } Obstacle;
 
 typedef struct {

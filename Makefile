@@ -1,22 +1,22 @@
 # Define the compiler and flags
-CC = gcc
-CFLAGS = -lm
+CC = g++
+CFLAGS = -g -I/usr/include/fastdds -I/usr/include/fastcdr -L/usr/local/lib -lfastdds -lfastcdr -lpthread
 NCURSES_FLAGS = -lncurses
 
 # Define the targets and their source files
-all: server dynamic obsticalegenerator targetgenerator keyboard vis watchdog
+all: server ObstaclesPublisher TargetsPublisher dynamic keyboard vis watchdog
 
-server: server.c
-	$(CC) $< -o $@ $(CFLAGS)
+server: server.cpp Generated/TargetsPubSubTypes.cxx Generated/TargetsTypeObjectSupport.cxx Generated/ObstaclesPubSubTypes.cxx Generated/ObstaclesTypeObjectSupport.cxx
+	$(CC) $< Generated/TargetsPubSubTypes.cxx Generated/TargetsTypeObjectSupport.cxx Generated/ObstaclesPubSubTypes.cxx Generated/ObstaclesTypeObjectSupport.cxx -o $@ $(CFLAGS)
+
+ObstaclesPublisher: ObstaclesPublisher.cpp Generated/ObstaclesPubSubTypes.cxx Generated/ObstaclesTypeObjectSupport.cxx
+	$(CC) $< Generated/ObstaclesPubSubTypes.cxx Generated/ObstaclesTypeObjectSupport.cxx -o $@ $(CFLAGS)
+
+TargetsPublisher: TargetsPublisher.cpp Generated/TargetsPubSubTypes.cxx Generated/TargetsTypeObjectSupport.cxx
+	$(CC) $< Generated/TargetsPubSubTypes.cxx Generated/TargetsTypeObjectSupport.cxx -o $@ $(CFLAGS)
 
 dynamic: dynamic.c
 	$(CC) $< -o $@ $(CFLAGS)
-
-obsticalegenerator: obsticalegenerator.c
-	$(CC) $< -o $@
-
-targetgenerator: targetgenerator.c
-	$(CC) $< -o $@
 
 keyboard: keyboard.c
 	$(CC) $< -o $@ $(NCURSES_FLAGS)
@@ -29,5 +29,5 @@ watchdog: watchdog.c
 
 # Clean up generated files
 clean:
-	rm -f server dynamic obsticalegenerator targetgenerator keyboard vis watchdog
+	rm -f server ObstaclesPublisher TargetsPublisher dynamic keyboard vis watchdog
 	rm -f *.o

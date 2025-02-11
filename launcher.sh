@@ -39,10 +39,6 @@ VISUALIZER_REQUEST_PIPE="$PIPE_DIR/visualizer_Request"
 VISUALIZER_RESPONSE_PIPE="$PIPE_DIR/visualizer_Respond"
 DRONE_REQUEST_PIPE="$PIPE_DIR/drone_Request"
 DRONE_RESPONSE_PIPE="$PIPE_DIR/drone_Respond"
-OBSTACLE_REQUEST_PIPE="$PIPE_DIR/obsticale_Request"
-OBSTACLE_RESPONSE_PIPE="$PIPE_DIR/obsticale_Respond"
-TARGET_PIPE_GENERATOR="$PIPE_DIR/targetgenerator"
-OBSTACLE_PIPE_GENERATOR="$PIPE_DIR/obsticalegenerator"
 
 # Create the pipes directory if it doesn't exist
 mkdir -p $PIPE_DIR
@@ -64,10 +60,6 @@ create_pipe $VISUALIZER_REQUEST_PIPE
 create_pipe $VISUALIZER_RESPONSE_PIPE
 create_pipe $DRONE_REQUEST_PIPE
 create_pipe $DRONE_RESPONSE_PIPE
-create_pipe $OBSTACLE_REQUEST_PIPE
-create_pipe $OBSTACLE_RESPONSE_PIPE
-create_pipe $TARGET_PIPE_GENERATOR
-create_pipe $OBSTACLE_PIPE_GENERATOR
 
 # Clean the project (optional, if Makefile has a clean target)
 echo "Cleaning the project..."
@@ -87,8 +79,8 @@ echo "Build complete!"
 # Start background processes
 ./server &
 ./dynamic &
-./obsticalegenerator &
-./targetgenerator &
+./ObstaclesPublisher &
+./TargetsPublisher &
 
 # Start Konsole processes
 konsole --qwindowgeometry 1000x1000 -e ./vis &

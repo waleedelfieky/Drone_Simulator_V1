@@ -25,7 +25,7 @@ void terminate_all_processes();
 
 
 //===========================================================
-const char *process_names[] = {"vis", "keyboard", "obsticalegenerator", "server", "targetgenerator", "dynamic"};
+const char *process_names[] = {"vis", "keyboard", "ObstaclesPublisher", "server", "TargetsPublisher", "dynamic"};
 const int process_count = sizeof(process_names) / sizeof(process_names[0]);
 //===========================================================
 
