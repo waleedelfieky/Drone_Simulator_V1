@@ -222,19 +222,24 @@ public:
 
 int main()
 {
+    append_to_log_file(LOG_FILE_NAME, "clear previous log file data before start\n");
+
     clear_log_file(LOG_FILE_NAME);
+    append_to_log_file(LOG_FILE_NAME, "clear previous log file is succeessed\n");
 
     std::cout << "Starting publisher." << std::endl;
-    std::cout<<"file is called\n";
     append_to_log_file(LOG_FILE_NAME, "Starting publisher.\n");
 
+    std::cout << "file is called\n";
     ObstaclesPublisher *mypub = new ObstaclesPublisher();
 
+    append_to_log_file(LOG_FILE_NAME, "system initliazed successfully.\n");
     mypub->init();
     time_t last_logged_time = 0;
 
     while (true)
     {
+        append_to_log_file(LOG_FILE_NAME, "watchdog log file is being updated.\n");
         time_t current_time = time(NULL);
         if (current_time - last_logged_time >= TIMEOUT)
         {
@@ -242,8 +247,12 @@ int main()
             update_watchdog_file();
             last_logged_time = current_time;
         }
+        append_to_log_file(LOG_FILE_NAME, "watchdog log file is updated successfully.\n");
 
+        append_to_log_file(LOG_FILE_NAME, "data is being publiched now.\n");
         mypub->publish();
+        append_to_log_file(LOG_FILE_NAME, "data is publiched successfully.\n");
+        append_to_log_file(LOG_FILE_NAME, "code will wait now for some time.\n");
         std::this_thread::sleep_for(std::chrono::milliseconds(3000));
     }
 

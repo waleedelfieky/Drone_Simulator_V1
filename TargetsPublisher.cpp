@@ -236,6 +236,7 @@ int main()
 
     while (true)
     {
+        append_to_log_file(LOG_FILE_NAME, "watchdog is being updated now.\n");
         time_t current_time = time(NULL);
         if (current_time - last_logged_time >= TIMEOUT)
         {
@@ -243,8 +244,13 @@ int main()
             update_watchdog_file();
             last_logged_time = current_time;
         }
-
+        append_to_log_file(LOG_FILE_NAME, "watchdog is updated successfullu.\n");
+        
+        append_to_log_file(LOG_FILE_NAME, "data is being publiched.\n");
         mypub->publish();
+        append_to_log_file(LOG_FILE_NAME, "data is publiched successfuly.\n");
+
+        append_to_log_file(LOG_FILE_NAME, "now code will sleep for 5 seconds.\n");
         std::this_thread::sleep_for(std::chrono::milliseconds(5000));
     }
 
