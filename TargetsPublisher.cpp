@@ -26,8 +26,8 @@
 // Define Macros
 #define MAX_TARGETS 10
 #define TIMEOUT 4 // Timeout in seconds
-#define LOG_FILE "../watchdog_log.txt"
-#define LOG_FILE_NAME "../log_target.txt"
+#define LOG_FILE "watchdog_log.txt"
+#define LOG_FILE_NAME "log_target.txt"
 #define MAX_TARGETS 10
 using namespace eprosima::fastdds::dds;
 using namespace eprosima::fastdds::rtps;

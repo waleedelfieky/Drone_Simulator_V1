@@ -318,11 +318,6 @@ int main()
                 write(fd_request_keyboard, "target", 7);
                 append_to_log_file(LOG_FILE_NAME, "the t button is presses\n");
             }
-            else if (ch == 'o')
-            {
-                write(fd_request_keyboard, "obsticale", 10);
-                append_to_log_file(LOG_FILE_NAME, "the o button is presses\n");
-            }
             else if (ch == 'r')
             {
                 write(fd_request_keyboard, "reset", 6);

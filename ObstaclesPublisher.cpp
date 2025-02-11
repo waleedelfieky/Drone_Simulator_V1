@@ -26,8 +26,8 @@
 #include <fastdds/dds/topic/TypeSupport.hpp>
 
 #define TIMEOUT 4 // Timeout in seconds
-#define LOG_FILE "../watchdog_log.txt"
-#define LOG_FILE_NAME "../log_obsticale.txt"
+#define LOG_FILE "watchdog_log.txt"
+#define LOG_FILE_NAME "log_obsticale.txt"
 #define MAX_OBSTACLES 20 // Maximum number of obstacles to generate
 
 // Function Declarations

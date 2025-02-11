@@ -120,9 +120,6 @@ void init(void);
 // send signal to target
 void send_target_signal();
 /*======================================================*/
-// send signal to obsticale
-void send_obsticale_signal();
-/*======================================================*/
 // API to clear content of log file
 void clear_log_file(const char *filename);
 /*======================================================*/
@@ -132,6 +129,7 @@ void append_to_log_file(const char *filename, const char *format, ...);
 
 /*======================================================*/
 // Create global varibales
+unsigned int Targets_flag = 0;
 SharedState state = {0};
 // Set the first target to be collected as 1
 SharedState reset_state = {0};
@@ -227,7 +225,11 @@ private:
 
                         // assign the reccieved data to the global array of struct that would be send later to the other processes
                         // this assignation happens under condition that the flag is matched
+                    }
+                    if (Targets_flag == 0)
+                    {
                         memcpy(state.targets, generated_targets, sizeof(generated_targets));
+                        Targets_flag = 1;
                     }
                 }
             }
@@ -864,12 +866,6 @@ void keyboard_pipe_Work(char *keyboard_input)
         append_to_log_file(LOG_FILE_NAME, "send target singal sent successfully and waiting generation\n");
         printf("===============================\n");
     }
-    else if (strcmp(keyboard_input, "obsticale") == 0)
-    {
-        send_obsticale_signal();
-        append_to_log_file(LOG_FILE_NAME, "send obsticale singal sent successfully and waiting generation\n");
-    }
-
     else if (strcmp(keyboard_input, "reset") == 0)
     {
         append_to_log_file(LOG_FILE_NAME, "reset signal is recevied and now server is process it\n");
@@ -884,8 +880,6 @@ void keyboard_pipe_Work(char *keyboard_input)
         // send signals to generat new targets and obsticales
         send_target_signal();
         append_to_log_file(LOG_FILE_NAME, "targets generated successfuly\n");
-        send_obsticale_signal();
-        append_to_log_file(LOG_FILE_NAME, "obsticales generated successfuly\n");
     }
     else if (strcmp(keyboard_input, "request_data") == 0)
     {
@@ -901,15 +895,7 @@ void keyboard_pipe_Work(char *keyboard_input)
 
 void send_target_signal()
 {
-    // implement our logic here
-    //  upadte in global varibale
-    // memcpy(state.targets, target_generator_reader, sizeof(target_generator_reader));
-}
-
-void send_obsticale_signal()
-{
-    // implement our logic here
-    // memcpy(state.obstacles, obsticale_generator_reader, sizeof(obsticale_generator_reader));
+    memcpy(state.targets, generated_targets, sizeof(generated_targets));
 }
 
 void update_watchdog_file()
