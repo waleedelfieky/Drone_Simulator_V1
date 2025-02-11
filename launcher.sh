@@ -2,7 +2,7 @@
 
 # Ask the user which mode they want to start
 echo "Which mode do you want to start?"
-echo "1 - Build and run ObstaclesPublisher, TargetsPublisher, and watchdog"
+echo "1 - Build and run ObstaclesPublisher and TargetsPublisher only"
 echo "2 - Build the project, create pipes, and run the whole game (excluding ObstaclesPublisher and TargetsPublisher)"
 read -p "Enter your choice (1 or 2): " mode
 
@@ -29,15 +29,15 @@ make clean
 
 # Build the project based on the user's choice
 if [[ "$mode" == "1" ]]; then
-    echo "Building ObstaclesPublisher, TargetsPublisher, and watchdog..."
-    make ObstaclesPublisher TargetsPublisher watchdog
+    echo "Building ObstaclesPublisher and TargetsPublisher..."
+    make
     if [[ $? -ne 0 ]]; then
         echo "Build failed. Exiting."
         exit 1
     fi
     echo "Build complete!"
 
-    echo "Starting ObstaclesPublisher, TargetsPublisher, and watchdog..."
+    echo "Starting ObstaclesPublisher and TargetsPublisher..."
     ./ObstaclesPublisher &
     ./TargetsPublisher &
     konsole --qwindowgeometry 900x300 -e ./watchdog &
