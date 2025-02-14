@@ -3,10 +3,12 @@
 ## Table of Contents:
 - [System_in_action](#System_in_action)
 - [overview-of-system](#overview-of-system)
+- [Drone_Score_Mechanism](#Drone_Score_Mechanism)
+- [System_MOODS](#System_MOODS)
 - [Watchdog_process](#Watchdog_process)
 - [Server_Node](#Server_Node)
-- [Target_Generator_Node](#Target_Generator_Node)
-- [Obstcale_Generator_Node](#Obstcale_Generator_Node)
+- [Target_Publisher](#Target_Publisher)
+- [Obstcale_Publisher](#Obstcale_Publisher)
 - [Dynamic_Node](#Dynamic_Node)
 - [Keyboard_Node](#Keyboard_Node)
 - [Visualizer_Node](#Visualizer_Node)
@@ -14,36 +16,54 @@
 - [Contact Information](#contact-information)
 ## System_in_action
 
-![image](https://github.com/user-attachments/assets/c97985e6-5255-46af-aa15-7f07394ce1f8)
+![image](https://github.com/user-attachments/assets/de25b335-0281-4936-b79e-5394196066de)
 
 <div style="text-align: justify;">
-This drone simulator allows user-controlled movement via a keyboard interface, with real-time updates on force, velocity, position, score, and attempt displayed on the screen. The drone avoids dynamically generated obstacles and collects targets to increase the score, following a modular architecture based on a request-response model. Communication between components, including visualization, keyboard input, obstacle generation, target generation and Dynamic, is handled via named pipes, with a central server managing these interactions and sending signals to coordinate updates. The system is designed for real-time feedback and efficient inter-process communication.
+This drone simulator allows user-controlled movement via a keyboard interface, with real-time updates on force, velocity, position, score, and attempt displayed on the screen. The drone avoids dynamically generated obstacles and collects targets to increase the score, following a modular architecture based on a request-response model and publish and subscribe mechanism over network using Fastdds and auto discovery server. Communication between components, including visualization, keyboard input, and Dynamic, is handled via named pipes and between obstacle generation, target generation is handled by pub and sub mechanism, with a central server managing these interactions and sending signals to coordinate updates. The system is designed for real-time feedback and efficient inter-process communication.
 </div>
+
+## Drone_Score_Mechanism 
+The score mechanism is being calculated in order, it means if you eat number 1 you will get 1 point if you eat number 2 you will get 2 points if then you eat number 4 because you miss number 3 you will get –4 score in the game  
 
 ## overview-of-system:
 ### Overall system Overview
 
-![image](https://github.com/user-attachments/assets/af120573-d717-4359-9e5f-72b8471cfb19)
+Subscriber Side:
 
-> The system comprises five processes, each connected to a server process through a request-response mechanism. Each process can send requests to the server, which in turn responds accordingly. In this setup, requests and responses consist of data that is processed either on the node side or the server side. Communication between the server and the nodes is facilitated through named pipes, ensuring seamless data exchange. 
+![image](https://github.com/user-attachments/assets/29498605-7e53-4f11-85ec-21f5f1a0666e)
+
+Publisher Side:
+
+![image](https://github.com/user-attachments/assets/7eb80a1d-31eb-4e99-ab8e-8605a7115750)
+
+
+> The system comprises 6 processes, 3 of them as shown in figure are connected to a server process through a request-response mechanism using named pipes. Each process can send requests to the server, which in turn responds accordingly. In this setup, requests and responses consist of data that is processed either on the node side or the server side. 
+
+> Target and obstacle publisher are connected to the server through publish and subscriber mechanism over network using auto discovery server using fastdds.  
 
 > The system employs the select function to guarantee non-blocking behavior, allowing a smooth flow of operations. Additionally, the flow may be interrupted by signal commands issued by the user through a keyboard pipe. These signals are processed by the server, which determines an appropriate time to execute the interrupt routine without disrupting the overall system flow. This ensures the system remains responsive while maintaining consistent operation. 
 
-> The parameters file is used with dynamic node, also each process is logging its progress to a log file so user can track what’s going on at any time or in case of any error, a make file is used to build the code and launcher file is used to first build system using the make file then do some initialization and then run the system. 
+> The parameters file is used with dynamic node, also each process is logging its progress to a log file so user can track what’s going on at any time or in case of any error, a make file is used to build the code and launcher file is used to first build system using the make file then do some initialization and then run the system.  
 
 
 ### Each process responsibilities: 
 **Dynamic Node**: Responsible for position, forces, velocities, accelerations of the system 
 **Keyboard Node**: Responsible for user friendly GUI interaction 
 **Visualizer Node**: Responsible for Visualization whole environment with drone motion 
-**Target Generator**: Responsible For Generating targets values and positions 
-**Obstacles Generator**: Responsible for Generating obstacles positions  
+**Target Publisher**: Responsible For Generating targets values and positions 
+**Obstacles Publisher**: Responsible for Generating obstacles positions  
 **Watchdog**: watch if any process stacked or crashed then close the whole system 
+
+## System_MOODS
+The system has 2 basic moods either is publish targets and objects through network using fastdds and auto discovery server or it work the whole environment and subscriber to the data that is coming from outside publisher 
+![image](https://github.com/user-attachments/assets/1438e017-0045-4eec-be8a-33016c59f5dd)
+![image](https://github.com/user-attachments/assets/59ade5cf-57b7-4ea3-8a38-38b312d0ae53)
+
 
 ## Watchdog_process:
 **Diagram**:
-
-![image](https://github.com/user-attachments/assets/7023fe5a-b303-4b2a-bac4-787ef3cdaf5b)
+![image](https://github.com/user-attachments/assets/9c5e7ca5-c54d-4625-a160-cfe340d31bb7)
+![image](https://github.com/user-attachments/assets/418a47db-3b60-465f-8037-809a805b220d)
 
 
 > Each of the five processes, along with the server process, periodically writes its last execution timestamp to a shared file. This shared file serves as a centralized log for monitoring the activity of all processes in the system. The watchdog process continuously monitors this shared file to ensure that each process is actively writing its timestamp within a predefined time limit. Each process when writing to the file used file Locking to prevent race conditions 
@@ -52,14 +72,19 @@ This drone simulator allows user-controlled movement via a keyboard interface, w
 
 > During its execution, the watchdog process also provides real-time feedback to the user by displaying the last recorded execution times of all processes on the terminal. This allows the user to monitor the flow and activity of the processes as they execute, offering a clear and detailed view of the system's status. The following diagram illustrates this monitoring mechanism and the flow of information. 
 
+Subscriber Side PC: 
+![image](https://github.com/user-attachments/assets/c47dc0a8-c040-4fb4-9619-e90cd66194fe)
 
-![image](https://github.com/user-attachments/assets/1abd73f6-7f3f-463e-b910-2078022cd675)
+Publisher Side PC: 
+
+![image](https://github.com/user-attachments/assets/66255a11-9d52-480a-b3e8-3bcbfad4e08a)
+
 
 ## Server_Node:
 
-> The server node acts as the central hub within the system, responsible for managing and coordinating all processes. It communicates with the five individual processes through named pipes, which serve as inter-process communication channels. The server node's primary role is to receive data from one or more of these processes, process or analyze the information as required, and then distribute the results or relevant data back to the other processes. This centralized management ensures that the system operates efficiently and maintains synchronization between all interconnected components. Additionally, the server node's design allows for streamlined communication, enabling seamless data transfer and reducing potential conflicts or delays in the system's operation. 
+> The server node acts as the central hub within the system, responsible for managing and coordinating all processes. It communicates with the five individual processes through named pipes and fastdds using pub-sub mechanism The server node's primary role is to receive data from one or more of these processes, process or analyze the information as required, and then distribute the results or relevant data back to the other processes. This centralized management ensures that the system operates efficiently and maintains synchronization between all interconnected components. Additionally, the server node's design allows for streamlined communication, enabling seamless data transfer and reducing potential conflicts or delays in the system's operation. 
 
-![image](https://github.com/user-attachments/assets/3fe2d630-a278-44bc-af1c-3f375af7671b)
+![image](https://github.com/user-attachments/assets/33a8ef98-d4d1-4646-8523-00cfd620bdb5)
 
 > Init will initialize the system as shown in the figure and create fifo will create the pipes if they do not exist and open will open those pipes. For select monitor we would discuss it in detail in the following:
 
@@ -82,9 +107,6 @@ This drone simulator allows user-controlled movement via a keyboard interface, w
 - Reads the drone's position and updates its state.
 - Calculates distances to targets for scoring and updates target statuses.
 
-#### Handle Obstacle Updates
-- Reads obstacle data from the respective pipe.
-- Updates the shared state with the new obstacle information.
 
 #### Log and Track Pipe Status
 - Detects and logs when pipes are closed by writers.
@@ -97,178 +119,18 @@ This drone simulator allows user-controlled movement via a keyboard interface, w
 - Manages errors in `select` and handles timeouts gracefully.
 
 **Server handles signals too After getting the command from keyboard node as following diagram**: 
-![image](https://github.com/user-attachments/assets/137aad1e-b9b3-4c94-9d7e-d850b0ffdd88)
 
-## Target_Generator_Node
+![image](https://github.com/user-attachments/assets/8581934f-853e-4002-818b-774f1f17a5a4)
 
-![image](https://github.com/user-attachments/assets/6badc6bd-3e3b-465a-ab6f-e366325632ef)
+## Target_Publisher
 
+![image](https://github.com/user-attachments/assets/3b136ddf-f1de-4c3d-83ee-5386799cf665)
 
-> This node is responsible for generating targets dynamically, handling signals for target generation, and maintaining communication with other processes through a FIFO (named pipe). Below is the detailed explanation:
 
-### 1. Start
+## Obstcale_Publisher
 
-The program begins execution by clearing the log file and initializing the required resources.
+![image](https://github.com/user-attachments/assets/6face357-bdbd-499a-8684-85b5df4b5237)
 
----
-
-### 2. Clear Log File
-
-The program clears the log file (`log_target.txt`) to ensure a clean start for logging target generation activities during the session.
-
----
-
-### 3. Initialize Program
-
-The `init` function performs the following steps:
-
-- **Checks if the FIFO file (`./pipes/targetgenerator`) exists:**
-  - If it does not exist, it creates the FIFO.
-
-- **Opens the FIFO in write mode.**
-
-- **Writes the process ID (PID)** of the target generator program to the FIFO.
-
-- **Registers the signal handler for SIGUSR1.**
-
----
-
-### 4. Main Loop
-
-After initialization, the program enters the main loop to perform periodic operations and wait for signals.
-
----
-
-### 5. SIGUSR1 Signal Received?
-
-The program waits for the **SIGUSR1** signal to initiate target generation. The signal handler performs the following:
-
-- **Logs the receipt of the signal.**
-
-- **Calls the `target_generator` function** to generate a new set of targets.
-
-- **Sends the generated targets to the server** via the FIFO.
-
-- If no signal is received, the program continues checking the watchdog timeout.
-
----
-
-### 6. Generate Targets
-
-The `target_generator` function:
-
-- **Logs the start of target generation.**
-
-- **Generates up to 10 targets** with random positions (`x, y`) and values:
-  - Positions are even numbers within a defined range.
-  - Each target is marked as active (`active = 1`).
-
-- **Logs the generated targets** and writes them to the FIFO.
-
----
-
-### 7. Check Watchdog Timeout
-
-The program periodically checks if the watchdog timeout (4 seconds) has been reached. If the timeout is reached:
-
-- **Updates the watchdog file** to signal that the process is still active.
-
-- **Logs this activity** in the log file.
-
-If the timeout has not been reached, the program continues the main loop.
-
-
-## Obstcale_Generator_Node
-
-![image](https://github.com/user-attachments/assets/6fbfbceb-c245-47ca-806f-ed64d8467812)
-
-> This node dynamically generates obstacles for a simulation, handles communication with other processes using named pipes (FIFO), and ensures process activity monitoring via a watchdog mechanism. The obstacles are periodically sent to the server so that the environment changes over time or when the obstacle generation key is pressed.
-
-Below is a detailed explanation of the flowchart:
-
----
-
-### 1. Start
-
-The program begins execution, initializing required resources and configurations.
-
----
-
-### 2. Initialize Program
-
-The `init` function performs the following tasks:
-
-- **Clears the log file (`log_obsticale.txt`)** to ensure a clean start for logging activities.
-
-- **Checks if the FIFO file (`./pipes/obsticalegenerator`) exists:**
-  - If it does not exist, the program creates the FIFO file.
-
-- **Opens the FIFO in write mode** and writes the process ID (PID) of the obstacle generator to the FIFO so the server can use it later.
-
-- **Registers a signal handler for SIGUSR1.**
-
----
-
-### 3. Create and Open Pipes
-
-- **Request Pipe (`PIPE_REQUEST_OBSTICALE`)**: Used to send generated obstacle data to the server.
-
-- **Response Pipe (`PIPE_RESPONSE_OBSTICALE`)**: Used to receive responses from the server.
-
-- If either pipe fails to open, the program logs the error and exits.
-
----
-
-### 4. Pipes Opened Successfully?
-
-- **Yes**: The program proceeds to register the signal handler for **SIGUSR1** and enters the main loop.
-- **No**: Logs the error and terminates.
-
----
-
-### 5. Register Signal Handler
-
-The program registers a signal handler for **SIGUSR1**, which is used to trigger obstacle generation on-demand.
-
----
-
-### 6. Generate Obstacles
-
-The `obsticale_generator` function dynamically creates obstacles. The steps include:
-
-- **Randomly generating positions (`x, y`)** for each obstacle:
-  - Odd numbers are generated to ensure placement within a specific grid.
-  - Example: `x = (rand() % 45) * 2 + 1` generates random odd positions between 1 and 89.
-
-- **Assigning properties to each obstacle:**
-  - **Size**: Fixed size (1x1) in this implementation.
-  - **Active**: All obstacles are marked as active (`active = 1`).
-
-- **Logging the generated obstacles** to the log file.
-
----
-
-### 7. Send Obstacles to Server
-
-Once obstacles are generated, they are sent to the server using the **request pipe (`PIPE_REQUEST_OBSTICALE`)**.
-
----
-
-### 8. Watchdog Timeout?
-
-The program periodically checks if the watchdog timeout (4 seconds) has been reached. If the timeout is reached:
-
-- **Updates the watchdog file** to signal that the process is still active.
-
-- **Logs this activity** in the log file.
-
-If the timeout has not been reached, the program continues the loop.
-
----
-
-### Purpose
-
-The obstacle generator node ensures that the environment remains dynamic by periodically generating new obstacles and sending them to the server. It also enables on-demand obstacle updates triggered by external signals.
 
 
 ## Dynamic_Node
@@ -669,9 +531,17 @@ This program provides a robust and user-friendly interface for managing real-tim
 
 ## video for the final output:
 
+## Subscriber Video view:
 
 
-https://github.com/user-attachments/assets/4ceccc65-b639-4c72-83a2-41cc41983df4
+https://github.com/user-attachments/assets/e63a080f-b2f3-4e3d-9405-505aef35ee69
+
+
+
+## Publisher Video view:
+
+
+https://github.com/user-attachments/assets/327af7db-394c-44b6-8008-60b4a62b373b
 
 
 
